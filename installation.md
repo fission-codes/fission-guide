@@ -10,19 +10,25 @@ Fission is your toolkit for easily interfacing with [IPFS](https://ipfs.io/). To
 
 ### ipfs-desktop
 
-If you don't want to mess around with running an IPFS daemon in the command line, [ipfs-desktop](https://github.com/ipfs-shipyard/ipfs-desktop) is a great option. You can down load the release from their Github page or use your favorite package manager:
+If you don't want to mess around with running an IPFS daemon in the command line, [ipfs-desktop](https://github.com/ipfs-shipyard/ipfs-desktop) is a great option. You can download the release from their Github page or use your favorite package manager:
 
 * Homebrew \(macOS\): `brew cask install ipfs` 
 * Chocolatey \(Windows\): `choco install ipfs-desktop` 
 * Snap \(Linux\): `snap install ipfs-desktop` 
 
+{% hint style="info" %}
+All of these include graphical interfaces as well as the command line IPFS daemon. You can drag and drag files, view your local IPFS files visually, and even integrate a shortcut for taking screenshots and auto-uploading them to IPFS.
+{% endhint %}
+
 ### ipfs binary
 
 We recommend installing IPFS from a prebuilt package. First, [download the correct package for your platform](https://dist.ipfs.io/#go-ipfs).
 
+If you are a Mac Homebrew user, `brew install ipfs` is even easier.
+
 #### macOS and Linux
 
-Untar the archive and run the `./install.sh` script \(which just 
+Untar the archive and run the `./install.sh` script \(which just moves the binary to a local bin path\).
 
 ```bash
 $ tar xvfz go-ipfs.tar.gz
