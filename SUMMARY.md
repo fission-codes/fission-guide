@@ -1,5 +1,10 @@
 # Table of contents
 
-* [Fission Guide](README.md)
-* [Untitled](untitled.md)
+* [Fission](README.md)
+* [Installation](installation.md)
+* [Getting Started](getting-started.md)
+* [Fission Live](fission-live.md)
+* [Fission Web API](file-pinning-tutorial.md)
+* [Further Reading/Resources](further-reading-resources.md)
+* [Appendix: IPFS Resources](untitled.md)
 

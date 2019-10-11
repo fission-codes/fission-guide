@@ -1,23 +1,14 @@
-# Fission Guide
+# Fission
 
-## Getting Super Powers
+## What is Fission?
 
-Becoming a super hero is a fairly straight forward process:
+Fission is a backend-as-a-service that gives you a serverless style of website and app building while also enabling you to run these systems from your local development environment.
 
-```
-$ give me super-powers
-```
+We build on top of decentralized web technologies like the InterPlanetary File System \(IPFS\) to enable developer friendly features.
 
-{% hint style="info" %}
- Super-powers are granted randomly so please submit an issue if you're not happy with yours.
-{% endhint %}
+## Fission Live
 
-Once you're strong enough, save the world:
+Fission Live is the Fission service that lets you host your app — whether it’s a static website or a client side JavaScript front end — directly from your laptop.
 
-```
-// Ain't no code for that yet, sorry
-echo 'You got to trust me on this, I saved the world'
-```
-
-
+Follow this guide to learn to use the CLI tool and experience seamless deployments to the decentralized web.
 
