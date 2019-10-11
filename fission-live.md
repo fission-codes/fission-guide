@@ -10,7 +10,7 @@ Check out the [Getting Started](getting-started.md) section to see how the simpl
 
 ## Fission CLI
 
-The Fission CLI has 4 commands:
+The Fission CLI has the following commands:
 
 * `login`
 * `register`
@@ -36,10 +36,10 @@ To use `up`, make sure that you:
 
 A few things happen when you run `fission up`:
 
-* Your current directly is recursively added to IPFS through your local node  \(the equivalent of running `ipfs add -r ./`\)
+* the directory is recursively added to IPFS through your local node  \(the equivalent of running `ipfs add -r ./`\)
 * Your local node connects to a remote Fission node  \(the equivalent of running `ipfs swarm connect [peerId]`\)
-* A Pin request is sent to our server which tells the remote Fission node to get and store the requested content directly from your local node
-* a request is sent to our server to update the Domain associated with you account to point to the new content using [dnslink](https://docs.ipfs.io/guides/concepts/dnslink/)
+* A Pin Request is sent to our server which tells the remote Fission node to get and store the requested content directly from your local node
+* a request is sent to our server to update the Domain associated with you account to point to the new content using dnslink ℹ 
   * This points `[username].demo.runfission.com` at our IPFS gateway \([ipfs.runfission.com](https://ipfs.runfission.com/ipfs/Qmaisz6NMhDB51cCvNWa1GMS7LU1pAxdF4Ld6Ft9kZEP2a)\)
   * And `_dnslink.[username].demo.runfission.com` at your uploaded content
   * _Note: It may take some time for DNS to propagate. So give it a minute or two if it doesn't load immediately._
