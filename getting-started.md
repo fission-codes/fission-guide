@@ -77,5 +77,9 @@ $ fission up
 
 Copy the url from the last line, and paste it into your web browser to see your new site, hosted on the decentralized web. It's that easy!
 
-_Note: It may take some time for DNS to propagate. So give it a minute or two if it doesn't load immediately._
+_Note: It may take some time for DNS to propagate. So give it a minute or two if it doesn't load immediately. If you're impatient you can also take the `content-id` from the CLI output and view it here at `https://ipfs.runfission.com/ipfs/{YOUR_CONTENT_ID}`_
+
+{% hint style="success" %}
+Fun IPFS Fact: If everyone follows this tutorial exactly you will end up with identical Content ID's. This means you can instantly pull the demo website from your neighbour if they're a step ahead of you.
+{% endhint %}
 
