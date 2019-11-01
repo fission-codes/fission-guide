@@ -60,8 +60,8 @@ For more installation options, check out the [Install IPFS guide](https://docs.i
 
 Head over to our [releases](https://github.com/fission-suite/web-api/releases) page on Github and download the latest release for your operating system or grab the latest one here:
 
-* Mac: [v1.16.0](https://github.com/fission-suite/web-api/releases/download/1.16.0/macos-cli)
-* Linux: [v.1.](https://github.com/fission-suite/web-api/releases/download/1.16.0/deb-cli)[16.0](https://github.com/fission-suite/web-api/releases/download/1.16.0/deb-cli)
+* Mac: [v1.20.0](https://github.com/fission-suite/cli/releases/download/1.20.0/deb-cli)
+* Linux: [v.1.](https://github.com/fission-suite/web-api/releases/download/1.16.0/deb-cli)[20.0](https://github.com/fission-suite/web-api/releases/download/1.16.0/deb-cli)
 
 Then make the binary executable:
 
