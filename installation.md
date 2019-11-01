@@ -58,22 +58,30 @@ For more installation options, check out the [Install IPFS guide](https://docs.i
 
 ## Installing Fission
 
-Head over to our [releases](https://github.com/fission-suite/web-api/releases) page on Github and download the latest release for your operating system or grab the latest one here:
+#### MacOS
 
-* Mac: [v1.20.0](https://github.com/fission-suite/cli/releases/download/1.20.0/deb-cli)
-* Linux: [v.1.](https://github.com/fission-suite/web-api/releases/download/1.16.0/deb-cli)[20.0](https://github.com/fission-suite/web-api/releases/download/1.16.0/deb-cli)
+We have a brew recipe to get you up and running quickly on MacOS:
+
+```bash
+$ brew tap fission-suite/fission
+$ brew install fission-cli
+```
+
+#### Linux \(and manual MacOS\)
+
+Head over to our [releases](https://github.com/fission-suite/web-api/releases) page on Github and download the latest release for your operating system.
 
 Then make the binary executable:
 
 ```bash
 $ cd ~/Downloads
-$ sudo chmod +x ./macos-cli
+$ sudo chmod +x ./deb-cli
 ```
 
 And move the file to your PATH:
 
 ```bash
-$ sudo mv ./macos-cli /usr/local/bin/fission
+$ sudo mv ./deb-cli /usr/local/bin/fission
 ```
 
 _**\(Linux Only\)**_  
