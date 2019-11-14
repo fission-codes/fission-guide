@@ -22,6 +22,10 @@ $ fission login
 Username: # follow the prompts to provide your username and password
 ```
 
+{% hint style="info" %}
+Our default web addresses are based on your username, and look like `USERNAME.fission.name`. In the future, you'll be able to add custom domains.
+{% endhint %}
+
 ## Run IPFS
 
 You need IPFS running in order to use `fission` 
@@ -48,8 +52,7 @@ $ touch index.html
 
 Add some content to `index.html`:
 
-{% code-tabs %}
-{% code-tabs-item title="index.html" %}
+{% code title="index.html" %}
 ```markup
 <html>
   <head>
@@ -57,11 +60,12 @@ Add some content to `index.html`:
   </head>
   <body>
     <h1>Hello Universe!</h1>
+    <p>This is on the InterPlanetary File System.</p>
+    <p>Assisted by <a href="https://fission.codes">Fission</a>.</p>
   </body>
 </html>
 ```
-{% endcode-tabs-item %}
-{% endcode-tabs %}
+{% endcode %}
 
 ## Go interplanetary!
 
@@ -70,9 +74,9 @@ Make sure you're in your project folder \(`hello-universe`\) and run:
 ```bash
 $ fission up
 🚀 Now live on the network
-👌 QmXGsrriZWi9j24CKKj9FY7NxghRMqAHhhjMgc2peRhx61
+👌 QmPmZDd6esqzsc2R1i8t5DcRGeRKrNomMhqj232Cz6heNW
 📝 DNS Updated. Check out your site at:
-🔗 21ebedd5d4070a521f83.demo.runfission.com
+🔗 diffusiondemo.fission.name
 ```
 
 Copy the url from the last line, and paste it into your web browser to see your new site, hosted on the decentralized web. It's that easy!
