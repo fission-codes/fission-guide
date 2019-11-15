@@ -7,4 +7,5 @@
 * [Fission Web API](file-pinning-tutorial.md)
 * [Further Reading/Resources](further-reading-resources.md)
 * [Appendix: Learning IPFS](appendix-learning-ipfs.md)
+* [Troubleshooting](troubleshooting.md)
 
