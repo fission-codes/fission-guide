@@ -71,6 +71,10 @@ $ brew install fission-cli
 
 Head over to our [releases](https://github.com/fission-suite/web-api/releases) page on Github and download the latest release for your operating system.
 
+{% hint style="warning" %}
+Note: Ubuntu 19+ is currently not supported due to [a build issue \#51](https://github.com/fission-suite/cli/issues/51)
+{% endhint %}
+
 Then make the binary executable:
 
 ```bash
