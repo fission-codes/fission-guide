@@ -69,23 +69,23 @@ $ brew install fission-cli
 
 #### Linux \(and manual MacOS\)
 
-Head over to our [releases](https://github.com/fission-suite/web-api/releases) page on Github and download the latest release for your operating system.
+Head over to our [releases](https://github.com/fission-suite/cli/releases) page on Github and download the latest release for your operating system.
 
 {% hint style="warning" %}
 Note: Ubuntu 19+ is currently not supported due to [a build issue \#51](https://github.com/fission-suite/cli/issues/51)
 {% endhint %}
 
-Then make the binary executable:
+Unzip the file, and then make the binary executable:
 
 ```bash
 $ cd ~/Downloads
-$ sudo chmod +x ./deb-cli
+$ sudo chmod +x ./fission-cli-exe
 ```
 
 And move the file to your PATH:
 
 ```bash
-$ sudo mv ./deb-cli /usr/local/bin/fission
+$ sudo mv ./fission-cli-exe /usr/local/bin/fission
 ```
 
 _**\(Linux Only\)**_  
