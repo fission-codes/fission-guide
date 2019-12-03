@@ -1,7 +1,8 @@
 # Table of contents
 
 * [Fission](README.md)
-* [Installation](installation.md)
+* [Installation](installation/README.md)
+  * [Windows](installation/windows.md)
 * [Getting Started](getting-started.md)
 * [Fission Live](fission-live.md)
 * [Fission Web API](file-pinning-tutorial.md)
