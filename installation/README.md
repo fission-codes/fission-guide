@@ -17,7 +17,7 @@ If you don't want to mess around with running an IPFS daemon in the command line
 * Snap \(Linux\): `snap install ipfs-desktop` 
 
 {% hint style="info" %}
-All of these include graphical interfaces as well as the command line IPFS daemon. You can drag and drag files, view your local IPFS files visually, and even integrate a shortcut for taking screenshots and auto-uploading them to IPFS.
+All of these include graphical interfaces as well as the command line IPFS daemon. You can drag and drop files, view your local IPFS files visually, and even integrate a shortcut for taking screenshots and auto-uploading them to IPFS.
 {% endhint %}
 
 ### ipfs binary
