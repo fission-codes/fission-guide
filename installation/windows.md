@@ -9,9 +9,9 @@ description: >-
 ## Native Windows Executable
 
 {% hint style="success" %}
-We are currently in the alpha stage of development and expect to have a native executable ready shortly.  
+We are currently in the alpha stage of development and expect to have a native Windows executable ready shortly.  
 
-In the meantime, continue reading to learn how to access Fission CLI using WSL today!
+In the meantime, continue reading to learn how to access Fission CLI using Windows Subsystem for Linux \(WSL\) today!
 {% endhint %}
 
 ## Fission on Windows Subsystem for Linux \(WSL\)
@@ -52,7 +52,7 @@ If you have multiple distributions installed, the above command \(`wsl --list`\)
 
 ### Installing IPFS
 
-We recommend installing IPFS from a prebuilt package. First, [download the correct **Linux** package for your platform](https://dist.ipfs.io/#go-ipfs).
+We recommend installing IPFS from a prebuilt package. First, [download the 64-bit **Linux** package for your platform](https://dist.ipfs.io/#go-ipfs).
 
 Enter WSL, untar the archive, and run the `./install.sh` script \(which just moves the binary to your local Linux bin path\).
 
