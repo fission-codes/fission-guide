@@ -1,4 +1,4 @@
-# Appendix: Learning IPFS
+# Learning IPFS
 
 The main [IPFS docs website](https://docs.ipfs.io/introduction/) is a good place to start to read and learn about IPFS. We've included a few explanations about certain ways that we use core IPFS features.
 
