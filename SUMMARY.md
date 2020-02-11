@@ -12,5 +12,5 @@
 
 ## Fission Drive <a id="drive"></a>
 
-* [Getting Started with Fission Drive](drive/getting-started-with-fission-drive.md)
+* [Preview](drive/preview.md)
 
