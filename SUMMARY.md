@@ -10,3 +10,7 @@
 * [Appendix: Learning IPFS](appendix-learning-ipfs.md)
 * [Troubleshooting](troubleshooting.md)
 
+## Fission Drive <a id="drive"></a>
+
+* [Getting Started with Fission Drive](drive/getting-started-with-fission-drive.md)
+
