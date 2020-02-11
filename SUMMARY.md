@@ -16,4 +16,5 @@
 ## Appendix
 
 * [Learning IPFS](appendix/ipfs.md)
+* [Technical Specifications & Whitepaper](https://whitepaper.fission.codes)
 
