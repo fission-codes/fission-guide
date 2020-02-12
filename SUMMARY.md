@@ -17,8 +17,8 @@
 
 ## Developers
 
-* [Fission Web API](developers/file-pinning-tutorial.md)
-* [Further Reading/Resources](developers/further-reading-resources.md)
+* [Fission Web API](developers/web-api.md)
+* [Further Reading and Resources](developers/resources.md)
 
 ## Appendix
 

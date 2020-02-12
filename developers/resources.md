@@ -1,6 +1,6 @@
-# Further Reading/Resources
+# Further Reading and Resources
 
-Here are some additional resources to help you understand the wider Fission/IPFS ecosystem
+Here are some additional resources to help you understand the wider Fission ecosystem
 
 * [Fission Web API docs through Swagger](https://runfission.com/docs/)
   * Use this if you want to make REST calls directly to our API. 
