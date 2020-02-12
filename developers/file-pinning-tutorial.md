@@ -4,9 +4,9 @@ description: An introduction to the Fission Web API with some example requests
 
 # Fission Web API
 
-The Fission Web API provides an interface between HTTP and IPFS. You can interact with it at [https://runfission.com/](https://runfission.com/).  We'll go through a few interactions that you might find helpful, but for the full API, check out the [Swagger docs](https://runfission.com/docs/).
+The Fission Web API provides an interface to our systems using a standard RESTful API. We'll go through a few interactions that you might find helpful, but for the full API, check out the [Swagger docs](https://runfission.com/docs/).
 
-## Get Content From IPFS
+## Get Content from IPFS
 
 Getting content from IPFS is a simple `GET` request to `https://runfission.com/ipfs/{cid}`  
 No authentication needed!

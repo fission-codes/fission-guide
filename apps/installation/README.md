@@ -1,10 +1,12 @@
 ---
-description: Install IPFS + Fission and make your machine interplanetary!
+description: Install the Fission command line tools to start publishing from your desktop
 ---
 
 # Installation
 
-Fission is your toolkit for easily interfacing with [IPFS](https://ipfs.io/). To get started, you'll need to install IPFS as well as the Fission CLI tool.
+We build on top of decentralized web technologies like the InterPlanetary File System \(IPFS\) to publish directly from your local development environment without having to learn complicated deployment or DevOps techniques.
+
+Right now you need to install IPFS as well as the Fission command line tool to get up and running, but it should just take a couple of minutes if you follow these instructions.
 
 ## Installing IPFS
 
@@ -57,6 +59,8 @@ USAGE:
 For more installation options, check out the [Install IPFS guide](https://docs.ipfs.io/guides/guides/install/).
 
 ## Installing Fission
+
+Skip to the [dedicated Windows page for Fission](windows.md), or follow Mac and Linux instructions below.
 
 #### MacOS
 

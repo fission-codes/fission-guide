@@ -1,20 +1,28 @@
 # Table of contents
 
-* [Fission](README.md)
-* [Installation](installation/README.md)
-  * [Windows](installation/windows.md)
-* [Getting Started](getting-started.md)
-* [Fission Live](fission-live.md)
-* [Fission Web API](file-pinning-tutorial.md)
-* [Further Reading/Resources](further-reading-resources.md)
-* [Troubleshooting](troubleshooting.md)
+* [Overview](README.md)
+
+## Fission Apps <a id="apps"></a>
+
+* [Installation](apps/installation/README.md)
+  * [Windows](apps/installation/windows.md)
+* [Getting Started](apps/getting-started.md)
+* [Using the Fission CLI to publish React sites](apps/fission-cli-react.md)
+* [Fission CLI](apps/cli.md)
+* [Custom Domains](apps/custom-domains.md)
 
 ## Fission Drive <a id="drive"></a>
 
 * [Preview](drive/preview.md)
 
+## Developers
+
+* [Fission Web API](developers/file-pinning-tutorial.md)
+* [Further Reading/Resources](developers/further-reading-resources.md)
+
 ## Appendix
 
 * [Learning IPFS](appendix/ipfs.md)
+* [Troubleshooting](appendix/troubleshooting.md)
 * [Technical Specifications & Whitepaper](https://whitepaper.fission.codes)
 
