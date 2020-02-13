@@ -14,7 +14,11 @@ The Preview release is an exploration of the interface, and currently supports o
 
 You can browse any IPFS directory, not just those hosted on Fission, by entering in the hash, or Content ID \(CID\), of a directory.
 
+You can use `QmbCLefkFuXbhHBWSW7PWmJzBL7W7e8zm41HK4DGJ1RDwV` as an example folder to browse. Visit [drive.fission.codes](https://drive.fission.codes) to try it out.
+
 ![](../.gitbook/assets/drive-explore-large-light.png)
+
+The hash above represents Boris' public files, which you can also see in the default IPFS browser at [boris.fission.name](https://boris.fission.name).
 
 ## Features
 
