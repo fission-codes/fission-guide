@@ -19,6 +19,7 @@
 ## Developers
 
 * [Fission Web API](developers/web-api.md)
+* [Heroku Add-on](developers/heroku.md)
 * [Further Reading and Resources](developers/resources.md)
 
 ## Appendix
