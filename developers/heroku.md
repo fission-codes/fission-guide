@@ -4,7 +4,23 @@ description: Interplanetary Fission IPFS - Fission Web API as an Heroku Add-on
 
 # Heroku Add-on
 
-The Fission Web API is available as a Heroku Add-on. F[ind it in the Heroku Add-Ons Marketplace](https://elements.heroku.com/addons/interplanetary-fission).
+The Fission Web API is available as a Heroku Add-on. [Find it in the Heroku Add-Ons Marketplace](https://elements.heroku.com/addons/interplanetary-fission). It is currently in a free beta mode with a "test" plan. 
+
+As with all Heroku add-ons, you can also create a new add-on locally using the Heroku CLI tool:
+
+```text
+heroku addons:create interplanetary-fission:test
+```
+
+If you create the add-on through the Heroku dashboard, you can find your API credentials in the _Settings_ section of your app, under the _Config Vars_ heading:
+
+![](../.gitbook/assets/heroku_config_vars.png)
+
+These can also be used in your local environment by creating an `.env` file.
+
+{% hint style="info" %}
+The Heroku Add-on uses the Web API, appropriate for server side apps written in any language that Heroku supports. You can browse the live docs of the Fission Web API at [runfission.com/docs](https://runfission.com/docs), or look at our [Github repo](https://github.com/fission-suite) to find a client SDK for your programming language.
+{% endhint %}
 
 ### Deploy to Heroku
 
