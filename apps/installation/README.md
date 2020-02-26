@@ -38,13 +38,9 @@ $ cd go-ipfs
 $ ./install.sh
 ```
 
-{% hint style="info" %}
-`If you don't know your system's architecture, run`**`uname -a`**
-{% endhint %}
-
 #### Windows
 
-Unzip the archive and move `ipfs.exe` to your `%PATH%` .
+Unzip the archive and move `ipfs.exe` to your `%PATH%` . Read through our Windows install page for more.
 
 ### Test it out
 
@@ -57,6 +53,20 @@ USAGE:
 ```
 
 For more installation options, check out the [Install IPFS guide](https://docs.ipfs.io/guides/guides/install/).
+
+For all systems, you'll want to initialize your local IPFS data repository:
+
+```bash
+ipfs init
+```
+
+If you're not running the IPFS desktop, you'll need to run the IPFS server in daemon mode.
+
+Using brew:
+
+```bash
+brew services start ipfs
+```
 
 ## Installing Fission
 
