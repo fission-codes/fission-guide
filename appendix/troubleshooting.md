@@ -41,3 +41,21 @@ brew install fission-cli
 
 This is related to [issue \#37](https://github.com/fission-suite/cli/issues/37).
 
+## DEBUG mode for fission cli
+
+If you want to see what the [Fission CLI](../apps/cli.md) is doing under the covers, you can turn on DEBUG mode by calling commands like this:
+
+```text
+DEBUG=true fission up .
+```
+
+You'll see that `fission up` calls your locally installed `ipfs` command to add files to IPFS. We can see that it's using the 0.4.22 version of ipfs, installed using Homebrew in the "Cellar" where brew keeps installed items.
+
+![](../.gitbook/assets/screen-shot-2020-03-04-at-8.00.25-am.png)
+
+Then, it sends the hash of the entire directory to our web API, which pins it and fetches the files directly from your laptop and any other IPFS nodes that already have copies of those files in the network.
+
+![](../.gitbook/assets/screenshot-2020-03-04-08.58.05.png)
+
+In this case, we can see that after the "Remote pinning Qm…", there is a _504 Gateway Time-out_ error from our server. This is a known issue, which we're working on to support large files / large quantities of files.
+
