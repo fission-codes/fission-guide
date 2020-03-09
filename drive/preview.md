@@ -54,7 +54,3 @@ Yes, this works on mobile!
 
 Use arrow keys to navigate, enter to open preview.
 
-### WebTorrent for Streaming Media
-
-We've implemented support for [WebTorrent](https://webtorrent.io/) so that large audio and video files can be watched right away.
-
