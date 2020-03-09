@@ -36,3 +36,7 @@ Note: ChromeOS does not currently support dark mode.
 
 ![](../.gitbook/assets/drive-preview-large-light.jpg)
 
+### Keyboard Shortcuts
+
+Use arrow keys to navigate, enter to open preview
+
