@@ -12,23 +12,37 @@ Right now you need to install IPFS as well as the Fission command line tool to g
 
 ### ipfs-desktop
 
-If you don't want to mess around with running an IPFS daemon in the command line, [ipfs-desktop](https://github.com/ipfs-shipyard/ipfs-desktop) is a great option. You can download the release from their Github page or use your favorite package manager:
+[ipfs-desktop](https://github.com/ipfs-shipyard/ipfs-desktop) is a great option for a graphical interface, including options to run ipfs as a service on system start, as well as easy access to start and stop the ipfs daemon.
+
+You can download the release from their Github page or use your favorite package manager:
 
 * Homebrew \(macOS\): `brew cask install ipfs` 
 * Chocolatey \(Windows\): `choco install ipfs-desktop` 
 * Snap \(Linux\): `snap install ipfs-desktop` 
 
 {% hint style="info" %}
-All of these include graphical interfaces as well as the command line IPFS daemon. You can drag and drop files, view your local IPFS files visually, and even integrate a shortcut for taking screenshots and auto-uploading them to IPFS.
+The command line ipfs daemon is also included as part of this install.
 {% endhint %}
 
-### ipfs binary
+### Command Line IPFS
 
-We recommend installing IPFS from a prebuilt package. First, [download the correct package for your platform](https://dist.ipfs.io/#go-ipfs).
+#### MacOS
 
-If you are a Mac Homebrew user, `brew install ipfs` is even easier.
+If you're not running ipfs-desktop, install ipfs via brew:
 
-#### macOS and Linux
+```bash
+brew install ipfs
+```
+
+To run ipfs as a background service:
+
+```bash
+brew services start ipfs
+```
+
+#### Linux and Windows / WSL
+
+Download the Linux binary from the [IPFS distributions page](https://dist.ipfs.io/#go-ipfs).
 
 Untar the archive and run the `./install.sh` script \(which just moves the binary to a local bin path\).
 
@@ -38,39 +52,31 @@ $ cd go-ipfs
 $ ./install.sh
 ```
 
-#### Windows
+### All Systems
 
-Unzip the archive and move `ipfs.exe` to your `%PATH%` . Read through our Windows install page for more.
-
-### Test it out
-
-```bash
-$ ipfs help
-USAGE:
-
-    ipfs - Global p2p merkle-dag filesystem.
-...
-```
-
-For more installation options, check out the [Install IPFS guide](https://docs.ipfs.io/guides/guides/install/).
-
-For all systems, you'll want to initialize your local IPFS data repository:
+For all systems, IPFS should now be installed. Initialize your IPFS repo:
 
 ```bash
 ipfs init
 ```
 
-If you're not running the IPFS desktop, you'll need to run the IPFS server in daemon mode.
+By default the config and files are stored in your home directory in the`.ipfs` directory.
 
-Using brew:
+ipfs-desktop can be turned on and off graphically. For Linux systems, run the daemon in the background:
 
 ```bash
-brew services start ipfs
+ipfs daemon &
 ```
 
-## Installing Fission
+If you would like to be able to easily start and stop the ipfs daemon, see the [Troubleshooting page](../appendix/troubleshooting.md#initd).
 
-Skip to the [dedicated Windows page for Fission](windows.md), or follow Mac and Linux instructions below.
+## Installing the Fission CLI
+
+The Fission command line interface \(CLI\) is the main way to interact with Fission's services.
+
+{% hint style="info" %}
+For Windows users, we currently recommend using the Windows Subsystem for Linux \(WSL\). The Linux instructions below apply equally to WSL, except where noted.
+{% endhint %}
 
 #### MacOS
 
@@ -89,14 +95,7 @@ Head over to our [releases](https://github.com/fission-suite/cli/releases) page 
 Note: Ubuntu 19+ is currently not supported due to [a build issue \#51](https://github.com/fission-suite/cli/issues/51)
 {% endhint %}
 
-Unzip the file, and then make the binary executable:
-
-```bash
-$ cd ~/Downloads
-$ sudo chmod +x ./fission-cli-exe
-```
-
-And move the file to your PATH:
+Unzip the file and move the file to your PATH:
 
 ```bash
 $ sudo mv ./fission-cli-exe /usr/local/bin/fission

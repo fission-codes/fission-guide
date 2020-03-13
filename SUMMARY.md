@@ -4,8 +4,7 @@
 
 ## Fission Apps <a id="apps"></a>
 
-* [Installation](apps/installation/README.md)
-  * [Windows](apps/installation/windows.md)
+* [Installation](apps/installation.md)
 * [Getting Started](apps/getting-started.md)
 * [Using the Fission CLI to publish React sites](apps/fission-cli-react.md)
 * [Fission CLI](apps/cli.md)

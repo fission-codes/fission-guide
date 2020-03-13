@@ -59,3 +59,11 @@ Then, it sends the hash of the entire directory to our web API, which pins it an
 
 In this case, we can see that after the "Remote pinning Qm…", there is a _504 Gateway Time-out_ error from our server. This is a known issue, which we're working on to support large files / large quantities of files.
 
+## Running IPFS as a service on Linux and WSL <a id="initd"></a>
+
+WSL doesn't have systemd, so this init.d script should work.
+
+{% embed url="https://gist.github.com/bmann/54223ad136d9ff34144ad6367fc05677" %}
+
+
+
