@@ -6,9 +6,10 @@
 
 * [Installation](apps/installation.md)
 * [Getting Started](apps/getting-started.md)
-* [Using the Fission CLI to publish React sites](apps/fission-cli-react.md)
+* [Ponto de Partida](apps/ponto-de-partida.md)
 * [Fission CLI](apps/cli.md)
 * [Custom Domains](apps/custom-domains.md)
+* [Using the Fission CLI to publish React sites](apps/fission-cli-react.md)
 
 ## Fission Drive <a id="drive"></a>
 
