@@ -86,6 +86,6 @@ Copie a URL que aparece na última linha \(🔗\) e cole no seu navegador para v
 _Note: Pode levar algum tempo para a replicação do DNS. Então aguarde 1 ou 2 minutos se o site não carregar imediatamente. Se você é do tipo impaciente, copie o `content-id` da saída da linha de comando e veja em `https://ipfs.runfission.com/ipfs/{YOUR_CONTENT_ID}`_
 
 {% hint style="success" %}
-Curiosidade sobre o IPFS: Todos que seguirem esse tutorial do começo ao fim, acabarão com a mesma chave de conteúdo \(Content ID\). Isso significa pode puxar instantaneamente esse site da demonstração do seu "vizinho" \(se estiver com pressa\), caso ele já tenha feito o deploy.
+Curiosidade sobre o IPFS: Todos que seguirem esse tutorial do começo ao fim, acabarão com a mesma chave de conteúdo \(Content ID\). Isso significa que você pode puxar instantaneamente esse site da demonstração do seu "vizinho" \(se estiver com pressa\), caso ele já tenha feito o deploy.
 {% endhint %}
 
