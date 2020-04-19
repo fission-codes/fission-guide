@@ -1,18 +1,20 @@
 ---
-description: Instalando as ferramentas de linha de comando do FISSION para iniciar as publicações do seu desktop
+description: >-
+  Instalando as ferramentas de linha de comando do FISSION para iniciar as
+  publicações do seu desktop
 ---
 
-# Instalação 
+# Instalação
 
 Nossa plataforma é construída sobre algumas ferramentas de descentralização da internet, como o InterPlanetary File System \(IPFS\), onde é possíel você publicar diretamente do seu ambiente local de desenvolvimento, isso sem necessitar aprender ou implementar tecnologias DevOps.
 
-Agora, vamos instalar o IPFS e a CLI do Fission para fazer tudo isso funcionar. Seguindo essas instruções abaixo, as instalações serão bem fáceis e rápidas. 
+Agora, vamos instalar o IPFS e a CLI do Fission para fazer tudo isso funcionar. Seguindo essas instruções abaixo, as instalações serão bem fáceis e rápidas.
 
 ## Instalando o IPFS
 
 ### ipfs-desktop
 
-[ipfs-desktop] (https://github.com/ipfs-shipyard/ipfs-desktop), se você prefere uma interface gráfica, o ipfs-desktop é uma ótima opção, esta te possibilita rodar o ipfs como serviço, além de facilitar o start/stop da aplicação (daemon).
+[ipfs-desktop](https://github.com/ipfs-shipyard/ipfs-desktop), se você prefere uma interface gráfica, o ipfs-desktop é uma ótima opção, esta te possibilita rodar o ipfs como serviço, além de facilitar o start/stop da aplicação \(daemon\).
 
 Você pode fazer o download pelas 'releases' no link acima, ou usar seu gerenciador de pacotes de preferência:
 
@@ -59,6 +61,7 @@ Após a instalação, se feita corretamente, o seguinte comando funciona para to
 ```bash
 ipfs init
 ```
+
 Por padrão, os arquivos ficam armazenados no diretório local em `.ipfs`.
 
 O ipfs-desktop pode ser ligado e desligado pela interface gráfica. Para sistemas Linux, execute o daemon em segundo plano:
@@ -70,10 +73,10 @@ ipfs daemon &
 Se você quiser facilitar o stop/start do daemon, favor visitar a [página de Troubleshooting](../appendix/troubleshooting.md#initd)
 
 ## Instalando o Fission CLI
- 
- O Fission pela linha de comando \(CLI\) é a principal forma de se interagir com os serviços do Fission.
 
- {% hint style="info" %}
+O Fission pela linha de comando \(CLI\) é a principal forma de se interagir com os serviços do Fission.
+
+{% hint style="info" %}
 Para usuários do Windows, nós recomandamos usar o 'Windows Subsystem for Linux' \(WSL\). As instruções escritas abaixo para Linux, também se aplicam para o WSL, exceto as demarcadas em nota.
 {% endhint %}
 
@@ -101,7 +104,7 @@ $ sudo mv ./fission-cli-exe /usr/local/bin/fission
 ```
 
 _**\(Apenas Linux\)**_  
-****Linux requires an additional dependency:
+_\*\*_Linux requires an additional dependency:
 
 ```bash
 $ sudo apt update
@@ -109,7 +112,6 @@ $ sudo apt install libpq-dev
 ```
 
 Pronto! Faça uma última checagem para ver se está tudo correto:
-
 
 ```bash
 $ fission --help
@@ -120,3 +122,4 @@ Usage: fission [--version] [--help] COMMAND
   applications quick and easy.
 ...
 ```
+

@@ -4,7 +4,7 @@
 
 ## Fission Apps <a id="apps"></a>
 
-* [Instalacao](apps/instalacao.md)
+* [Instalação](apps/instalacao.md)
 * [Ponto de Partida](apps/ponto-de-partida.md)
 * [Fission CLI](apps/cli.md)
 * [Custom Domains](apps/custom-domains.md)
