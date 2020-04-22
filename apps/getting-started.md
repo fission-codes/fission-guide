@@ -1,30 +1,34 @@
 ---
-description: Get your first site up and running on IPFS with this beginner-friendly guide
+description: Get your first site up and running with this beginner-friendly guide
 ---
 
 # Getting Started
 
-## Register or Login
+## Setup
 
-Now that you have `fission` installed, you need to register for an account:
-
-```bash
-$ fission register
-✅ Registered & logged in
-```
-
-And you're good to go! Your credentials are stored in `~/.fission.yaml` 
-
-If you already have an account, you can login instead:
+Now that you have `fission` installed, you need to set it up for your local machine. If this is your first time using fission or you are setting up a new machine, you'll want to run setup:
 
 ```bash
-$ fission login
-Username: # follow the prompts to provide your username and password
+$ fission setup
+Username: YOURNAME
+Email: yourname@example.com
+✅ Registration successful!
 ```
+
+And you're good to go! A private key has been generated for your machine, and placed in your local `~/.ssh` folder. This secures communication with the Fission services, and works similarly to how using an SSH key to connect to GitHub works.
 
 {% hint style="info" %}
-Our default web addresses are based on your username, and look like `USERNAME.fission.name`. In the future, you'll be able to add custom domains.
+Your first web address is based on your username, and looks like `USERNAME.fission.name`. You can add custom apps at `YOURAPP.fission.app`, and also add custom domains.
 {% endhint %}
+
+### Account Linking
+
+If you already have an account, you'll want to link it to your local system with a new private key. Entering your current username in the setup step will move you into the account linking flow:
+
+```bash
+$ fission setup
+// NOTE: account linking TBD
+```
 
 ## Run IPFS
 

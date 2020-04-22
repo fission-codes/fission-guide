@@ -6,7 +6,6 @@
 
 * [Installation](apps/installation.md)
 * [Getting Started](apps/getting-started.md)
-* [Ponto de Partida](apps/ponto-de-partida.md)
 * [Fission CLI](apps/cli.md)
 * [Custom Domains](apps/custom-domains.md)
 * [Using the Fission CLI to publish React sites](apps/fission-cli-react.md)

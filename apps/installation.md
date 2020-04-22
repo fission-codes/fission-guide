@@ -101,14 +101,6 @@ Unzip the file and move the file to your PATH:
 $ sudo mv ./fission-cli-exe /usr/local/bin/fission
 ```
 
-_**\(Linux Only\)**_  
-****Linux requires an additional dependency:
-
-```bash
-$ sudo apt update
-$ sudo apt install libpq-dev
-```
-
 That's it! Double check that it's installed correctly:
 
 ```bash
