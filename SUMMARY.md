@@ -21,6 +21,7 @@
 * [Heroku Add-on](developers/heroku.md)
 * [Fission Web API \(Live Swagger Docs\)](https://runfission.com/docs)
 * [Further Reading and Resources](developers/resources.md)
+* [Apresentação: O que vem depois do 'Serverless' ?](https://slides.com/forgondolin/deck-4e8a20#/)
 
 ## Appendix
 
