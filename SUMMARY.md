@@ -1,6 +1,6 @@
 # Table of contents
 
-* [Resumo](README.md)
+* [Visão Geral](README.md)
 
 ## Fission Apps <a id="apps"></a>
 
