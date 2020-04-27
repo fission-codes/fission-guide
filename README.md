@@ -1,14 +1,14 @@
-# Overview
+# Visão Geral
 
-## What is Fission?
+## O que é o Fission?
 
-Fission helps you quickly and easily publish files, websites, and apps directly from your local machine.
+Fission te ajuda a publicar seus arquivos, websites, e apps de forma rápida e prática, diretamente da sua máquina local.
 
-We enable a serverless style of website and app building. This supports local-first software that runs locally for you and your users as much as possible.
+Nós possibilitamos um novo estilo serverless para construção de aplicações e websites. Este suporta sistemas 'local-first' que rodam localmente para você e para seus usuários, o máximo possível. (Eliminando a necessidade de se configurar um ambiente para sua utilização)
 
-For front-end developers and designers, we provide a backend-as-a-service that includes user logins, end-to-end encryption, and user-controlled data.
+Para programadores front-end e designers, nós oferecemos um serviço backend que inclui autenticação, criptografia end-to-end e dados de controle e gerenciamento para usuários.
 
-Use the front-end frameworks you already know to quickly build front end features, and plug in these Fission features to power your app. Fission includes publishing tools and free subdomains to bring your websites and apps live.
+Utilize os frameworks e bibliotecas front-end que você já conhece para construir novos recursos no front, e conecte-os ao Fission para lançar sua aplicação. Fission inclui ferramentas para publicação e subdomínios gratuitos para fazer o deploy de suas aplicações, e melhorar a experiência de usuário. 
 
-Get started by installing the tools on your local machine.
+Comece a utilizar o Fission, instalando agora as ferramentas no seu ambiente local.
 
