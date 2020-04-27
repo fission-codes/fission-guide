@@ -61,7 +61,7 @@ In this case, we can see that after the "Remote pinning Qm…", there is a _504 
 
 ## Running IPFS as a service on Linux and WSL <a id="initd"></a>
 
-WSL doesn't have systemd, so this init.d script should work.
+WSL doesn't have systemd, so this init.d script should work. Place the script in your init.d folder and then run `/etc/init.d/ipfs start/status/stop` to control the IPFS daemon.
 
 {% embed url="https://gist.github.com/bmann/54223ad136d9ff34144ad6367fc05677" %}
 
