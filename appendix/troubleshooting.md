@@ -4,6 +4,18 @@ description: 'Troubleshooting, work arounds, and known issues.'
 
 # Troubleshooting
 
+## Unable to connect to the Fission IPFS peer
+
+```text
+🛰 Unable to connect to the Fission IPFS peer, trying again...
+🛰 Unable to connect to the Fission IPFS peer, trying again...
+UnableToConnect
+😭 We were unable to connect to the Fission IPFS peer!
+Try checking your connection or logging in again
+```
+
+This message most often appears when your local IPFS server isn't running, or if you're offline. Turn on your IPFS Desktop, run `ipfs daemon &`, or whatever method you're using to run IPFS.
+
 ## Maximum Open Files on Ubuntu, Mac OS, ChromeOS
 
 We've had a report with uploading large numbers of files using `ipfs-deploy` with Fission support that you may need to increase the number of open files that your operating system supports. This could also occur with `fission watch`.
