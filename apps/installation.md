@@ -83,8 +83,7 @@ For Windows users, we currently recommend using the Windows Subsystem for Linux 
 We have a brew recipe to get you up and running quickly on MacOS:
 
 ```bash
-$ brew tap fission-suite/fission
-$ brew install fission-cli
+$ brew install fission-suite/fission/fission-cli
 ```
 
 #### Linux \(and manual MacOS\)
