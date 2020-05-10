@@ -1,35 +1,35 @@
-# Using the Fission CLI to publish React sites
+# Usando a linha de comando do Fission para publicar sites feitos em React
 
-Fission works with any static or client side sites and apps, whether you have a single html file, or you're using a static site generator like [Gatsby](https://www.gatsbyjs.org/) or [Jekyll](https://jekyllrb.com/).
+Fission trabalha com qualquer site ou aplicação estática/client side, independentemente se for uma única página html, ou um gerador de sites estáticos como [Gatsby](https://www.gatsbyjs.org/) ou [Jekyll](https://jekyllrb.com/).
 
-Here we'll walk through how to build and deploy a static site using Gatsby, but the process will be the same for any static site.
+Neste tutorial, vamos utilizar o Gatsby para construir e publicar um site estático, mas você pode usar qualquer outro de sua preferência.
 
-First, choose a project, and `cd` into the project directory. For this guide, we'll use [reactjs.org](https://github.com/reactjs/reactjs.org) so that anyone can follow along, but if you have another site in mind, use that!
+Primeiramente, escolha um projeto, e entre no seu diretório `cd`. Vamos utilizar [reactjs.org](https://github.com/reactjs/reactjs.org) para que todos nós fiquemos na mesma página, caso tenha uma outra preferência, fique a vontade para usá-la.
 
 ```bash
 $ git clone https://github.com/reactjs/reactjs.org
 $ cd reactjs.org
 ```
 
-Install dependencies:
+Instale as dependências:
 
 ```bash
 $ yarn
 ```
 
-Build the site:
+Construa o site:
 
 ```bash
 $ yarn build
 ```
 
-`cd` into the build folder
+`cd` para dentro do diretório:
 
 ```bash
 $ cd public
 ```
 
-Go interplanetary!
+Lance-o no IPFS!
 
 ```bash
 $ fission up
@@ -39,5 +39,4 @@ $ fission up
 🔗 21ebedd5d4070a521f83.demo.runfission.com
 ```
 
-Now copy that link from you terminal to your browser to see your site served live from the decentralized web!
-
+Agora copie o link gerado no seu terminal para o browser, e veja seu site hospedado em uma rede descentralizada!
