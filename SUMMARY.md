@@ -8,7 +8,7 @@
 * [Ponto de Partida](apps/ponto-de-partida.md)
 * [Fission CLI](apps/cli.md)
 * [Domínios Customizados](apps/dominios-customizados.md)
-* [Using the Fission CLI to publish React sites](apps/fission-cli-react.md)
+* [Usando a CLI para publicar sites em React](apps/fission-cli-react.md)
 
 ## Fission Drive <a id="drive"></a>
 
@@ -28,4 +28,3 @@
 * [Learning IPFS](appendix/ipfs.md)
 * [Troubleshooting](appendix/troubleshooting.md)
 * [Technical Specifications & Whitepaper](https://whitepaper.fission.codes)
-
