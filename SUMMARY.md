@@ -7,7 +7,9 @@
 * [Installation](apps/installation.md)
 * [Getting Started](apps/getting-started.md)
 * [Fission CLI](apps/cli.md)
-* [Custom Domains](apps/custom-domains.md)
+* [Custom Domains](apps/custom-domains/README.md)
+  * [Fission Hosted DNS](apps/custom-domains/fission-hosted-dns.md)
+  * [Control your own DNS](apps/custom-domains/control-own-dns.md)
 * [Using the Fission CLI to publish React sites](apps/fission-cli-react.md)
 
 ## Fission Drive <a id="drive"></a>
