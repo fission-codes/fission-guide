@@ -10,11 +10,39 @@ Every Fission App gets a free subdomain.
 
 Currently, these look like `YOURUSERNAME.fission.name`, but we're migrating to user accounts and attached apps, where every app has `YOURAPPNAME.fission.app`.
 
-To use a custom domain of your own, like `YOURAPPDOMAIN.com`, you need to point your domain at our name servers in your domain registrar control panel.
+To use a custom domain of your own, like `YOURAPPDOMAIN.com`, you need to make some changes to DNS. There are two methods detailed below.
 
 {% hint style="warning" %}
 Note: custom domains currently require manual confirmation by us. This will be integrated directly into the Fission CLI and be fully automated. For now, [contact us on our support page](https://fission.codes/support) if you want to use this feature.
 {% endhint %}
+
+## Control your own DNS
+
+By adding a TXT record for your app and a CNAME pointing at our gateway, you can run your DNS elsewhere but still have a custom domain for your Fission app.
+
+### Add a CNAME pointing to ipfs.runfission.com
+
+For your domain, `YOURAPPDOMAIN.com`, go into your DNS provider control panel and add a CNAME pointing to `ipfs.runfission.com`.
+
+| Record | Type | Value |
+| :---: | :---: | :---: |
+| "\*" \(root\) | CNAME | `ipfs.runfission.com` |
+
+{% hint style="info" %}
+Some DNS providers don't support a CNAME for your root, so you'll need to add a CNAME for `www` instead.
+{% endhint %}
+
+### Add a TXT record with dnslink info
+
+Now, add a TXT record pointing to your app subdomain
+
+| Record | Type | Value |
+| :---: | :---: | :---: |
+| \_dnslink | TXT |  `_dnslink="/ipns/APPNAME.fission.app"` |
+
+## Fission Hosted DNS
+
+We can take care of this for you by hosting your DNS for you. This means changing your name servers to the Fission ones.
 
 ### Fission Nameservers
 
