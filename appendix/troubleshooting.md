@@ -55,7 +55,7 @@ This is related to [issue \#37](https://github.com/fission-suite/cli/issues/37).
 
 ## DEBUG mode for fission cli
 
-If you want to see what the [Fission CLI](../apps/cli.md) is doing under the covers, you can turn on DEBUG mode by calling commands like this:
+If you want to see what the [Fission CLI](../hosting/cli.md) is doing under the covers, you can turn on DEBUG mode by calling commands like this:
 
 ```text
 DEBUG=true fission up .

@@ -15,7 +15,7 @@ Email: yourname@example.com
 ✅ Registration successful!
 ```
 
-And you're good to go! A private key has been generated for your machine, and placed in your local `~/.ssh` folder. This secures communication with the Fission services, and works similarly to how using an SSH key to connect to GitHub works.
+And you're good to go! A private key has been generated for your machine, and placed in your local `~/config/fission` folder. This secures communication with the Fission services, and works similarly to how using an SSH key to connect to GitHub works.
 
 {% hint style="info" %}
 Your first web address is based on your username, and looks like `USERNAME.fission.name`. You can add custom apps at `YOURAPP.fission.app`, and also add custom domains.
@@ -23,24 +23,7 @@ Your first web address is based on your username, and looks like `USERNAME.fissi
 
 ### Account Linking
 
-If you already have an account, you'll want to link it to your local system with a new private key. Entering your current username in the setup step will move you into the account linking flow:
-
-```bash
-$ fission setup
-// NOTE: account linking TBD
-```
-
-## Run IPFS
-
-You need IPFS running in order to use `fission` 
-
-If you're using [ipfs-desktop](https://github.com/ipfs-shipyard/ipfs-desktop), ensure that the application is running.
-
-If you're running `ipfs` from the command line, run the following in a separate terminal:
-
-```bash
-$ ipfs daemon
-```
+If you already have an account, you'll want to link it to your local system. Just enter in your current username and [follow the linking flow](account-linking.md).
 
 ## Create a simple webpage
 
@@ -64,12 +47,24 @@ Add some content to `index.html`:
   </head>
   <body>
     <h1>Hello Universe!</h1>
-    <p>This is on the InterPlanetary File System.</p>
+    <p>This is a Fission powered page.</p>
     <p>Assisted by <a href="https://fission.codes">Fission</a>.</p>
   </body>
 </html>
 ```
 {% endcode %}
+
+## Run IPFS
+
+You need IPFS running in order to use `fission` 
+
+If you're using [ipfs-desktop](https://github.com/ipfs-shipyard/ipfs-desktop), ensure that the application is running.
+
+If you're running `ipfs` from the command line, run the following in a separate terminal:
+
+```bash
+$ ipfs daemon
+```
 
 ## Go interplanetary!
 
