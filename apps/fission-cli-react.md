@@ -1,4 +1,4 @@
-# Usando a linha de comando do Fission para publicar sites feitos em React
+# Usando a CLI para publicar sites em React
 
 Fission trabalha com qualquer site ou aplicação estática/client side, independentemente se for uma única página html, ou um gerador de sites estáticos como [Gatsby](https://www.gatsbyjs.org/) ou [Jekyll](https://jekyllrb.com/).
 
@@ -40,3 +40,4 @@ $ fission up
 ```
 
 Agora copie o link gerado no seu terminal para o browser, e veja seu site hospedado em uma rede descentralizada!
+
