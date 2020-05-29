@@ -65,5 +65,12 @@ WSL doesn't have systemd, so this init.d script should work.
 
 {% embed url="https://gist.github.com/bmann/54223ad136d9ff34144ad6367fc05677" %}
 
+## Fission Peer Addresses
 
+The Fission CLI automatically connects your local IPFS server to our peers. It does this by issuing the `ipfs swarm connect` command \([see IPFS docs](https://docs.ipfs.io/reference/cli/#ipfs-swarm-connect)\). Running the following two commands will open a direct connection to the Fission peers.
+
+```text
+ipfs swarm connect /ip4/3.215.160.238/tcp/4001/ipfs/QmVLEz2SxoNiFnuyLpbXsH6SvjPTrHNMU88vCQZyhgBzgw
+ipfs swarm connect /ip4/3.226.224.78/tcp/4001/ipfs/QmXab6bcjmWUQZryEtmZfxS5hGoJAguw8bhLdUN5ZFQ2e5
+```
 
