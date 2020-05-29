@@ -8,6 +8,7 @@
   * [Installing IPFS](hosting/installation/ipfs.md)
 * [Getting Started](hosting/getting-started.md)
 * [Fission CLI](hosting/cli.md)
+* [Fission Accounts](hosting/fission-accounts.md)
 * [Account Linking](hosting/account-linking.md)
 * [Custom Domains](hosting/custom-domains/README.md)
   * [Fission Hosted DNS](hosting/custom-domains/fission-hosted-dns.md)
