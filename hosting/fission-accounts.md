@@ -28,21 +28,19 @@ We don't delete the data that the app stored for you, since it's stored in your 
 
 ## Revoking App Access
 
-Instead of signing out, you may want to revoke -- or delete -- an app's access to your files. You can visit the Auth page 
+Instead of signing out, you may want to revoke -- or delete -- an app's access to your account. You can visit the Fission Auth page to see both devices and apps that are connected to your account.
 
-You can even do this with the default Drive app, but we'll ask you to make an extra confirmation that you want to revoke it. You'll need to use another tool or developer API access to manage your Fission File System attached to your account.
+{% hint style="warning" %}
+You can even revoke access to the default Drive app, but we'll ask you to make an extra confirmation. You'll need to use another tool or developer API access to manage your Fission File System attached to your account.
+{% endhint %}
 
 ## Shared Devices
 
-But, browsers and desktop computers aren't smartphones, and they do get shared. You can unlink a device -- remove your key -- by visiting the Fission auth page.
+But, browsers and desktop computers aren't smartphones, and they do get shared. You can unlink a device -- remove your key -- by visiting the Fission Auth page.
 
 ## Multiple Accounts per Device
 
-You may have multiple Fission accounts, but you'll need a unique email address and username for each one. You'll also need to use Browser Profiles to be able to access them at the same time.
-
-{% hint style="warning" %}
-In the future, the CLI tool will support multiple accounts through YAML files and command line switches with a path to the key you want to use.
-{% endhint %}
+You may create multiple Fission accounts, but you'll need a unique email address and username for each one. You'll also need to use Browser Profiles to be able to access them at the same time on the same machine, as the keys that grant access are stored in the browser.
 
 
 
