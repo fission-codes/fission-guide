@@ -9,18 +9,11 @@ description: Get your first site up and running on IPFS with this beginner-frien
 Now that you have `fission` installed, you need to register for an account:
 
 ```bash
-$ fission register
+$ fission setup
 ✅ Registered & logged in
 ```
 
 And you're good to go! Your credentials are stored in `~/.fission.yaml` 
-
-If you already have an account, you can login instead:
-
-```bash
-$ fission login
-Username: # follow the prompts to provide your username and password
-```
 
 {% hint style="info" %}
 Our default web addresses are based on your username, and look like `USERNAME.fission.name`. In the future, you'll be able to add custom domains.
