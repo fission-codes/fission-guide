@@ -2,14 +2,18 @@
 
 * [Overview](README.md)
 
-## Fission Apps <a id="apps"></a>
+## Fission Hosting <a id="hosting"></a>
 
-* [Installation](apps/installation.md)
-* [Getting Started](apps/getting-started.md)
-* [Ponto de Partida](apps/ponto-de-partida.md)
-* [Fission CLI](apps/cli.md)
-* [Custom Domains](apps/custom-domains.md)
-* [Using the Fission CLI to publish React sites](apps/fission-cli-react.md)
+* [Installation](hosting/installation/README.md)
+  * [Installing IPFS](hosting/installation/ipfs.md)
+* [Getting Started](hosting/getting-started.md)
+* [Fission CLI](hosting/cli.md)
+* [Fission Accounts](hosting/fission-accounts.md)
+* [Account Linking](hosting/account-linking.md)
+* [Custom Domains](hosting/custom-domains/README.md)
+  * [Fission Hosted DNS](hosting/custom-domains/fission-hosted-dns.md)
+  * [Control your own DNS](hosting/custom-domains/control-own-dns.md)
+* [Using the Fission CLI to publish React sites](hosting/fission-cli-react.md)
 
 ## Fission Drive <a id="drive"></a>
 
