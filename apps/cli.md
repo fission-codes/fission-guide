@@ -30,7 +30,7 @@ Available commands:
   whoami                   Check the current user
   up                       Keep your current working directory up
   down                     Pull a ipfs or ipns object down to your system
-  watch                    Keep your working directory in sync with the IPFS
+  watch                    Keep your working directory in sync with the IPFS network
 ```
 
 ### Up
