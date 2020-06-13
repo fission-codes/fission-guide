@@ -42,7 +42,7 @@ brew services start ipfs
 
 #### Linux and Windows / WSL
 
-Download the Linux binary from the [IPFS distributions page](https://dist.ipfs.io/#go-ipfs) \(It's recommended to avoid the snap\).
+Download the Linux binary from the [IPFS distributions page](https://dist.ipfs.io/#go-ipfs) \(Known difficulties using the snap package\).
 
 Untar the archive and run the `./install.sh` script \(which just moves the binary to a local bin path\).
 
