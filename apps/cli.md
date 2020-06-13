@@ -18,8 +18,8 @@ Details on all of these commands can be seen at any time by running `fission --h
 CLI to interact with Fission services
 
 Usage: fission [--version] [--help] COMMAND
-  Fission makes developing, deploying, updating, and iterating on web apps quick
-  and easy.
+  Fission makes developing, deploying, updating and iterating on web
+  applications quick and easy.
 
 Available options:
   --version                Show version
@@ -29,7 +29,7 @@ Available commands:
   setup                    Setup Fission on your machine
   whoami                   Check the current user
   up                       Keep your current working directory up
-  down                     Pull data down to your system
+  down                     Pull a ipfs or ipns object down to your system
   watch                    Keep your working directory in sync with the IPFS
 ```
 
