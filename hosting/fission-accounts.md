@@ -2,9 +2,7 @@
 
 When you create a Fission Account, whether using the CLI, or signing up on the web, it creates a username and email address in our service database, and also a private / public key pair representing that account.
 
-The username also comes with a special web address, `USERNAME.fission.name`, that is your own personal space for publishing content or doing whatever you like.
-
-We also create a Fission File System attached to your account, and give you access to[ Fission Drive](https://guide.fission.codes/drive), which lets you browse all your files, access them from any browser, and see which apps are attached to your File System.
+We also create a Fission File System attached to your account, and given you access to[ Fission Drive](https://guide.fission.codes/drive), which lets you browse all your files, access them from any browser, and see which apps are attached to your File System.
 
 So far, no passwords! We verify your email address, and can use that to help manage aspects of your service with us. You hold access to the keys connected to your account, and sign in happens automatically.
 

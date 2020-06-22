@@ -15,10 +15,10 @@ Email: yourname@example.com
 ✅ Registration successful!
 ```
 
-And you're good to go! A private key has been generated for your machine, and placed in your local `~/config/fission` folder. This secures communication with the Fission services, and works similarly to how using an SSH key to connect to GitHub works.
+And you're good to go! A private key has been generated for your machine, and placed in your local `~/ssh` folder. This secures communication with the Fission services, and works similarly to how using an SSH key to connect to GitHub works.
 
-{% hint style="info" %}
-Your first web address is based on your username, and looks like `USERNAME.fission.name`. You can add custom apps at `YOURAPP.fission.app`, and also add custom domains.
+{% hint style="warning" %}
+Note: account linking is not yet live, but will be very soon. You can rename your fission key or securely copy it around as workaround for now.
 {% endhint %}
 
 ### Account Linking

@@ -6,6 +6,24 @@ description: An introduction to the Fission Web API with some example requests
 
 The Fission Web API provides an interface to our systems using a standard RESTful API. We'll go through a few interactions that you might find helpful, but for the full API, check out the [Swagger docs](https://runfission.com/docs/).
 
+## Get Content from IPFS
+
+Getting content from IPFS is a simple `GET` request to `https://runfission.com/ipfs/{cid}`  
+No authentication needed!
+
+For example:
+
+```text
+$ curl https://runfission.com/ipfs/QmWATWQ7fVPP2EFGu71UkfnqhYXDYH566qy47CnJDgvs8u
+```
+
+If you want to do this programmatically, use your favorite REST client or the [Fission TypeScript Client](https://github.com/fission-suite/typescript-client)
+
+```javascript
+import { content } from '@fission-suite/client'
+const helloWorld = await content("QmWATWQ7fVPP2EFGu71UkfnqhYXDYH566qy47CnJDgvs8u")
+```
+
 ## Upload Content To IPFS
 
 You can upload content to IPFS by sending a `POST` request to `https://runfission.com/ipfs`   
@@ -49,8 +67,7 @@ const cid = await add(content, auth)
 
 ## Pin Content To IPFS
 
-Fission also offers a pinning service, if you already have content on IPFS and want the remote Fission node to help keep it online. To pin something, send a `PUT` request to `https://runfission.com/ipfs/{cid}` 
-
+Fission also offer's a pinning service, if you already have content on IPFS and want the remote Fission node to help keep it online. To pin something, send a `PUT` request to `https://runfission.com/ipfs/{cid}`   
 For this, you'll need a BasicAuth header
 
 For example:
@@ -62,23 +79,11 @@ curl -i \
      https://runfission.com/ipfs/QmWATWQ7fVPP2EFGu71UkfnqhYXDYH566qy47CnJDgvs8u
 ```
 
-If you want to do this programmatically, use your favourite REST client or the [Fission TypeScript Client](https://github.com/fission-suite/typescript-client)
+If you want to do this programmatically, use your favorite REST client or the [Fission TypeScript Client](https://github.com/fission-suite/typescript-client)
 
 ```javascript
 import { pin } from '@fission-suite/client'
 const auth = { username: "username", password: "password" }
 await pin("QmWATWQ7fVPP2EFGu71UkfnqhYXDYH566qy47CnJDgvs8u", auth)
 ```
-
-
-
-## Get Content from IPFS
-
-Use our gateway to call files directly, or do a GET request:
-
-```text
-https://ipfs.runfission.com/ipfs/QmWATWQ7fVPP2EFGu71UkfnqhYXDYH566qy47CnJDgvs8u
-```
-
-You can also use any IPFS gateway, or ask us to map a custom domain to ours.
 
