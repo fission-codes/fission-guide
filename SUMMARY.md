@@ -13,7 +13,6 @@
 * [Custom Domains](hosting/custom-domains/README.md)
   * [Fission Hosted DNS](hosting/custom-domains/fission-hosted-dns.md)
   * [Control your own DNS](hosting/custom-domains/control-own-dns.md)
-* [Using the Fission CLI to publish React sites](hosting/fission-cli-react.md)
 
 ## Fission Drive <a id="drive"></a>
 
