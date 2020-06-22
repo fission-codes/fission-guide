@@ -24,7 +24,6 @@
 * [Fission Web API](developers/web-api.md)
 * [Heroku Add-on](developers/heroku.md)
 * [Fission Web API \(Live Swagger Docs\)](https://runfission.com/docs)
-* [Further Reading and Resources](developers/resources.md)
 
 ## Appendix
 
