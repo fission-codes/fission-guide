@@ -17,8 +17,7 @@ Right now you need to install IPFS as well as the Fission command line tool to g
 You can download the [release from their Github page](https://github.com/ipfs-shipyard/ipfs-desktop/releases) or use your favourite package manager:
 
 * Homebrew \(macOS\): `brew cask install ipfs` 
-* Chocolatey \(Windows\): `choco install ipfs-desktop` 
-* Snap \(Linux\): `snap install ipfs-desktop` 
+* Snap \(Linux / WSL\): `snap install ipfs-desktop` 
 
 {% hint style="info" %}
 The command line ipfs daemon is also included as part of the ipfs-desktop install.
