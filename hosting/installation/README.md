@@ -24,7 +24,7 @@ $ brew install fission-suite/fission/fission-cli
 
 #### Linux \(and manual MacOS\)
 
-Head over to our [releases](https://github.com/fission-suite/cli/releases) page on Github and download the latest release for your operating system.
+Head over to our [releases](https://github.com/fission-suite/fission/releases) page on Github and download the latest release for your operating system.
 
 Unzip the file and move the file to your PATH:
 
