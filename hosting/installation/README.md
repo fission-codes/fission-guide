@@ -32,6 +32,12 @@ Unzip the file and move the file to your PATH:
 $ sudo mv ./fission-cli-exe /usr/local/bin/fission
 ```
 
+We currently depend on two additional libraries `libpq.so.5` and `libtinfo.so.5`. For apt-based Linux distros, you'll want to run the following:
+
+```bash
+$ apt install libpq-dev libtinfo5
+```
+
 That's it! Double check that it's installed correctly:
 
 ```bash
