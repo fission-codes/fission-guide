@@ -10,6 +10,7 @@ The Fission CLI has the following commands:
 * `whoami`
 * `up`
 * `down`
+* `app-init`
 * `watch`
 
 Details on all of these commands can be seen at any time by running `fission --help`
@@ -30,6 +31,7 @@ Available commands:
   whoami                   Check the current user
   up                       Keep your current working directory up
   down                     Pull data down to your system
+  app-init                 Initialize a new Fission app in an existing directory
   watch                    Keep your working directory in sync with the IPFS
                            network
 ```
@@ -70,6 +72,10 @@ But from your perspective, it's just success messages, emojis, and a link to you
 ### down
 
 Enter in an IPFS hash to download the files to your local machine.
+
+### app-init
+
+
 
 ### watch
 
