@@ -37,6 +37,16 @@ $ cd hello-universe
 $ touch index.html
 ```
 
+Use the `fission app-init` command to create a new app in the current directory. Find out more on the [Fission CLI page »](cli.md)
+
+```text
+✅ App initialized as junior-angular-tulip.fission.app
+⏯️  Next run fission up or fission watch to sync data
+💁 It may take DNS time to propogate this initial setup globally. 
+In this case, you can always view your app 
+at https://ipfs.runfission.com/ipns/junior-angular-tulip.fission.app
+```
+
 Add some content to `index.html`:
 
 {% code title="index.html" %}
@@ -60,7 +70,13 @@ You need IPFS running in order to use `fission`
 
 If you're using [ipfs-desktop](https://github.com/ipfs-shipyard/ipfs-desktop), ensure that the application is running.
 
-If you're running `ipfs` from the command line, run the following in a separate terminal:
+Using Homebrew, ipfs can be running continuously in the background using the following command:
+
+```text
+brew services start ipfs
+```
+
+If you're running `ipfs` on another Linux system, run the following in a separate terminal:
 
 ```bash
 $ ipfs daemon
