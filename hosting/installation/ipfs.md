@@ -10,7 +10,7 @@ We build on top of decentralized web technologies like the InterPlanetary File S
 
 Right now you need to install IPFS as well as the Fission command line tool to get up and running, but it should just take a couple of minutes if you follow these instructions.
 
-### ipfs-desktop
+## IPFS Graphical Desktop
 
 [ipfs-desktop](https://github.com/ipfs-shipyard/ipfs-desktop) is a great option for a graphical interface, including options to run ipfs as a service on system start, as well as easy access to start and stop the ipfs daemon.
 
@@ -23,9 +23,9 @@ You can download the [release from their Github page](https://github.com/ipfs-sh
 The command line ipfs daemon is also included as part of the ipfs-desktop install.
 {% endhint %}
 
-### Command Line IPFS
+## Command Line IPFS
 
-#### MacOS
+### MacOS
 
 If you're not running ipfs-desktop, install ipfs via brew:
 
@@ -39,7 +39,7 @@ To run ipfs as a background service:
 brew services start ipfs
 ```
 
-#### Linux and Windows / WSL
+### Linux and Windows / WSL
 
 Download the Linux binary from the [IPFS distributions page](https://dist.ipfs.io/#go-ipfs).
 
@@ -50,6 +50,10 @@ $ tar xvfz go-ipfs.tar.gz
 $ cd go-ipfs
 $ ./install.sh
 ```
+
+### Resources for other systems
+
+* [IPFS for archlinux](https://wiki.archlinux.org/index.php/IPFS)
 
 ### All Systems
 
