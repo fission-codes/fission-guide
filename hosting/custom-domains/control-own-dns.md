@@ -18,23 +18,21 @@ For your domain, `YOURAPPDOMAIN.com`, go into your DNS provider control panel an
 Some DNS providers don't support a CNAME for your root, so you'll need to add a CNAME for `www` instead.
 {% endhint %}
 
-### 
-
 The process for a subdomain is the same `SUB.YOURAPPDOMAIN.com`, but looks a little different. Go into your DNS provider control panel and add a CNAME pointing to `ipfs.runfission.com`.
 
 | Record | Type | Value |
 | :---: | :---: | :---: |
 | SUB | CNAME | `ipfs.runfission.com` |
 
-### Add a TXT record with dnslink info
+### Add a TXT record with dnslink
 
-Now, add a TXT record pointing to your app subdomain. Your APPNAME is created when you run `fission app-init`.
+Now, add a TXT record pointing to your app subdomain. Your APPNAME is created when you run `fission app-init`, and will look something like `junior-angular-tulip` . We're creating a link to say that the content from that app should be served up at your domain with a special dnslink record:
 
 | Record | Type | Value |
 | :---: | :---: | :---: |
 | \_dnslink | TXT |  `dnslink=/ipns/APPNAME.fission.app` |
 
-Again, subdomains function the same way, with the \_dnslink subdomain where you're adding the TXT record being "above" the SUB.YOURDOMAIN.com record, which looks like this:
+Again, subdomains function the same way, with the \_dnslink subdomain, where you're adding the TXT record being "above" the SUB.YOURDOMAIN.com record, which looks like this:
 
 | Record | Type | Value |
 | :---: | :---: | :---: |
