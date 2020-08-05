@@ -4,6 +4,21 @@ description: 'Troubleshooting, work arounds, and known issues.'
 
 # Troubleshooting
 
+## Check your DNS
+
+To check the setup of your DNS for [Custom Domains](../hosting/custom-domains/control-own-dns.md), you can run this `dig` command:
+
+```text
+dig -t txt short _dnslink.junior-angular-tulip.fission.app
+```
+
+The "short" option is still pretty long! We're just looking for the ANSWER section:
+
+```text
+;; ANSWER SECTION:
+_dnslink.junior-angular-tulip.fission.app. 9 IN	TXT "dnslink=/ipfs/QmafcCaym2UZ46oKDoSQs7UkHVPpeKTVTES2GN5icuvKQv"
+```
+
 ## Unable to connect to the Fission IPFS peer
 
 ```text
