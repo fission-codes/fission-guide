@@ -18,11 +18,29 @@ For your domain, `YOURAPPDOMAIN.com`, go into your DNS provider control panel an
 Some DNS providers don't support a CNAME for your root, so you'll need to add a CNAME for `www` instead.
 {% endhint %}
 
-### Add a TXT record with dnslink info
+### 
 
-Now, add a TXT record pointing to your app subdomain
+The process for a subdomain is the same `SUB.YOURAPPDOMAIN.com`, but looks a little different. Go into your DNS provider control panel and add a CNAME pointing to `ipfs.runfission.com`.
 
 | Record | Type | Value |
 | :---: | :---: | :---: |
-| \_dnslink | TXT |  `_dnslink="/ipns/APPNAME.fission.app"` |
+| SUB | CNAME | `ipfs.runfission.com` |
+
+### Add a TXT record with dnslink info
+
+Now, add a TXT record pointing to your app subdomain. Your APPNAME is created when you run `fission app-init`.
+
+| Record | Type | Value |
+| :---: | :---: | :---: |
+| \_dnslink | TXT |  `dnslink=/ipns/APPNAME.fission.app` |
+
+Again, subdomains function the same way, with the \_dnslink subdomain where you're adding the TXT record being "above" the SUB.YOURDOMAIN.com record, which looks like this:
+
+| Record | Type | Value |
+| :---: | :---: | :---: |
+| \_dnslink.SUB | TXT |  `dnslink=/ipns/APPNAME.fission.app` |
+
+### Get in touch to complete the process
+
+This isn't fully automated right now, so you'll need to send us an email `support@fission.codes` or drop by our [support page](https://fission.codes/support) to send us a chat, and we can get things setup on our end.
 
