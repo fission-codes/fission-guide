@@ -77,7 +77,7 @@ Enter in an IPFS hash to download the files to your local machine.
 
 Running `fission app-init` will create a new app linked to your account. We will generate a name for the app, which also gives you an `APPNAME.fission.app` subdomain.
 
-A `fission.yaml` is created in the local folder which lists the app name and the URL where it is available. You can also add [Custom Domains](custom-domains/).
+A `fission.yaml` is created in the local folder which lists the app name and the URL where it is available. You can also add [Custom Domains](../custom-domains/).
 
 Running fission `up` or `watch` will publish the files to the app listed in the local YAML file.
 

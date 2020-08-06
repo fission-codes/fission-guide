@@ -37,7 +37,7 @@ $ cd hello-universe
 $ touch index.html
 ```
 
-Use the `fission app-init` command to create a new app in the current directory. Find out more on the [Fission CLI page »](cli.md)
+Use the `fission app-init` command to create a new app in the current directory. Find out more on the [Fission CLI page »](cli/)
 
 ```text
 ✅ App initialized as junior-angular-tulip.fission.app
