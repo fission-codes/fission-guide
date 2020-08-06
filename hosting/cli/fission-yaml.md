@@ -43,6 +43,7 @@ When you create a new app using `fission app-init`, a new `.fission.yaml` file i
 
 ```text
 app_url: junior-angular-tulip.fission.app
+build_dir: site/
 ignore:
  - *.psd
  - _ignore
@@ -54,6 +55,14 @@ This is the URL where your app is available.
 
 {% hint style="info" %}
 Eventually, you'll be able to specific different versions -- for example, development, testing, production, etc. -- as well as list custom domains here.
+{% endhint %}
+
+### build\_dir
+
+Apps often have build directories that are used for production deployments. You can set the path of your build directory, relative to where the `.fission.yaml` file is.
+
+{% hint style="success" %}
+If you are using a "common" build directory, fission will attempt to detect this the first time you run `fission up`, and will prompt to ask if you would like to set this as your build directory.
 {% endhint %}
 
 ### ignore
