@@ -13,7 +13,7 @@
 ## Fission Webnative SDK <a id="webnative-sdk"></a>
 
 * [Introdução ao Web Native](webnative-sdk/web-native-introduction/README.md)
-  * [Fundamentos do Processamento, Armazenamento, e Identitate](webnative-sdk/web-native-introduction/identidade-armazenamento-pc.md)
+  * [Fundamentos do Processamento, Armazenamento, e Identidade](webnative-sdk/web-native-introduction/identidade-armazenamento-pc.md)
 * [Iniciando com o SDK webnative](webnative-sdk/iniciando-com-sdk-webnative.md)
 
 ## Fission Drive <a id="drive"></a>
