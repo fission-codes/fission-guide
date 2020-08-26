@@ -1,56 +1,56 @@
 ---
-description: Fission's approach to providing and working with web native building blocks
+description: A abordagem da para prover e trabalhar com blocos nativos da web 
 ---
 
-# Compute, Storage, and Identity Foundations
+# Fundamentos do Processamento, Armazenamento, e Identidade 
 
-The foundation of powerful digital applications roughly include three primary building blocks: compute, storage, and identity. Fission's approach is to make use of these building blocks, make them easier to use for developers, and to develop strong default capabilities in each of these areas.
+Os alicerces de aplicações poderosas de forma geral incluem três blocos primários: processamento, armazenamento, e identidade. A abordagem escolhida pela Fission é fazer uso desses blocos, deixando-os fáceis para programadores os utilizarem, além de criar fortes atributos para essas áreas por padrão. 
 
-The [Fission White Paper](https://whitepaper.fission.codes/) can be read for a more technical, specification-style version of our vision and roadmap, including direct links to various sections:
+O [Fission White Paper](https://whitepaper.fission.codes/) pode ser lido para uma análise mais técnica, com todas nossas especificações e metas, incluindo links para várias seções importantes:
 
 * [WinFS File System](https://whitepaper.fission.codes/file-system)
 * [DID-based identity, UCAN + JWTs](https://whitepaper.fission.codes/identity)
 
-Additional reading and presentations are also available:
+Leituras adicionais e apresentações também estão disponíveis:
 
 * User Controlled Authorization Network \(UCAN\), [Auth without a Backend blog post](https://blog.fission.codes/auth-without-backend/)
-* Presentation to the Berlin Functional Programming Meetup June 2020, [A Universal Hostless Substrate: Full Stack Web Apps Without a Backend, and More!](https://talk.fission.codes/t/berlin-functional-programming-group-a-universal-hostless-substrate-full-stack-web-apps-without-a-backend-and-more/617)
+* Apresentação feita no Berlin Functional Programming Meetup June 2020, [A Universal Hostless Substrate: Full Stack Web Apps Without a Backend, and More!](https://talk.fission.codes/t/berlin-functional-programming-group-a-universal-hostless-substrate-full-stack-web-apps-without-a-backend-and-more/617)
 
-## Compute
+## Processamento
 
-Web browsers run on your local desktop, laptop, or mobile device, and use local computer processing unit \(CPU\) to do work -- to compute things. Your machine provides the work to run apps in your browser. Simple web pages use the browser's built in HTML and CSS capabilities. But many web pages are full blown "apps" that are highly interactive, with a rich user interface \(UI\). These are typically powered by JavaScript, a programming language that runs in your browser, and uses your local compute.
+Web browsers rodam no seu desktop local, laptop, ou dispositivos móveis, e todos eles usam processamento local do "computer processing unit" \(CPU\) para fazer o trabalho -- para computar as coisas. Sua máquina realiza o trabalho para executar aplicações no seu browser. Páginas web simples usam os recursos de HTML e CSS próprios dos browsers. Mas muitas páginas na web possuem mais recursos interativos, com uma rica interface gráfica \(UI\). Estes são geralmente construído e executdaos em JavaScript, uma linguagem de programação que roda no seu browser, e usa seu processamento local.
 
-Web Assembly is a fourth compute environment has been standardized for browsers. It can compute apps that are originally written in many different programming languages, not just JavaScript. We are just starting to see powerful Web Assembly apps being built, like Figma, which provides a PhotoShop-like experience in your web browser.
+Web Assembly é o quarto recurso de computação padronizado para navegadores. Ele pode processar aplicações que são escritas originalmente em outras linguagens, não só JavaScript. Nós estamos começando a ver aplicações poderosas sendo feitas em Web Assembly, como o Figma, que provê uma experiência no estilo "PhotoShop" para seu web browser. 
 
-Fission intends to support Web Assembly, and make it easier to build, host, and scale web native apps that include Web Assembly.
+Fission pretende suportar Web Assembly, deixando assim mais fácil de construir, hospedar, e escalar aplicações nativas da web que incluem  Web Assembly.
 
-## Storage
+## Armazenamento
 
-When people think about owning their data, this often reveals that they feel comfortable when they can see and browse the files that an app uses or creates, rather than having to request an export, or not even have access to their data at all.
+Quando as pessoas pensam sobre serem donas de seus prórpios dados, isso geralmente revela que eles se sentem confortáveis quando podem ver e procurar os arquivos que um aplicativo usa ou cria, ao invés de precisarem exportar, ou não ter acesso nenhum aos seus dados.
 
-At Fission, we started by designing a file system that is available to both developers who want to build and host apps, and the people who use these apps.
+Na Fission, nós desenvolvemos um sistema de arquivos que está disponível tanto para desenvolvedores que querem construir e hospedar aplicativos, quanto para as pessoas que usam esses aplicativos.
 
-We have designed what we call **Web Native File System**, pronounced and written as **WinFS**. It is built on top of other open protocols, including the InterPlanetary File System \(IPFS\), which you can [learn more about in the appendix](../../appendix/ipfs.md).
+Nós desenvolvemos o que chamamos de **Web Native File System**, se pronuncia e se escreve como **WinFS**. É construído sobre vários protocolos abertos, incluindo o InterPlanetary File System \(IPFS\), o qual você pode [aprender mais sobre no apêndice](../../appendix/ipfs.md).
 
-We intend to design and share the WinFS specification in the open, and contribute it as an open standard, with open source implementations that anyone can use.
+Nós pretendendos desenvolver e compartilhar as especificações do WinFS, e contribuir para isso se tornar uma padronização aberta, com implementações abertas para qualquer um utilizar.
 
-WinFS is designed to provide an experience like an open source iCloud: available and synchronized across all devices and provide both public and private, encrypted files.
+WinFS foi feito para prover uma experiência aberta como do iCloud: disponível e sincronizado em todos os dispositivos, além de prover arquivos criptografados públicos e privados. 
 
-## Identity
+## Identidade
 
-Implementing a login, authentication, and authorization system is challenging to do securely, especially while respecting user privacy, providing end to end encryption, and otherwise balancing ease of use for both developers and customers.
+Implementar um sistema de login, autenticação, e autorização de forma segura é um desafio, especialmente respeitando a privacidade do usuário, provendo criptografria end to end, e de outra froma balanceando a facilidade de uso tanto para desenvolvedores quando para consumidores. 
 
-For developers, we wanted to provide a built in way to include logins and authentication without having to struggle to implement it.
+Para desenvolvedores, nós queremos prover uma solução interna para incluir logins e autenticação evitando problemas para sua implementação.
 
-For everyone, we wanted it to be easy to login securely, without having to remember passwords, and make that login available on all of their devices.
+Para todos, nós queremos que seja fácil fazer login de forma segura, sem precisar que lembrar de senhas, e fazer esse login disponível em todos os outros dispositivos.
 
-We built on top of the emerging Decentralized Identifiers \(DIDs\), which is a [working draft of the W3C standards body](https://www.w3.org/TR/did-core/).
+Nós construímos sobre os Identificadores Descentralizados \(DIDs\). [Rascunho do W3C standards](https://www.w3.org/TR/did-core/).
 
-We then designed the User Controlled Authorization Network \(UCAN\): a way of doing authorization where users are fully in control. 
+Nós então desenvolvemos o "User Controlled Authorization Network" \(UCAN\): uma forma de fazer a autorização onde os usuários possuem totalmente o controle. 
 
-With UCAN, we based it on top of the developer friendly JSON Web Tokens \(JWTs\) standard, plus Google's Macaroons research paper for more distributed systems.
+Com UCAN, nós nos baseaamos nos padrões do JSON Web Tokens \(JWTs\), e também no paper da Google sobre Macaroons para sistemas distribuídos.
 
-We combine all of this in the webnative SDK for developers and the Fission platform for app users. In browsers, we use the [Web Cryptography API, a W3C standard](https://www.w3.org/TR/WebCryptoAPI/). The [MDN Web Docs include further reading »](https://developer.mozilla.org/en-US/docs/Web/API/Web_Crypto_API)
+Nós combinamos tudo isso no SDK webnative para desenvolvedores e usuários da plataforma da Fission. Em browsers, usamos o [Web Cryptography API, uma padronização da W3C](https://www.w3.org/TR/WebCryptoAPI/). A [Documentação da MDN incluí mais leituras »](https://developer.mozilla.org/en-US/docs/Web/API/Web_Crypto_API)
 
-We intend to work with existing and emerging authorization and identity standards bodies to contribute our work as open standards.
+Nós pretendemos trabalhar com padrões de autorização e identiades existentes e novos que contribuirão para nosso trabalho como padronizações abertas. 
 
