@@ -4,42 +4,42 @@ description: 'O SDK webnative da Fission, e uma introdução aos aplicativos nat
 
 # Introdução ao Web Native 
 
-"Web native software" is what we call software designed to run on the web, taking advantage of all the capabilities your browser has to offer, as well as native, local capabilities like computation, storage, and identity.
+"Web native software" é o que chamamos de software designado para rodar na web, tendo todas as vantagens que o browser pode te oferecer, de forma nativa, te oferece possibilidades como processamento, armazenamento, e identidade.
 
-That includes web browsers on mobile devices, which increasingly are the primary and only computing device for the majority of people on the planet.
+Isso inclui web browsers em dispotivos móveis, os quais são o método primário de utilização desse dispotivo para grande parte das pessoas do mundo. 
 
-**webnative** is the name of the software development kit \(SDK\) we have built for the Fission platform, which also functions an app framework for building powerful web native software.
+**webnative** é o nome do kit de desenvolvimento de software \(SDK\) que nós construímos para a plataforma Fission, que também funciona como um framework para construção de poderosos softwares nativos da web.
 
-Developers can visit the GitHub code repository at [fission-suite/webnative](https://github.com/fission-suite/webnative), find it on NPM as [webnative](https://www.npmjs.com/package/webnative), or skip this introduction and go straight to Getting Started.
+Desenvolvedores podem visitar o repositório de código no GitHub em [fission-suite/webnative](https://github.com/fission-suite/webnative), ou no NPM como [webnative](https://www.npmjs.com/package/webnative), or até pular esta introdução e ir direto para os Primeiros passos. 
 
-Read on for more of our thinking on web native.
+Continue lendo para entender mais da nossa ideia sobre web native.
 
-## A web native app works more like native mobile or desktop apps
+## Uma aplicação nativa da web funciona mais como nativo mobile ou aplicação desktop 
 
-Compute, storage, and identity are all under control of the person using the software.
+Processamento, armazenamento, e identidade estão sob controle da pessoa usando o software.
 
-A web native app:
+Um aplicativo nativo da web:
 
-* Works in all browsers, including mobile
-* Doesn't need browser plug-ins
-* Makes use of web APIs in the browser, including on mobile
-* Has user owned data and storage
-* Gives users control over app permissions
-* Can function local-first, and in many cases, offline
+* Funciona em todos os browsers, inclusive nos de dispositivos móveis
+* Não precisa de plugins do browser
+* Usa API's da web no browser, inclusive em dispotivos móveis
+* Garante ao usuário controle de armazenamento e dados
+* Da ao usuário o controle das permissões do aplicativo
+* Pode funcionar de forma local, e em muitos casos, offline
 
 Like the original vision of the Internet, much more of the communication is peer-to-peer. Some of the peers are more powerful, or online and backed up more often, but they have the same functions as the local web native app. This is in contrast to the web app client / server model that we see with so many cloud services today, where you can't run the local web interface without the server at all.
 
-## Further Reading
+## Leituras adicionais 
 
-We are inspired by the work of the [Ink & Switch](https://www.inkandswitch.com/) research lab, especially their[ April 2019 publication on Local First Software](https://www.inkandswitch.com/local-first.html), which includes their **Seven Ideals for local-first Software**:
+Nos inspiramos no trablho do laboratório de pesquisa da [Ink & Switch](https://www.inkandswitch.com/), principalmente no texto [ April 2019 publication on Local First Software](https://www.inkandswitch.com/local-first.html), que inclui os **Sete ideais para Software local**:
 
-1. No spinners: your work at your fingertips
-2. Your work is not trapped on one device
-3. The network is optional
-4. Seamless collaboration with your colleagues
-5. The Long Now
-6. Security and privacy by default
-7. You retain ultimate ownership and control
+1. Sem spinners: seu trabalho na ponta dos dedos
+2. Seu trabalho não fica preso em um dispositivo apenas
+3. Conexão à rede é opcional
+4. Colaboração perfeita com seus colegas
+5. "The Long Now"
+6. Segurança e privacidade por padrão
+7. Você retém a propriedade e o controle total
 
 
 
