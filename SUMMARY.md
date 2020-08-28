@@ -19,7 +19,10 @@
 
 * [Web Native Introduction](webnative-sdk/web-native-introduction/README.md)
   * [Compute, Storage, and Identity Foundations](webnative-sdk/web-native-introduction/compute-storage-identity.md)
-* [Getting Started with webnative SDK](webnative-sdk/getting-started-webnative-sdk.md)
+* [Getting Started with webnative SDK](webnative-sdk/getting-started-webnative-sdk/README.md)
+  * [WNFS Extras](webnative-sdk/getting-started-webnative-sdk/wnfs-extras.md)
+  * [Platform APIs](webnative-sdk/getting-started-webnative-sdk/platform.md)
+  * [Utilities](webnative-sdk/getting-started-webnative-sdk/utilities.md)
 
 ## Fission Drive <a id="drive"></a>
 
