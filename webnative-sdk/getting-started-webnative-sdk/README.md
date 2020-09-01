@@ -1,4 +1,4 @@
-# Getting Started with webnative SDK
+# Getting Started with the webnative SDK
 
 This is the extended version of the [README of the webnative SDK](https://github.com/fission-suite/webnative). Detailed code documentation is [available in the source code](https://github.com/fission-suite/webnative/tree/master/docs).
 
@@ -11,9 +11,7 @@ The webnative SDK offers tools for:
 * tools for building DIDs and UCANs.
 * interacting with the users apps via the **platform APIs**
 
-\*\*\*\*
-
-### **Include the webnative  SDK:**
+### **Include the webnative SDK:**
 
 ```typescript
 // ES6
