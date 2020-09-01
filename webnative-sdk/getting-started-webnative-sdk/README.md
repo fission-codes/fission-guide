@@ -79,8 +79,6 @@ This function will do that first part, and then redirect you to the auth lobby:
 wn.leave()
 ```
 
-
-
 ## File System
 
 The Web Native File System \(WNFS\) is built on top of the InterPlanetary File System \(IPFS\). It's structured and functions similarly to a Unix-style file system, with one notable exception: it's a Directed Acyclic Graph \(DAG\), meaning that a given child can have more than one parent \(think symlinks but without the "sym"\).
