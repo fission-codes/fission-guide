@@ -1,6 +1,4 @@
-# Utilities
-
-## Customisation
+# Customisation
 
 Customisation can be done using the `setup` module.  
 Run these before anything else you do with the SDK.

@@ -22,7 +22,7 @@
 * [Getting Started with the webnative SDK](webnative-sdk/getting-started-webnative-sdk/README.md)
   * [WNFS Extras](webnative-sdk/getting-started-webnative-sdk/wnfs-extras.md)
   * [Platform APIs](webnative-sdk/getting-started-webnative-sdk/platform.md)
-  * [Utilities](webnative-sdk/getting-started-webnative-sdk/utilities.md)
+  * [Customisation](webnative-sdk/getting-started-webnative-sdk/customisation.md)
 
 ## Fission Drive <a id="drive"></a>
 
