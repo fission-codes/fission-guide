@@ -1,15 +1,14 @@
 # Utilities
 
-
-
 ## Customisation
 
-Customisation can be done using the `setup` module. Run these before anything else you do with the SDK.
+Customisation can be done using the `setup` module.  
+Run these before anything else you do with the SDK.
 
 ```javascript
 // custom api, lobby, and/or user domain
 // (no need to specify each one)
-sdk.setup.endpoints({
+wn.setup.endpoints({
   api: "https://my.fission.api",
   lobby: "https://my.fission.lobby",
   user: "my.domain"
@@ -17,10 +16,8 @@ sdk.setup.endpoints({
 
 // js-ipfs options
 // (see docs in src for more info)
-sdk.setup.ipfs({ init: { repo: "my-ipfs-repo" } })
+wn.setup.ipfs({ init: { repo: "my-ipfs-repo" } })
 ```
-
-
 
 ## Building Blocks
 

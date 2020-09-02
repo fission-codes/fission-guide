@@ -63,22 +63,6 @@ if (scenario.authCancelled) {
 
 The function takes an optional parameter, the url that the lobby should redirect back to \(the default is `location.href`\).
 
-### Authorisation
-
-The auth lobby is responsible for authorisation as well, it'll give us a UCAN \(or token if you will\) with various scopes based on the values we gave to `wn.initialise`. Important to note here is that if one of those tokens, that we got from a previous session, is expired, the scenario will be `notAuthorised`.
-
-### Shared devices
-
-Our vision for "fission-enabled apps" is that users don't really need to sign out, unless they are on a shared device \(a device they normally don't use\). You can read more about our vision on this on [our forum](https://talk.fission.codes/t/what-does-log-in-or-log-out-mean-for-the-fission-sdk-and-apps/919).
-
-Signing out on shared devices would be two-fold: 1. Remove any authorisation tokens from the current domain \(ie. for your app\) 2. Sign out of the auth lobby
-
-This function will do that first part, and then redirect you to the auth lobby:
-
-```javascript
-wn.leave()
-```
-
 ## File System
 
 The Web Native File System \(WNFS\) is built on top of the InterPlanetary File System \(IPFS\). It's structured and functions similarly to a Unix-style file system, with one notable exception: it's a Directed Acyclic Graph \(DAG\), meaning that a given child can have more than one parent \(think symlinks but without the "sym"\).
@@ -121,27 +105,6 @@ WNFS exposes a familiar POSIX-style interface:
 * `read`: alias for `cat`
 * `rm`: remove a file or directory
 * `write`: alias for `add`
-
-### Publicise
-
-The `publicise` function synchronises your file system with the Fission API and IPFS. We don't do this automatically because if you add a large set of data, you only want to do this after everything is added. Otherwise it would be too slow and we would have too many network requests to the API.
-
-### Permissions
-
-Every file system action checks if you received the sufficient permissions from the user. Permissions are given to the app by the auth lobby. The permissions to ask the user are determined by the "prerequisites" you give to `wn.initialise`, such as `app`.
-
-The initialise function will indicate the `notAuthorised` scenario if one of the necessary tokens will expire in one day, to minimise the likelihood of receiving this error message. But to be safe, you should account for this error:
-
-```typescript
-try {
-  await fs.mkdir(...)
-} catch (err) {
-  if (err instanceOf wn.errors.NoPermissionError) {
-    // Redirect the user back to the auth page to get the permissions
-    wn.redirectToLobby(prerequisites)
-  }
-}
-```
 
 ### API
 
@@ -307,134 +270,5 @@ Example:
 ```typescript
 const content = "hello world"
 const updatedCID = await wnfs.write("public/some/path/to/a/file", content)
-```
-
-### Web Worker
-
-Can I use my file system in a web worker?  
-Yes, this only requires a slightly different setup.
-
-```typescript
-// UI thread
-// `state.fs` will now be `null`
-const { prerequisites } = wn.initialise({ loadFileSystem: false })
-worker.postMessage({ tag: "LOAD_FS", prerequisites })
-
-// Web Worker
-let fs
-
-self.onMessage = async event => {
-  switch (event.data.tag) {
-    case "LOAD_FS":
-      fs = await wn.loadFileSystem(event.data.prerequisites)
-      break;
-  }
-}
-```
-
-## Customisation
-
-Customisation can be done using the `setup` module.  
-Run these before anything else you do with the SDK.
-
-```javascript
-// custom api, lobby, and/or user domain
-// (no need to specify each one)
-wn.setup.endpoints({
-  api: "https://my.fission.api",
-  lobby: "https://my.fission.lobby",
-  user: "my.domain"
-})
-
-// js-ipfs options
-// (see docs in src for more info)
-wn.setup.ipfs({ init: { repo: "my-ipfs-repo" } })
-```
-
-## Apps API
-
-webnative also exposes methods to interact with the apps associated with the user. This API must be prefixed with `apps`.
-
-* `apps.index`: A list of all of your apps and their associated domain names
-* `apps.create`: Creates a new app, assigns an initial subdomain, and sets an asset placeholder
-* `apps.deleteByURL`: Destroy app by any associated URL
-
-### API
-
-**apps.index**
-
-A list of all of your apps and their associated domain names
-
-Params:
-
-Returns: `{ RandomKey : [ subdomain ] }` a map of subdomains
-
-Example:
-
-```typescript
-const index = await wn.apps.index()
-// { `SqlBackendKey {unSqlBackendKey = 216} `: ['your-fission-deployment.fission.app'] }
-```
-
-**apps.create**
-
-Creates a new app, assigns an initial subdomain, and sets an asset placeholder
-
-Params:
-
-* subdomain: `string` **optional**
-
-Returns: `subdomain` the newly created subdomain
-
-Example:
-
-```typescript
-const newApp = await wn.apps.create()
-// 'your-fission-deployment.fission.app'
-```
-
-**apps.deleteByURL**
-
-Destroy app by any associated URL
-
-Params:
-
-* url: `string` **required**
-
-Returns:
-
-Example:
-
-```typescript
-const deletedApp = await wn.apps.deleteByURL('your-fission-deployment.fission.app')
-//
-```
-
-## Building Blocks
-
-**Warning: Here be 🐉! Only use lower level utilities if you know what you're doing.**
-
-This library is built on top of [js-ipfs](https://github.com/ipfs/js-ipfs) and [keystore-idb](https://github.com/fission-suite/keystore-idb). If you have already integrated an ipfs daemon or keystore-idb into your web application, you probably don't want to have two instances floating around.
-
-You can use one instance for your whole application by doing the following:
-
-```typescript
-import ipfs from 'webnative/ipfs'
-
-// get the ipfs instance that the Fission SDK is using
-const ipfsInstance = await ipfs.get()
-
-// OR set the ipfs to an instance that you already have
-await ipfs.set(ipfsInstance)
-```
-
-```typescript
-import keystore from 'webnative/keystore'
-
-// get the keystore instance that the Fission SDK is using
-const keystoreInstance = await keystore.get()
-
-// OR set the keystore to an instance that you already have
-await keystore.set(keystoreInstance)
 ```
 

@@ -4,7 +4,31 @@ description: Extra information about working with WNFS
 
 # WNFS Extras
 
-Extra information about working with WNFS.
+## Lobby
+
+### Authorisation
+
+The auth lobby is responsible for authorisation as well, it'll give us a UCAN \(or token if you will\) with various scopes based on the values we gave to `wn.initialise`. Important to note here is that if one of those tokens, that we got from a previous session, is expired, the scenario will be `notAuthorised`.
+
+### Shared devices
+
+Our vision for "fission-enabled apps" is that users don't really need to sign out, unless they are on a shared device \(a device they normally don't use\). You can read more about our vision on this on [our forum](https://talk.fission.codes/t/what-does-log-in-or-log-out-mean-for-the-fission-sdk-and-apps/919).
+
+Signing out on shared devices would be two-fold: 1. Remove any authorisation tokens from the current domain \(ie. for your app\) 2. Sign out of the auth lobby
+
+This function will do that first part, and then redirect you to the auth lobby:
+
+```javascript
+wn.leave()
+```
+
+## File System
+
+### Permissions
+
+Every file system action checks if you received the sufficient permissions from the user. Permissions are given to the app by the auth lobby. The permissions to ask the user are determined by the "prerequisites" you give to `wn.initialise`, such as `app`.
+
+The initialise function will indicate the `notAuthorised` scenario if one of the necessary tokens will expire in one day, to minimise the likelihood of receiving this error message. But to be safe, you should account for this error:
 
 ### Web Worker
 
@@ -13,11 +37,20 @@ Yes, this only requires a slightly different setup.
 
 ```typescript
 // UI thread
-// `session.fs` will now be `null`
-sdk.initialise({ loadFileSystem: false })
+// `state.fs` will now be `null`
+const { prerequisites } = wn.initialise({ loadFileSystem: false })
+worker.postMessage({ tag: "LOAD_FS", prerequisites })
 
 // Web Worker
-const fs = await sdk.loadFileSystem()
+let fs
+
+self.onMessage = async event => {
+  switch (event.data.tag) {
+    case "LOAD_FS":
+      fs = await wn.loadFileSystem(event.data.prerequisites)
+      break;
+  }
+}
 ```
 
 ### Versions
