@@ -106,6 +106,10 @@ WNFS exposes a familiar POSIX-style interface:
 * `rm`: remove a file or directory
 * `write`: alias for `add`
 
+### Publicise <a id="publicise"></a>
+
+The `publicise` function synchronises your file system with the Fission API and IPFS. We don't do this automatically because if you add a large set of data, you only want to do this after everything is added. Otherwise it would be too slow and we would have too many network requests to the API.
+
 ### API
 
 #### Methods
