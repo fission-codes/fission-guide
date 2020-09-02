@@ -1,8 +1,8 @@
 ---
-description: Extra information about working with WNFS
+description: "Become a webnative jedi \U0001F9D8"
 ---
 
-# WNFS Extras
+# Additional information
 
 ## Lobby
 
