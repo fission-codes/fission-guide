@@ -1,12 +1,16 @@
 # Fission Accounts
 
-When you create a Fission Account, whether using the CLI, or signing up on the web, it creates a username and email address in our service database, and also a private / public key pair representing that account.
+When you create a Fission Account, whether signing up on the web or using the command line as a developer, it creates a username and email address in our service database, and also a private / public key pair representing that account.
 
-We also create a Fission File System attached to your account, and given you access to[ Fission Drive](https://guide.fission.codes/drive), which lets you browse all your files, access them from any browser, and see which apps are attached to your File System.
+We also create a Fission Web Native File System \(WNFS\) attached to your account, and given you access to[ Fission Drive](https://guide.fission.codes/drive), which lets you browse all your files, access them from any browser, and see which apps are attached to your file system.
 
-So far, no passwords! We verify your email address, and can use that to help manage aspects of your service with us. You hold access to the keys connected to your account, and sign in happens automatically.
+We verify your email address, and can use that to help manage aspects of your service with us. You hold access to the keys connected to your account, and sign in happens automatically. 
 
 We encourage you to "link" your account to multiple devices -- your desktop and your phone, your home and your work computers, and so on. These devices can then be used to login, or link more accounts. You can read more about [Account Linking »](account-linking.md)
+
+{% hint style="info" %}
+Each device gets their own private key using the WebCrypto API built into modern browsers. Private keys shouldn't be copied around, so instead, we link keys indicating they have access to the same account.
+{% endhint %}
 
 ## Signing out of Fission Apps
 
@@ -24,9 +28,15 @@ If you want it again in the future, you download it again, by giving permission 
 
 We don't delete the data that the app stored for you, since it's stored in your own Fission File System -- just like data is stored on your phone.
 
+## App Permissions
+
+As part of signing into an app, an app will ask for certain permissions. Right now, these are mostly related to access to your file system.
+
+By default, every app needs access to an App Folder. You'll need to at least grant access to an App Folder for the app to function correctly.
+
 ## Revoking App Access
 
-Instead of signing out, you may want to revoke -- or delete -- an app's access to your account. You can visit the Fission Auth page to see both devices and apps that are connected to your account.
+Instead of signing out, you may want to revoke -- or delete -- an app's access to your account.
 
 {% hint style="warning" %}
 You can even revoke access to the default Drive app, but we'll ask you to make an extra confirmation. You'll need to use another tool or developer API access to manage your Fission File System attached to your account.
@@ -34,7 +44,7 @@ You can even revoke access to the default Drive app, but we'll ask you to make a
 
 ## Shared Devices
 
-But, browsers and desktop computers aren't smartphones, and they do get shared. You can unlink a device -- remove your key -- by visiting the Fission Auth page.
+Browsers and desktop computers aren't smartphones, and they do get shared. You can unlink a device -- remove your key -- by visiting the Fission Auth page.
 
 ## Multiple Accounts per Device
 
