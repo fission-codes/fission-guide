@@ -8,19 +8,20 @@ description: "Become a webnative jedi \U0001F9D8"
 
 ### Authorisation
 
-The auth lobby is responsible for authorisation as well, it'll give us a UCAN \(or token if you will\) with various scopes based on the values we gave to `wn.initialise`. Important to note here is that if one of those tokens, that we got from a previous session, is expired, the scenario will be `notAuthorised`.
+The auth lobby is responsible for authorisation. As well, it gives us a UCAN \(or token if you will\) with various scopes based on the values we gave to `wn.initialise`.
+
+Important to note here is that if a UCAN token received from a previous session is expired, the response will be `notAuthorised`.
 
 ### Shared devices
 
 Our vision for "fission-enabled apps" is that users don't really need to sign out, unless they are on a shared device \(a device they normally don't use\). You can read more about our vision on this on [our forum](https://talk.fission.codes/t/what-does-log-in-or-log-out-mean-for-the-fission-sdk-and-apps/919).
 
-Signing out on shared devices would be two-fold: 1. Remove any authorisation tokens from the current domain \(ie. for your app\) 2. Sign out of the auth lobby
+Signing out on shared devices would be two-fold:
 
-This function will do that first part, and then redirect you to the auth lobby:
+1. Remove any authorisation tokens from the current domain \(ie. for your app\)
+2. Sign out of the auth lobby
 
-```javascript
-wn.leave()
-```
+The `wn.leave` function will do that first part, and then redirect you to the auth lobby.
 
 ## File System
 
