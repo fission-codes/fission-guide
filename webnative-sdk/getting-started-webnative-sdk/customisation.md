@@ -26,7 +26,7 @@ This library is built on top of [js-ipfs](https://github.com/ipfs/js-ipfs) and [
 You can use one instance for your whole application by doing the following:
 
 ```typescript
-import ipfs from 'webnative/ipfs'
+import * as ipfs from 'webnative/ipfs'
 
 // get the ipfs instance that the Fission SDK is using
 const ipfsInstance = await ipfs.get()
@@ -36,7 +36,7 @@ await ipfs.set(ipfsInstance)
 ```
 
 ```typescript
-import keystore from 'webnative/keystore'
+import * as keystore from 'webnative/keystore'
 
 // get the keystore instance that the Fission SDK is using
 const keystoreInstance = await keystore.get()
