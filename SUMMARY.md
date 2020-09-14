@@ -42,3 +42,8 @@
 * [Troubleshooting](appendix/troubleshooting.md)
 * [Technical Specifications & Whitepaper](https://whitepaper.fission.codes)
 
+## Examples
+
+* [Elm](examples/elm/README.md)
+  * [Publishing an elm-pages app](examples/elm/publishing-an-elm-pages-app.md)
+
