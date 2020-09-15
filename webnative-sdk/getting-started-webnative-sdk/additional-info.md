@@ -27,7 +27,7 @@ The `wn.leave` function will do that first part, and then redirect you to the au
 
 ### Permissions
 
-Every file system action checks if you received the sufficient permissions from the user. Permissions are given to the app by the auth lobby. The permissions to ask the user are determined by the "prerequisites" you give to `wn.initialise`, such as `app`.
+Every file system action checks if you received the sufficient permissions from the user. Permissions are given to the app by the auth lobby. The permissions to ask the user are determined by the `permissions` you give to `wn.initialise`, such as `app`.
 
 The initialise function will indicate the `notAuthorised` scenario if one of the necessary tokens will expire in one day, to minimise the likelihood of receiving this error message. But to be safe, you should account for this error:
 
@@ -39,8 +39,8 @@ Yes, this only requires a slightly different setup.
 ```typescript
 // UI thread
 // `state.fs` will now be `null`
-const { prerequisites } = wn.initialise({ loadFileSystem: false })
-worker.postMessage({ tag: "LOAD_FS", prerequisites })
+const { permissions } = wn.initialise({ loadFileSystem: false })
+worker.postMessage({ tag: "LOAD_FS", permissions })
 
 // Web Worker
 let fs
@@ -48,7 +48,7 @@ let fs
 self.onMessage = async event => {
   switch (event.data.tag) {
     case "LOAD_FS":
-      fs = await wn.loadFileSystem(event.data.prerequisites)
+      fs = await wn.loadFileSystem(event.data.permissions)
       break;
   }
 }
