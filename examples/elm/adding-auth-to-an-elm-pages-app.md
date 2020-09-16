@@ -193,36 +193,39 @@ After our Elm app is initialized, we can bring `webnative` together with our `lo
 
 ```text
 const fissionInit = {
-  app: {
-    name: 'fission-elm-pages-starter',
-    creator: 'bgins',
-  },
-  fs: {
-    privatePaths: [],
-    publicPaths: [],
-  },
+  permissions: {
+    app: {
+      name: 'fission-elm-pages-starter',
+      creator: 'bgins'
+    }
+  }
 };
 
 pagesInit({
-  mainElmModule: Elm.Main,
+  mainElmModule: Elm.Main
 }).then(app => {
-  webnative
-    .initialize(fissionInit)
-    .then(async ({ prerequisites, scenario, state }) => {
-      if (scenario.authSucceeded || scenario.continuum) {
+  webnative.initialize(fissionInit).then(async state => {
+    switch (state.scenario) {
+      case webnative.Scenario.AuthSucceeded:
+      case webnative.Scenario.Continuation:
         app.ports.onFissionAuth.send({ username: state.username });
-      }
+        break;
 
-      app.ports.login.subscribe(() => {
-        webnative.redirectToLobby(prerequisites);
-      });
+      case webnative.Scenario.NotAuthorised:
+      case webnative.Scenario.AuthCancelled:
+        break;
+    }
+
+    app.ports.login.subscribe(() => {
+      webnative.redirectToLobby(state.permissions);
     });
+  });
 });
 ```
 
-Initializing `webnative` gives us access to `scenario` and `state`. The `scenario` tells us if the user is authenticated and `state` represents user data including their username.
+Initializing `webnative` gives us access to `state` which has a `state.username` and a `state.scenario`. The `state.scenario` tells us if the user is authenticated or not.
 
-If a user just returned from the Fission auth lobby, `scenario.authSucceeded` will be `true`. If they authenticated on a previous visit, `scenario.continuum` will be `true`. In both cases, we have a `state.username` to pass through the `onFissionAuth` port.
+If a user just returned from the Fission auth lobby, `state.scenario` will be `webnative.Scenario.AuthSucceeded`. If they authenticated on a previous visit, `state.scenario` will be `webnative.Scenario.Continuation`. In both cases, we have a `state.username` to pass through the `onFissionAuth` port.
 
 The `login` port calls on `webnative` to redirect the user to the Fission auth lobby. When the user returns from the lobby, we will initialize and check authentication status all over again.
 
