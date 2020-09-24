@@ -14,6 +14,7 @@
 * [Custom Domains](hosting/custom-domains/README.md)
   * [Fission Hosted DNS](hosting/custom-domains/fission-hosted-dns.md)
   * [Control your own DNS](hosting/custom-domains/control-own-dns.md)
+  * [Using Cloudflare IPFS Gateway](hosting/custom-domains/using-cloudflare-ipfs-gateway.md)
 
 ## Fission Webnative SDK <a id="webnative-sdk"></a>
 

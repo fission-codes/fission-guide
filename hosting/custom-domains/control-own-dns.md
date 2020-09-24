@@ -12,10 +12,10 @@ For your domain, `YOURAPPDOMAIN.com`, go into your DNS provider control panel an
 
 | Record | Type | Value |
 | :---: | :---: | :---: |
-| "\*" \(root\) | CNAME | `ipfs.runfission.com` |
+| @ \(root\) | CNAME | `ipfs.runfission.com` |
 
 {% hint style="info" %}
-Some DNS providers don't support a CNAME for your root, so you'll need to add a CNAME for `www` instead.
+@ usually represents the "root" or domain apex. Some DNS providers don't support a CNAME for your root, so you'll need to add a CNAME for `www` instead.
 {% endhint %}
 
 The process for a subdomain is the same `SUB.YOURAPPDOMAIN.com`, but looks a little different. Go into your DNS provider control panel and add a CNAME pointing to `ipfs.runfission.com`.
