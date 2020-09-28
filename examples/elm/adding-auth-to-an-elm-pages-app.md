@@ -179,19 +179,19 @@ Our desired authentication flow looks like this:
 
 Let's start by installing the `webantive` package from npm.
 
-```text
+```javascript
 npm install webnative
 ```
 
 Import it in `index.js`.
 
-```text
+```javascript
 import * as webnative from 'webnative';
 ```
 
 After our Elm app is initialized, we can bring `webnative` together with our `login` and `onFissionAuth` ports to authenticate users.
 
-```text
+```javascript
 const fissionInit = {
   permissions: {
     app: {
