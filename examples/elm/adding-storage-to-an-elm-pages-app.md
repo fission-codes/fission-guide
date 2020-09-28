@@ -2,7 +2,7 @@
 
 ## Adding storage to an elm-pages app
 
-In this guide, we will show how to use Fission storage to save user data. Our goal will be to add annotations to blog posts in the `elm-pages-starter`.
+In this guide, we will show how to use Fission webnative storage to save user data. Our goal will be to add annotations to blog posts in the `elm-pages-starter`.
 
 All of the code in this guide is available in the [fission-elm-pages-starter](https://github.com/bgins/fission-elm-pages-starter/tree/storage) repository on the `storage` branch.
 
@@ -371,9 +371,9 @@ view document page fissionAuth annotationOptions =
 
 Our app is ready for annotations and the last step is adding `webnative` storage.
 
-Each Fission user has a filesystem that is stored locally and distributed across the web. An app that uses Fission storage asks the user for permission to use their filesystem. After the app has been granted permission, it can store user data to their local filesystem and publish it to the distributed filesystem.
+Each Fission user has a filesystem that is stored locally and distributed across the web. An app that uses Fission storage asks the user for permission to use their filesystem -- similar to how a native mobile app asks for permission. After the app has been granted permission, it can store user data to their local filesystem and publish it to the distributed filesystem.
 
-Let's start by installing the `webantive` package from npm.
+Let's start by installing the `webnative` package from npm.
 
 ```text
 npm install webnative
@@ -387,7 +387,9 @@ import * as webnative from 'webnative';
 
 We initialize `webnative` with a list of permissions stating what our app would like to use. In our case, we only need to request permission to use the storage associated with our app.
 
-> **Shared storage** The `webnative` filesystem also has public and private shared storage that can be accessed across apps. See the [webnative documentation](https://github.com/fission-suite/webnative) for more details.
+{% hint style="info" %}
+**Shared storage:** The webnative filesystem also has public and private shared storage that can be accessed across apps. See the [webnative documentation](../../webnative-sdk/getting-started-webnative-sdk/#file-system) for more details.
+{% endhint %}
 
 Declare an `fs` variable that will be used to access the user's filesystem. Add `fissionInit` with a request for `permissions` to use app storage by app name and your Fission username.
 
