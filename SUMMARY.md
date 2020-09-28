@@ -48,4 +48,5 @@
 * [Elm](examples/elm/README.md)
   * [Publishing an elm-pages app](examples/elm/publishing-an-elm-pages-app.md)
   * [Adding auth to an elm-pages app](examples/elm/adding-auth-to-an-elm-pages-app.md)
+  * [Adding storage to an elm-pages app](examples/elm/adding-storage-to-an-elm-pages-app.md)
 
