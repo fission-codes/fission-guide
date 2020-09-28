@@ -481,7 +481,7 @@ The numbered references in the code go as follows:
 
 1. **Alias the filesystem from state.** We alias `state.fs` as `fs` to put it onto the global scope.
 2. **Create the app directory if it does not exist.** A new user will not have a directory for our app. Check if the directory exists and make one if not with `fs.mkdir`. Each time we make a change to the local filesystem, we `fs.publish` to synchronize with the distributed filesystem.
-3. **Load an annotation or send an empty one.** When the Elm app sends a message over the `loadAnnotation` port, we make check if a file for the annotation exists. If it does, we `fs.read` and send it over the `onFissionAuth` port into the Elm app. If not, we send a empty annotation value.
+3. **Load an annotation or send an empty one.** When the Elm app sends a message over the `loadAnnotation` port, we make check if a file for the annotation exists. If it does, we `fs.read` and send it over the `onFissionAuth` port into the Elm app. If not, we send an empty annotation value.
 4. **Store and publish an annotation to the filesystem.** When the Elm app sends a message over the `storeAnnotation` port, `webnative` saves the annotation to the filesystem with `fs.write`. The current implementation uses a transaction queue to handle writes that come in quick succession. See the [transaction queue implementation](https://github.com/bgins/fission-elm-pages-starter/blob/dbf041f767c8b5e409c661c00a52fa84b6c9dab4/index.js#L89-L134) to examine how this works now. An upcoming version of `webnative` will handle writes in parallel, and the transaction queue will not be needed.
 
 ### Write some notes! 📝️
