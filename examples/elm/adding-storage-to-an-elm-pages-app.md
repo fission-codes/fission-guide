@@ -18,7 +18,7 @@ If a user has not signed in, they do not see the annotation button or text input
 
 ![](../../.gitbook/assets/storage3.png)
 
-Annotations are saved to the user's `webnative` filesystem and will be there when they return or use the app on another device.
+Annotations are saved to the user's webnative filesystem and will be there when they return or use the app on another device.
 
 ### Write an annotation module
 
@@ -62,7 +62,7 @@ internalsDecoder =
         (Json.Decode.field "notes" Json.Decode.string)
 ```
 
-Our code that interacts with the `webnative` filesystem will use blog post titles as keys to lookup and save annotations.
+Our code that interacts with the webnative filesystem will use blog post titles as keys to lookup and save annotations.
 
 Add `encode` for storing annotations and `encodeTitle` for loading them.
 
@@ -170,9 +170,9 @@ view options =
 
 Now that our annotation module is ready, we can add annotations to the `elm-pages-starter`.
 
-We want the user to see the annotation button when they navigate to a page with a blog post. When they click on the annotation button, we load the annotation from their `webnative` filesystem or an empty annotation if they are starting a new annotation. We replace the button with the notes in a text input box.
+We want the user to see the annotation button when they navigate to a page with a blog post. When they click on the annotation button, we load the annotation from their webnative filesystem or an empty annotation if they are starting a new annotation. We replace the button with the notes in a text input box.
 
-We save the annotation to `webnative` with each keystroke the user makes in the text input box.
+We save the annotation to webnative with each keystroke the user makes in the text input box.
 
 Import the annotation module in `Main.elm`.
 
@@ -369,7 +369,7 @@ view document page fissionAuth annotationOptions =
 
 ### Add webnative storage
 
-Our app is ready for annotations and the last step is adding `webnative` storage.
+Our app is ready for annotations and the last step is adding webnative storage.
 
 Each Fission user has a filesystem that is stored locally and distributed across the web. An app that uses Fission storage asks the user for permission to use their filesystem -- similar to how a native mobile app asks for permission. After the app has been granted permission, it can store user data to their local filesystem and publish it to the distributed filesystem.
 
