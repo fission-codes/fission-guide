@@ -176,13 +176,13 @@ We save the annotation to `webnative` with each keystroke the user makes in the 
 
 Import the annotation module in `Main.elm`.
 
-```text
+```javascript
 import Annotation exposing (Annotation)
 ```
 
 Add an `annotation` to the `Model`.
 
-```text
+```javascript
 type alias Model =
     { username : Maybe String
     , annotation : Annotation
@@ -193,7 +193,7 @@ We only display one annotation at a time, which means we can replace `annotation
 
 The annotation starts off as `NotEditing` in `init`.
 
-```text
+```javascript
 init : ( Model, Cmd Msg )
 init =
     ( { username = Nothing
@@ -205,7 +205,7 @@ init =
 
 Our `update` will handle four messages that initialize, load, or store annotations. `OnPageChange` sets the annotation to `NotEditing` when a user navigates to a new page. `LoadAnnotation` calls over a port to load an annotation. `UpdateAnnotation` updates the displayed annotation in the input box and stores the annotation. `GotAnnotatation` subscribes to annotations that come in over a port after a load.
 
-```text
+```javascript
 type Msg
     = SubmittedLogin
     | GotAuth (Maybe String)
@@ -257,7 +257,7 @@ Our `main` function needs a small change to configure the `OnPageChange` message
 
 Add `loadAnnotation`, `onFissionAnnotation`, and `storeAnnotation` ports.
 
-```text
+```javascript
 port loadAnnotation : Json.Decode.Value -> Cmd msg
 
 
@@ -269,7 +269,7 @@ port storeAnnotation : Json.Decode.Value -> Cmd msg
 
 Add a subscription to the `onFissionAnnotation` port.
 
-```text
+```javascript
 subscriptions : Model -> Sub Msg
 subscriptions _ =
     Sub.batch
@@ -291,7 +291,7 @@ We create an annotation from the `Value` received over `onFissionAnnotation` and
 
 Pass the annotation and two messages to tell it how to load and update annotations to `Layout.view`.
 
-```text
+```javascript
     Layout.view
         (pageView model siteMetadata page viewForPage)
         page
@@ -304,7 +304,7 @@ Pass the annotation and two messages to tell it how to load and update annotatio
 
 In `Layout.elm`, the `view` displays the annotation at the bottom right corner and in front of the rest of the page. We check if the user is logged in and viewing a blog post. If both are true, we show them the annotation.
 
-```text
+```javascript
 view :
     { title : String, body : List (Element msg) }
     ->
@@ -375,13 +375,13 @@ Each Fission user has a filesystem that is stored locally and distributed across
 
 Let's start by installing the `webnative` package from npm.
 
-```text
+```bash
 npm install webnative
 ```
 
 Import it in `index.js`.
 
-```text
+```javascript
 import * as webnative from 'webnative';
 ```
 
