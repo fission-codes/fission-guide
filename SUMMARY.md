@@ -2,14 +2,34 @@
 
 * [Overview](README.md)
 
-## Fission Apps <a id="apps"></a>
+## Fission Hosting <a id="hosting"></a>
 
-* [Installation](apps/installation.md)
-* [Getting Started](apps/getting-started.md)
-* [Ponto de Partida](apps/ponto-de-partida.md)
-* [Fission CLI](apps/cli.md)
-* [Custom Domains](apps/custom-domains.md)
-* [Using the Fission CLI to publish React sites](apps/fission-cli-react.md)
+* [Installation](hosting/installation.md)
+* [Getting Started](hosting/getting-started.md)
+* [Fission CLI](hosting/cli/README.md)
+  * [Fission YAML](hosting/cli/fission-yaml.md)
+* [Fission Accounts](hosting/fission-accounts.md)
+* [Account Linking](hosting/account-linking.md)
+* [Custom Domains](hosting/custom-domains/README.md)
+  * [Fission Hosted DNS](hosting/custom-domains/fission-hosted-dns.md)
+  * [Control your own DNS](hosting/custom-domains/control-own-dns.md)
+  * [Using Cloudflare IPFS Gateway](hosting/custom-domains/using-cloudflare-ipfs-gateway.md)
+
+## Fission Webnative SDK <a id="webnative-sdk"></a>
+
+* [Web Native Introduction](webnative-sdk/web-native-introduction/README.md)
+  * [Compute, Storage, and Identity Foundations](webnative-sdk/web-native-introduction/compute-storage-identity.md)
+* [Getting Started with the webnative SDK](webnative-sdk/getting-started-webnative-sdk/README.md)
+  * [Additional information](webnative-sdk/getting-started-webnative-sdk/additional-info.md)
+  * [Platform APIs](webnative-sdk/getting-started-webnative-sdk/platform.md)
+  * [Customisation](webnative-sdk/getting-started-webnative-sdk/customisation.md)
+
+## Examples
+
+* [Elm](examples/elm/README.md)
+  * [Publishing an elm-pages app](examples/elm/publishing-an-elm-pages-app.md)
+  * [Adding auth to an elm-pages app](examples/elm/adding-auth-to-an-elm-pages-app.md)
+  * [Adding storage to an elm-pages app](examples/elm/adding-storage-to-an-elm-pages-app.md)
 
 ## Fission Drive <a id="drive"></a>
 
@@ -21,10 +41,10 @@
 * [Fission Web API](developers/web-api.md)
 * [Heroku Add-on](developers/heroku.md)
 * [Fission Web API \(Live Swagger Docs\)](https://runfission.com/docs)
-* [Further Reading and Resources](developers/resources.md)
 
 ## Appendix
 
+* [Browser Support](appendix/browser-support.md)
 * [Learning IPFS](appendix/ipfs.md)
 * [Troubleshooting](appendix/troubleshooting.md)
 * [Technical Specifications & Whitepaper](https://whitepaper.fission.codes)

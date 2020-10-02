@@ -32,7 +32,7 @@ This means adding an `app.json` file and a few other settings that tell Heroku w
 
 #### Ghost Blogging on Heroku with IPFS
 
-We built an [IPFS Storage Adapter for the Ghost blogging platform](https://github.com/fission-suite/ghost-storage-adapter-ipfs), and bundled it together with Deploy to Heroku and the Fission Heroku Add On. You can get started on the hobby tier by clicking the Deploy to Heroku button on Github:
+We built an [IPFS Storage Adapter for the Ghost blogging platform](https://github.com/fission-suite/ghost-storage-adapter-ipfs), and bundled it together with **Deploy to Heroku** and the **Fission Heroku Add On**. You can get started on the hobby tier by clicking the Deploy to Heroku button on Github:
 
 * [https://github.com/fission-suite/heroku-ipfs-ghost](https://github.com/fission-suite/heroku-ipfs-ghost)
 
