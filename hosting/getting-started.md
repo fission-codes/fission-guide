@@ -61,7 +61,7 @@ $ fission app register
 👷 Build directory (.):
 ```
 
-Press enter to set `hello-universe` as your build directory, and fission will initialize your app.
+Press enter to set `hello-universe` as your build directory, and `fission` will initialize your app.
 
 ```text
 ✅ App initialized as big-narrow-fuchsia-elf.fission.app
@@ -92,7 +92,9 @@ $ fission app publish
 🔗 big-narrow-fuchsia-elf.fission.app
 ```
 
-Copy the URL from the last line and paste it into your web browser to view the webpage. It's that easy!
+Copy the URL from the last line and paste it into your web browser to view the webpage live on the web. Nice and simple!
 
-_Note: It may take some time for DNS to propagate. Give it a minute or two if it doesn't load immediately. You can also take the URL from the CLI output and view it at`https://ipfs.runfission.com/ipfs/{YOUR_CONTENT_ID}`right away._
+{% hint style="warning" %}
+It may take a few minutes for DNS to propagate. If you don't see the webpage live at the URL, come back and try again in a bit. You can also take the URL from the CLI output and view the webpage at`https://ipfs.runfission.com/ipfs/{URL}`right away.
+{% endhint %}
 
