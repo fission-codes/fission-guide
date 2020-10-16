@@ -15,6 +15,7 @@ Additional reading and presentations are also available:
 
 * User Controlled Authorization Network \(UCAN\), [Auth without a Backend blog post](https://blog.fission.codes/auth-without-backend/)
 * Presentation to the Berlin Functional Programming Meetup June 2020, [A Universal Hostless Substrate: Full Stack Web Apps Without a Backend, and More!](https://talk.fission.codes/t/berlin-functional-programming-group-a-universal-hostless-substrate-full-stack-web-apps-without-a-backend-and-more/617)
+* [Web Native File System Technical Design Overview](https://blog.fission.codes/web-native-file-system-presentation/), Aug 2020 slide deck and recorded video presentation
 
 ## Compute
 
@@ -30,7 +31,7 @@ When people think about owning their data, this often reveals that they feel com
 
 At Fission, we started by designing a file system that is available to both developers who want to build and host apps, and the people who use these apps.
 
-We have designed what we call **Web Native File System**, pronounced and written as **WinFS**. It is built on top of other open protocols, including the InterPlanetary File System \(IPFS\), which you can [learn more about in the appendix](../appendix/ipfs.md).
+We have designed what we call **Web Native File System**, pronounced and written as **WinFS**. It is built on top of other open protocols, including the InterPlanetary File System \(IPFS\).
 
 We intend to design and share the WinFS specification in the open, and contribute it as an open standard, with open source implementations that anyone can use.
 
@@ -53,4 +54,18 @@ With UCAN, we based it on top of the developer friendly JSON Web Tokens \(JWTs\)
 We combine all of this in the webnative SDK for developers and the Fission platform for app users. In browsers, we use the [Web Cryptography API, a W3C standard](https://www.w3.org/TR/WebCryptoAPI/). The [MDN Web Docs include further reading »](https://developer.mozilla.org/en-US/docs/Web/API/Web_Crypto_API)
 
 We intend to work with existing and emerging authorization and identity standards bodies to contribute our work as open standards.
+
+## Further Reading
+
+The [Introduction to Web Native Apps post on our blog](https://blog.fission.codes/intro-web-native-apps/) covers a lot of the same material from a conceptual point of view.
+
+We are inspired by the work of the [Ink & Switch](https://www.inkandswitch.com/) research lab, especially their[ April 2019 publication on Local First Software](https://www.inkandswitch.com/local-first.html), which includes their **Seven Ideals for local-first Software**:
+
+1. No spinners: your work at your fingertips
+2. Your work is not trapped on one device
+3. The network is optional
+4. Seamless collaboration with your colleagues
+5. The Long Now
+6. Security and privacy by default
+7. You retain ultimate ownership and control
 

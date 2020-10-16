@@ -1,8 +1,6 @@
 # Table of contents
 
 * [Overview](README.md)
-* [Web Native Introduction](webnative-intro/README.md)
-  * [Compute, Storage, and Identity Foundations](webnative-intro/compute-storage-identity.md)
 * [Fission Accounts](accounts/README.md)
   * [Account Linking](accounts/account-linking.md)
 
@@ -36,8 +34,8 @@
 ## Appendix
 
 * [Browser Support](appendix/browser-support.md)
-* [Learning IPFS](appendix/ipfs.md)
 * [Troubleshooting](appendix/troubleshooting.md)
+* [Compute, Storage, and Identity Foundations](appendix/compute-storage-identity.md)
 * [Heroku Add-on](appendix/heroku.md)
 * [Fission Web API \(Live Swagger Docs\)](https://runfission.com/docs)
 * [Technical Specifications & Whitepaper](https://whitepaper.fission.codes)
