@@ -1,81 +1,107 @@
 ---
-description: More information on the fission.yaml file and options
+description: More information on global and app YAML configuration files.
 ---
 
 # Fission YAML
 
-Fission stores some configuration options on your local machine by using a file named `.fission.yaml`. One is in your home folder and is for global defaults for all apps on your machine.
+Fission stores global and app configuration options in YAML files. The global configuration is stored in a `config.yaml` file and app configurations are stored in `fission.yaml` files.
 
 ## Global Fission YAML
 
-After you run `fission setup`, you'll have a global `.fission.yaml` file in your home folder. If you type the following command, it will display the contents of your global file:
+After you run `fission setup`, you will have a global `config.yaml` in your `~/.config/fission/` folder. You can open `config.yaml` in a text editor or display it at the command line.
 
-```text
+```bash
 more ~/.fission.yaml
 ```
 
-The default global file will looks something like this:
+The default global `config.yaml` will looks something like this:
 
-```text
-ignore: [".DS_Store", ".env", ".fission.yaml"]
+```yaml
+ignore: []
+username: fission
+server_did: did:key:zStEZpzSMtTt9k2vszgvCwF4fLQQSyA15W5AQ4z3AR6Bx4eFJ5crJFbuGxKmbma4
 peers:
-- /ip4/3.215.160.238/tcp/4001/ipfs/QmVLEz2SxoNiFnuyLpbXsH6SvjPTrHNMU88vCQZyhgBzgw
-- /ip4/3.226.224.78/tcp/4001/ipfs/QmXab6bcjmWUQZryEtmZfxS5hGoJAguw8bhLdUN5ZFQ2e5
+- /dns4/node.runfission.com/tcp/4001/ipfs/QmVLEz2SxoNiFnuyLpbXsH6SvjPTrHNMU88vCQZyhgBzgw
+- /ip4/3.226.224.78/tcp/4001/p2p/QmPeeeZZXxMBAPxxba7a6ggjDr5jLuD3RAFnmPPcvJ9fMS
+- /ip4/3.226.224.78/udp/4001/quic/p2p/QmPeeeZZXxMBAPxxba7a6ggjDr5jLuD3RAFnmPPcvJ9fMS
+signing_key_path: /home/fission/.config/fission/key/machine_id.ed25519
 ```
+
+{% hint style="warning" %}
+In most cases, the only thing you will want to change in this file is the `ignore` section. The other sections are managed by the Fission CLI.
+{% endhint %}
 
 ### ignore
 
-Ignore is used to list files you don't want `fission up` to upload. We include a couple of defaults to make sure that common files don't get uploaded.
+Ignore is a list of files you don't want `fission app publish` to publish. For example, you might add commonly ignored files and secrets.
 
-This functions similarly to a `.gitignore` file.
+```yaml
+ignore: [".DS_Store", ".env"]
+```
+
+Ignore follows the same conventions used in a `.gitignore` file.
+
+### username
+
+Username is a name you select for yourself during `fission setup`.
+
+### server\_did
+
+Server DID is the identity of the Fission server that authenticates your requests when using the Fission CLI.
 
 ### peers
 
-We make sure that your local computer can directly connect to our servers. These are the IP addresses and fingerprints of our servers.
+We configure your machine to directly connect to our servers. The peers are the IP addresses and fingerprints of our servers.
 
 {% hint style="info" %}
 Eventually, we'll have a list of peers around the world.
 {% endhint %}
 
+### signing\_key\_path
+
+The path to the key used to sign requests made when using the Fission CLI.
+
 ## Fission YAML for Apps
 
-When you create a new app using `fission app-init`, a new `.fission.yaml` file is created in the directory where you ran the command. Here's an example:
+When you create a new app with `fission app register`, a `fission.yaml` file is created in the directory where you ran the command. The default `fission.yaml` file looks something like:
 
-```text
-app_url: junior-angular-tulip.fission.app
-build_dir: site/
-ignore:
- - *.psd
- - _ignore
+```yaml
+ignore: []
+url: junior-angular-tulip.fission.app
+build: ./dist
 ```
-
-### app\_url
-
-This is the URL where your app is available.
-
-{% hint style="info" %}
-Eventually, you'll be able to specific different versions -- for example, development, testing, production, etc. -- as well as list custom domains here.
-{% endhint %}
-
-### build\_dir
-
-Apps often have build directories that are used for production deployments. You can set the path of your build directory, relative to where the `.fission.yaml` file is.
-
-{% hint style="success" %}
-If you are using a "common" build directory, fission will attempt to detect this the first time you run `fission up`, and will prompt to ask if you would like to set this as your build directory.
-{% endhint %}
 
 ### ignore
 
-As you can see, this can also include a local ignore directive, that just applies to the local app directory. There won't be an ignore section by default, but you can edit the file to add whatever you like here.
+Ignore works the same as the ignore in the global configuration. You can use it to list files that you do not want to publish.
 
-YAML can specify arrays in a couple of different ways, both like this, and comma separated as in the global example above.
+```yaml
+ignore:
+ - node_modules
+ - *.psd
+```
 
-The `*.psd` means, ignore and don't upload any Photoshop files with a `.psd` extension.
+You might use it to ignore a directory like `node_modules` or all files with an extension like Photoshop `.psd` files.
 
-The `_ignore` is just a convention, to make a local directory with that name where you can keep all your files together, but know that files in that folder won't get uploaded.
+{% hint style="info" %}
+YAML can specify lists in a couple of different ways, both like this, or as comma-separated list shown in the global `config.yaml` example above.
+{% endhint %}
 
-### 
+### url
 
+The URL where your app is viewable after it has been published.
 
+{% hint style="info" %}
+Eventually, you will be able to publish different versions of your app -- for example, development, testing, production, etc. -- and use custom domains for your app.
+{% endhint %}
+
+### build
+
+The build directory is the directory the Fission CLI will publish. Use this when you have a build step that produces a production-ready version of your application.
+
+The build directory is set as a relative path from the location of the `fission.yaml` file.
+
+{% hint style="success" %}
+If you are using a "common" build directory, the Fission CLI will attempt to detect it the first time you run `fission app register`. It will prompt you and ask if you would like to use the directory it detects.
+{% endhint %}
 
