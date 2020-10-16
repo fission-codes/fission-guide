@@ -1,4 +1,4 @@
-# Getting Started with the webnative SDK
+# Webnative SDK
 
 This is the extended version of the [README of the webnative SDK](https://github.com/fission-suite/webnative). Detailed code documentation is [available in the source code](https://github.com/fission-suite/webnative/tree/master/docs).
 

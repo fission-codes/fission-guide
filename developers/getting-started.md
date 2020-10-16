@@ -19,7 +19,7 @@ A private key has been generated for your machine and saved in the `~/.config/fi
 
 ### Account Linking
 
-If you already have an account, you can link it to your local machine. Just enter in your current username and [follow the linking flow](account-linking.md).
+If you already have an account, you can link it to your local machine. Just enter in your current username and [follow the linking flow](../accounts/account-linking.md).
 
 {% hint style="warning" %}
 Note: account linking is not yet live, but will be very soon. You can rename your fission key or securely copy it around as workaround for now.

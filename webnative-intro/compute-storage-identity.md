@@ -30,7 +30,7 @@ When people think about owning their data, this often reveals that they feel com
 
 At Fission, we started by designing a file system that is available to both developers who want to build and host apps, and the people who use these apps.
 
-We have designed what we call **Web Native File System**, pronounced and written as **WinFS**. It is built on top of other open protocols, including the InterPlanetary File System \(IPFS\), which you can [learn more about in the appendix](../../appendix/ipfs.md).
+We have designed what we call **Web Native File System**, pronounced and written as **WinFS**. It is built on top of other open protocols, including the InterPlanetary File System \(IPFS\), which you can [learn more about in the appendix](../appendix/ipfs.md).
 
 We intend to design and share the WinFS specification in the open, and contribute it as an open standard, with open source implementations that anyone can use.
 

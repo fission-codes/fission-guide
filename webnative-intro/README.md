@@ -4,15 +4,15 @@ description: 'The Fission webnative SDK, and an intro to web native apps'
 
 # Web Native Introduction
 
-"Web native software" is what we call software designed to run on the web, taking advantage of all the capabilities your browser has to offer, as well as native, local capabilities like computation, storage, and identity.
+"Web native app" is what we call an app designed to run on the web, taking advantage of all the capabilities your browser has to offer, as well as native, local capabilities like computation, storage, and identity.
 
 That includes web browsers on mobile devices, which increasingly are the primary and only computing device for the majority of people on the planet.
 
-**webnative** is the name of the software development kit \(SDK\) we have built for the Fission platform, which also functions an app framework for building powerful web native software.
+**webnative** is the name of the software development kit \(SDK\) we have built for the Fission platform, which also functions an app framework for building powerful web native apps.
 
-Developers can visit the GitHub code repository at [fission-suite/webnative](https://github.com/fission-suite/webnative), find it on NPM as [webnative](https://www.npmjs.com/package/webnative), or skip this introduction and go straight to Getting Started.
-
-Read on for more of our thinking on web native.
+{% hint style="success" %}
+Skip to the [Developers](../developers/installation.md) section of the guide and the [Webnative SDK documentation](../developers/webnative/) to get started building your first app.
+{% endhint %}
 
 ## A web native app works more like native mobile or desktop apps
 
@@ -30,6 +30,8 @@ A web native app:
 Like the original vision of the Internet, much more of the communication is peer-to-peer. Some of the peers are more powerful, or online and backed up more often, but they have the same functions as the local web native app. This is in contrast to the web app client / server model that we see with so many cloud services today, where you can't run the local web interface without the server at all.
 
 ## Further Reading
+
+The [Introduction to Web Native Apps post on our blog](https://blog.fission.codes/intro-web-native-apps/) covers a lot of the same material.
 
 We are inspired by the work of the [Ink & Switch](https://www.inkandswitch.com/) research lab, especially their[ April 2019 publication on Local First Software](https://www.inkandswitch.com/local-first.html), which includes their **Seven Ideals for local-first Software**:
 

@@ -1,35 +1,10 @@
 # Table of contents
 
 * [Overview](README.md)
-
-## Fission Hosting <a id="hosting"></a>
-
-* [Installation](hosting/installation.md)
-* [Getting Started](hosting/getting-started.md)
-* [Fission CLI](hosting/cli/README.md)
-  * [Fission YAML](hosting/cli/fission-yaml.md)
-* [Fission Accounts](hosting/fission-accounts.md)
-* [Account Linking](hosting/account-linking.md)
-* [Custom Domains](hosting/custom-domains/README.md)
-  * [Fission Hosted DNS](hosting/custom-domains/fission-hosted-dns.md)
-  * [Control your own DNS](hosting/custom-domains/control-own-dns.md)
-  * [Using Cloudflare IPFS Gateway](hosting/custom-domains/using-cloudflare-ipfs-gateway.md)
-
-## Fission Webnative SDK <a id="webnative-sdk"></a>
-
-* [Web Native Introduction](webnative-sdk/web-native-introduction/README.md)
-  * [Compute, Storage, and Identity Foundations](webnative-sdk/web-native-introduction/compute-storage-identity.md)
-* [Getting Started with the webnative SDK](webnative-sdk/getting-started-webnative-sdk/README.md)
-  * [Additional information](webnative-sdk/getting-started-webnative-sdk/additional-info.md)
-  * [Platform APIs](webnative-sdk/getting-started-webnative-sdk/platform.md)
-  * [Customisation](webnative-sdk/getting-started-webnative-sdk/customisation.md)
-
-## Examples
-
-* [Elm](examples/elm/README.md)
-  * [Publishing an elm-pages app](examples/elm/publishing-an-elm-pages-app.md)
-  * [Adding auth to an elm-pages app](examples/elm/adding-auth-to-an-elm-pages-app.md)
-  * [Adding storage to an elm-pages app](examples/elm/adding-storage-to-an-elm-pages-app.md)
+* [Web Native Introduction](webnative-intro/README.md)
+  * [Compute, Storage, and Identity Foundations](webnative-intro/compute-storage-identity.md)
+* [Fission Accounts](accounts/README.md)
+  * [Account Linking](accounts/account-linking.md)
 
 ## Fission Drive <a id="drive"></a>
 
@@ -38,14 +13,32 @@
 
 ## Developers
 
-* [Fission Web API](developers/web-api.md)
-* [Heroku Add-on](developers/heroku.md)
-* [Fission Web API \(Live Swagger Docs\)](https://runfission.com/docs)
+* [Installation](developers/installation.md)
+* [Getting Started](developers/getting-started.md)
+* [Fission CLI](developers/cli/README.md)
+  * [Fission YAML](developers/cli/fission-yaml.md)
+* [Webnative SDK](developers/webnative/README.md)
+  * [Additional information](developers/webnative/additional-info.md)
+  * [Platform APIs](developers/webnative/platform.md)
+  * [Customisation](developers/webnative/customisation.md)
+* [Custom Domains](developers/custom-domains/README.md)
+  * [Fission Hosted DNS](developers/custom-domains/fission-hosted-dns.md)
+  * [Control your own DNS](developers/custom-domains/control-own-dns.md)
+  * [Using Cloudflare IPFS Gateway](developers/custom-domains/using-cloudflare-ipfs-gateway.md)
+
+## App & Code Examples <a id="examples"></a>
+
+* [Elm](examples/elm/README.md)
+  * [Publishing an elm-pages app](examples/elm/publishing-an-elm-pages-app.md)
+  * [Adding auth to an elm-pages app](examples/elm/adding-auth-to-an-elm-pages-app.md)
+  * [Adding storage to an elm-pages app](examples/elm/adding-storage-to-an-elm-pages-app.md)
 
 ## Appendix
 
 * [Browser Support](appendix/browser-support.md)
 * [Learning IPFS](appendix/ipfs.md)
 * [Troubleshooting](appendix/troubleshooting.md)
+* [Heroku Add-on](appendix/heroku.md)
+* [Fission Web API \(Live Swagger Docs\)](https://runfission.com/docs)
 * [Technical Specifications & Whitepaper](https://whitepaper.fission.codes)
 
