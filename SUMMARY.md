@@ -14,6 +14,8 @@
 * [Installation](developers/installation.md)
 * [Getting Started](developers/getting-started.md)
 * [Fission CLI](developers/cli/README.md)
+  * [Managing Your Account](developers/cli/managing-your-account.md)
+  * [Working with Apps](developers/cli/working-with-apps.md)
   * [Fission YAML](developers/cli/fission-yaml.md)
 * [Webnative SDK](developers/webnative/README.md)
   * [Additional information](developers/webnative/additional-info.md)
