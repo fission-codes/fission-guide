@@ -6,10 +6,10 @@ description: Get your first site up and running with this beginner-friendly guid
 
 ## Setup
 
-With `fission` installed, we are ready to set it up on your local machine. If this is your first time using fission or you are configuring a new machine, run the `fission setup` command. You will be prompted for a username and an email to confirm your new account.
+With `fission` installed, we are ready to set it up on your local machine. If this is your first time using fission or you are configuring a new machine, run the `fission user register` command. You will be prompted for a username and an email to confirm your new account.
 
 ```bash
-$ fission setup
+$ fission user register
 Username: YOURNAME
 Email: yourname@example.com
 ✅ Registration successful!

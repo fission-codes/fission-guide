@@ -10,12 +10,24 @@ Use the `fission app` command and its subcommands to work with apps. The main op
 
 The `fission app register` command initializes a new app and links it to your Fission account.
 
-You will be prompted for a build directory. The Fission CLI will publish your app from the build directory you select.
+```text
+$ fission app register
+👷 Build directory (./dist): 
+✅ App initialized as big-narrow-fuchsia-elf.fission.app
+⏯️  Next run fission app publish or fission app publish --watch to sync data
+💁 It may take DNS time to propagate this initial setup globally. In this case, 
+you can always view your app at 
+https://ipfs.runfission.com/ipns/big-narrow-fuchsia-elf.fission.app
+```
 
-The Fission CLI will create a `fission.yaml` configuration file with a list of files to ignore, a URL where your app will be viewable after it is published, and a build directory. See the [Fission YAML guide](https://guide.fission.codes/v/2.9.0/developers/cli/fission-yaml) for more information about the `fission.yaml` file.
+You will be prompted for a build directory. The Fission CLI will publish your app from the build directory you select. 
+
+If you are using a common build directory, the Fission CLI will detect it when you run `fission app register` and suggest it. You accept the suggestion or enter another build directory as a relative path from the `fission.yaml` file.
+
+The Fission CLI will create a `fission.yaml` configuration file with a list of files to ignore, a URL where your app will be viewable after it is published, and a build directory. See the [Fission YAML guide ](fission-yaml.md#fission-yaml-for-apps)for more information about the `fission.yaml` file.
 
 {% hint style="info" %}
-You can also use a custom domain name for your app. See the [Custom Domains](https://app.gitbook.com/@runfission/s/fission-guide/v/2.9.0/developers/custom-domains) guide to set up a custom domain name.
+You can also use a custom domain name for your app. See the [Custom Domains](../custom-domains/) guide to set up a custom domain name.
 {% endhint %}
 
 The `fission app register` command has advanced options:
@@ -43,6 +55,13 @@ Available options:
 Use the `fission app publish` command to publish your app to the web. Run this command from the directory that contains your app's `fission.yaml` configuration file.
 
 The `fission app publish` command publishes your app and associates it with the URL in the `fission.yaml` file. After your app is published, the Fission CLI will output a success message and the URL for your app.
+
+```text
+$ fission app publish
+🚀 Now live on the network
+📝 DNS updated! Check out your site at: 
+🔗 big-narrow-fuchsia-elf.fission.app
+```
 
 You can continuously publish your app by adding the `--watch` option. The Fission CLI will watch your build directory and publish whenever it detects a change.
 
@@ -74,6 +93,11 @@ Available options:
 ## Display information about an app
 
 Use `fission app info` to display the URL where your app is viewable.
+
+```text
+$ fission app info
+✅ App available at big-narrow-fuchsia-elf.fission.app
+```
 
 ## 
 

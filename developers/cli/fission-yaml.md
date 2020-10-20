@@ -8,10 +8,10 @@ Fission stores global and app configuration options in YAML files. The global co
 
 ## Global Fission YAML
 
-After you run `fission setup`, you will have a global `config.yaml` in your `~/.config/fission/` folder. You can open `config.yaml` in a text editor or display it at the command line.
+After you run `fission user register`, you will have a global `config.yaml` in your `~/.config/fission/` folder. You can open `config.yaml` in a text editor or display it at the command line.
 
 ```bash
-more ~/.fission.yaml
+more ~/.config/fission/config.yaml
 ```
 
 The default global `config.yaml` will looks something like this:
