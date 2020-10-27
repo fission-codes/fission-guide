@@ -6,13 +6,14 @@ description: Get your first site up and running with this beginner-friendly guid
 
 ## Setup
 
-With `fission` installed, we are ready to set it up on your local machine. If this is your first time using fission or you are configuring a new machine, run the `fission user register` command. You will be prompted for a username and an email to confirm your new account.
+With `fission` installed, we are ready to set it up on your local machine. If this is your first time using fission, you will be prompted for a username and an email to confirm your new account.
 
-```bash
-$ fission user register
-Username: YOURNAME
-Email: yourname@example.com
-✅ Registration successful!
+```text
+$ fission setup
+Username: USERNAME
+Email: username@example.com
+✅ Registration successful! Head over to your email to confirm your account.
+Installing dependencies...                                                                                                 
 ```
 
 A private key has been generated for your machine and saved in the `~/.config/fission/key/` directory. This key secures your communication with Fission services and works like using an SSH key to connect to GitHub.
