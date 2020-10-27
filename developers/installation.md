@@ -42,11 +42,11 @@ That's it! Double check that it's installed correctly:
 
 ```bash
 $ fission --help
-CLI to interact with Fission services
+Fission makes developing, deploying, updating, and iterating on web apps quick
+and easy.
 
-Usage: fission [--version] [--help] COMMAND
-  Fission makes developing, deploying, updating and iterating on web
-  applications quick and easy.
+Usage: fission (SHORTCUT | COMMAND | --version)
+  CLI to interact with Fission services
 ...
 ```
 
