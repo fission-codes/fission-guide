@@ -117,6 +117,10 @@ WNFS exposes a familiar POSIX-style interface:
 
 ### Publish <a id="publicise"></a>
 
+{% hint style="warning" %}
+When you've made changes to the file system, don't forget to call `publish` to synchronise your updates.
+{% endhint %}
+
 The `publish` function synchronises your file system with the Fission API and IPFS. We don't do this automatically because if you add a large set of data, you only want to do this after everything is added. Otherwise it would be too slow and we would have too many network requests to the API.
 
 ### API
@@ -127,7 +131,7 @@ Methods for interacting with the filesystem all use **absolute** paths.
 
 **add**
 
-Adds some file content at a given path
+Adds some file content at a given path. Requires a call to `publish` to sync changes.
 
 Params:
 
@@ -141,6 +145,7 @@ Example:
 ```typescript
 const content = "hello world"
 const updatedCID = await wnfs.add("public/some/path/to/a/file", content)
+await wnfs.publish()
 // creates a file called "file" at "public/some/path/to/a"
 ```
 
@@ -219,7 +224,7 @@ data = await Promise.all(links.map(([name, _]) => {
 
 **mkdir**
 
-Creates a directory at the given path
+Creates a directory at the given path. Requires a call to `publish` to sync changes.
 
 Params:
 
@@ -231,12 +236,13 @@ Example:
 
 ```typescript
 const updatedCID = await wnfs.mkdir("public/some/directory/path")
+await wnfs.publish()
 // creates a directory called "path" at "public/some/directory"
 ```
 
 **mv**
 
-Move a directory or file from one path to another
+Move a directory or file from one path to another. Requires a call to `publish` to sync changes.
 
 Params:
 
@@ -249,11 +255,12 @@ Example:
 
 ```typescript
 const updatedCID = await wnfs.mv("public/doc.md", "private/Documents/notes.md")
+await wnfs.publish()
 ```
 
 **rm**
 
-Removes a file or directory at a given path
+Removes a file or directory at a given path. Requires a call to `publish` to sync changes.
 
 Params:
 
@@ -265,11 +272,12 @@ Example:
 
 ```typescript
 const updatedCID = await wnfs.rm("private/some/path/to/a/file")
+await wnfs.publish()
 ```
 
 **write**
 
-Alias for `add`.
+Alias for `add`. Requires a call to `publish` to sync changes.
 
 Params:
 
@@ -283,5 +291,6 @@ Example:
 ```typescript
 const content = "hello world"
 const updatedCID = await wnfs.write("public/some/path/to/a/file", content)
+await wnfs.publish()
 ```
 
