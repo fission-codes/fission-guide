@@ -2,13 +2,17 @@
 
 ## What is Fission?
 
-Fission helps you quickly and easily publish files, websites, and apps directly from your local machine.
+Fission is building an app hosting marketplace for developers and users that supports web native apps.
 
-We enable a serverless style of website and app building. This supports local-first software that runs locally for you and your users as much as possible.
+For developers, they can design a user app using only front end and design skills. The web native app can be installed by 10 or 10,000 users, just like mobile or desktop software. Because the app is running on the user's computer, you can focus on finding new users and adding new features, rather than having to learn DevOps or server scaling. It's the fastest way to start sharing – and soon, selling – your app on the web.
 
-For front-end developers and designers, we provide a backend-as-a-service that includes user logins, end-to-end encryption, and user-controlled data.
+Users create a secure identity in their browsers. Every Fission account is linked to a file system, available in any browser. Much like an open source iCloud, users give permissions to apps, and can access their files from anywhere. Users can browse their file system, both public and private, and mix and match which apps they use, just like they're used to with mobile and desktop apps.
 
-Use the front-end frameworks you already know to quickly build front end features, and plug in these Fission features to power your app. Fission includes publishing tools and free subdomains to bring your websites and apps live.
+### Developers
 
-Get started by installing the tools on your local machine.
+Get started by [installing the Fission CLI »](developers/installation.md)
+
+### Users
+
+Learn more about [Fission Accounts](accounts/), and try one out by [installing the Drive app »](https://guide.fission.codes/drive)
 

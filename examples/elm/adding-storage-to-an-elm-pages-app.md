@@ -388,7 +388,7 @@ import * as webnative from 'webnative';
 We initialize `webnative` with a list of permissions stating what our app would like to use. In our case, we only need to request permission to use the storage associated with our app.
 
 {% hint style="info" %}
-**Shared storage:** The webnative filesystem also has public and private shared storage that can be accessed across apps. See the [webnative documentation](../../webnative-sdk/getting-started-webnative-sdk/#file-system) for more details.
+**Shared storage:** The webnative filesystem also has public and private shared storage that can be accessed across apps. See the [webnative documentation](../../developers/webnative/#file-system) for more details.
 {% endhint %}
 
 Declare an `fs` variable that will be used to access the user's filesystem. Add `fissionInit` with a request for `permissions` to use app storage by app name and your Fission username.

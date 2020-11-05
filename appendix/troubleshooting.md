@@ -6,7 +6,7 @@ description: 'Troubleshooting, work arounds, and known issues.'
 
 ## Check your DNS
 
-To check the setup of your DNS for [Custom Domains](../hosting/custom-domains/control-own-dns.md), you can run this `dig` command:
+To check the setup of your DNS for [Custom Domains](../developers/custom-domains/control-own-dns.md), you can run this `dig` command:
 
 ```text
 dig -t txt short _dnslink.junior-angular-tulip.fission.app
@@ -70,7 +70,7 @@ This is related to [issue \#37](https://github.com/fission-suite/cli/issues/37).
 
 ## DEBUG mode for fission cli
 
-If you want to see what the [Fission CLI](../hosting/cli/) is doing under the covers, you can turn on DEBUG mode by calling commands like this:
+If you want to see what the [Fission CLI](../developers/cli/) is doing under the covers, you can turn on DEBUG mode by calling commands like this:
 
 ```text
 DEBUG=true fission up .
