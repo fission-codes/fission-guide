@@ -33,6 +33,11 @@
   * [Adding auth to an elm-pages app](examples/elm/adding-auth-to-an-elm-pages-app.md)
   * [Adding storage to an elm-pages app](examples/elm/adding-storage-to-an-elm-pages-app.md)
 
+---
+
+* [WebAssembly](webassembly/README.md)
+  * [Storing WebAssembly Modules](webassembly/storing-webassembly-modules.md)
+
 ## Appendix
 
 * [Browser Support](appendix/browser-support.md)
