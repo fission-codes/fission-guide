@@ -113,7 +113,7 @@ After authentication, we are ready to request `add.wasm` and store it in web nat
   };
 ```
 
-We fetch `add.wasm` and stream the `Response` into an `ArrrayBuffer`. It will be stored as a `Blob` in app storage at the path `wasm/math/add.wasm`.
+We fetch `add.wasm` and stream the `Response` into an `ArrayBuffer`. It will be stored as a `Blob` in app storage at the path `wasm/math/add.wasm`.
 
 We prepare a `path` and `blob`, write the blob to the local file system, and publish it to the user's wider file system across the web. After we publish, the module is available on any device where the user has set up web native storage.
 
