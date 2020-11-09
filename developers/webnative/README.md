@@ -1,6 +1,6 @@
 # Webnative SDK
 
-This is the extended version of the [README of the webnative SDK](https://github.com/fission-suite/webnative). Detailed code documentation is [available in the source code](https://github.com/fission-suite/webnative/tree/master/docs).
+This is the extended version of the [README of the webnative SDK](https://github.com/fission-suite/webnative). 
 
 You are welcome to post to the [Fission Developer forum](https://talk.fission.codes) and join the [Fission chat server](https://fission.codes/discord) to ask questions.
 
@@ -118,6 +118,8 @@ WNFS exposes a familiar POSIX-style interface:
 ### Publish <a id="publicise"></a>
 
 The `publish` function synchronises your file system with the Fission API and IPFS. We don't do this automatically because if you add a large set of data, you only want to do this after everything is added. Otherwise it would be too slow and we would have too many network requests to the API.
+
+Returns: `CID` the updated _root_ CID for the file system
 
 ### API
 
