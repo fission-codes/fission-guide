@@ -25,6 +25,10 @@ Our example app will make a GET request for `add.wasm` and store it in web nativ
 Our example uses some helper functions to add interactivity. We won't cover calls to `dom.reveal()`, `dom.hide()`, or `dom.updateFirstChild().` If you would like to see what these do, please take a look at the code in the repository.
 {% endhint %}
 
+{% hint style="warning" %}
+At the moment, this example will not work in webKit iOS or Safari macOS browsers. If you are familiar with WebAssembly in these browsers, we would love some help with this! See the [SyntaxError invalid character in webkit/safari](https://github.com/bgins/fission-stored-wasm-example/issues/1) issue for more details.
+{% endhint %}
+
 ### Authenticate the user
 
 Before we can store a WASM module, we need to initialize `webnative` and ask the user for permission to use their web native file system. This example asks for permission to use app storage and uses `fs` as an alias for the file system after we initialize.
