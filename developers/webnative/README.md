@@ -123,7 +123,7 @@ Returns: `CID` the updated _root_ CID for the file system
 
 ### Versioning
 
-Each file and directory has a `history` property, which you can use to get an earlier version of that item.
+Each file and directory has a `history` property, which you can use to get an earlier version of that item. We use the `delta` variable as the order index. Primarily because the timestamps can be slightly out of sequence, due to device inconsistencies.
 
 ```typescript
 const file = await fs.get("private/Blog Posts/article.md")
