@@ -121,6 +121,29 @@ The `publish` function synchronises your file system with the Fission API and IP
 
 Returns: `CID` the updated _root_ CID for the file system
 
+### Versioning
+
+Each file and directory has a `history` property, which you can use to get an earlier version of that item.
+
+```typescript
+const file = await fs.get("private/Blog Posts/article.md")
+
+file.history.list()
+// { delta: -1, timestamp: 1606236743 }
+// { delta: -2, timestamp: 1606236532 }
+
+// Get the previous version
+file.history.back()
+
+// Go back two versions
+const delta = -2
+file.history.back(delta)
+
+// Get the first version (ie. delta -2)
+// by providing a timestamp
+file.history.prior(1606236743)
+```
+
 ### API
 
 #### Methods
