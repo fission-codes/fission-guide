@@ -63,8 +63,6 @@ $ fission app publish
 🔗 big-narrow-fuchsia-elf.fission.app
 ```
 
-You can continuously publish your app by adding the `--watch` option. The Fission CLI will watch your build directory and publish whenever it detects a change.
-
 {% hint style="info" %}
 The `fission up` command is a shortcut for `fission app publish`.
 {% endhint %}
@@ -89,6 +87,19 @@ Available options:
                            sync (default: "./")
   -h,--help                Show this help text
 ```
+
+### Continuously Update an App with Watch
+
+You can continuously publish your app by adding the `--watch` option. The Fission CLI will watch your build directory and publish whenever it detects a change.
+
+```text
+$ fission app publish --watch
+🚀 Now live on the network
+📝 DNS updated! Check out your site at: 
+🔗 big-narrow-fuchsia-elf.fission.app
+```
+
+This means that as you work in your local development environment, changes are continuously streamed online as you save. Note that some development environments have different code and output options than "production", but this will allow you to quickly and easily share a live online version with other people. 
 
 ## Display information about an app
 
