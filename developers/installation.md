@@ -38,6 +38,8 @@ We currently depend on two additional libraries `libpq.so.5` and `libtinfo.so.5`
 $ apt install libpq-dev libtinfo5
 ```
 
+Depending on your OS version, you may need to run `apt-get update` first, and you may need to run these commands with `sudo`.
+
 That's it! Double check that it's installed correctly:
 
 ```bash
