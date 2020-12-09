@@ -20,6 +20,7 @@
 * [Webnative SDK](developers/webnative/README.md)
   * [Additional information](developers/webnative/additional-info.md)
   * [Platform APIs](developers/webnative/platform.md)
+  * [Webnative File System \(WNFS\)](developers/webnative/webnative-file-system-wnfs.md)
   * [Customisation](developers/webnative/customisation.md)
 * [Custom Domains](developers/custom-domains/README.md)
   * [Fission Hosted DNS](developers/custom-domains/fission-hosted-dns.md)
