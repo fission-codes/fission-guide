@@ -16,8 +16,6 @@ Not encrypted. Full metadata support. Starts with `/public`.
 
 Not encrypted. No metadata. Represented simply as `/p` to be nice and short when creating public URLs like `/p/path/to/file.img`. It does not support versioning, use the Public or Private trees for that.
 
-Since this can be confusing when compared to Public at times, use `/pretty` or  `/p` in your code.
-
 #### Private
 
 Encrypted. Structured so that file metadata as well as contents is obscured. Starts with `/private`
