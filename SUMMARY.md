@@ -39,6 +39,7 @@
 
 * [WebAssembly](webassembly/README.md)
   * [Storing WebAssembly Modules](webassembly/storing-webassembly-modules.md)
+* [UCAN](ucan.md)
 
 ## Appendix
 
