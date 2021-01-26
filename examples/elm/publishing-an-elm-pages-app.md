@@ -82,7 +82,7 @@ We have put the `elm-pages-starter` out on the web without setting up a DevOps e
 
 At this point your mind might be swimming with a thousand questions. Here are a couple of resources that explain how this all works:
 
-* [A Universal "Hostless" Substrate for a Post-Serverless Future](https://www.youtube.com/watch?v=1NBZoJ5fnjM) talk at Øredev 2019
+* [WebNative: How to put a full stack directly in the browser](https://www.youtube.com/watch?v=TBKQ_TvrK8o) talk at Speakeasy JS
 * [Fission Whitepaper](https://whitepaper.fission.codes/)
 
 In the next section, we will add Fission auth to the `elm-pages-starter`.
