@@ -2,7 +2,11 @@
 
 In this guide, we will add Fission auth to the `elm-pages-starter`. We will add a login button to the navbar that redirects users to the Fission auth lobby. After a user authenticates in the lobby, we will log them in and display their Fission username.
 
-All of the code in this guide is available in the [fission-elm-pages-starter](https://github.com/bgins/fission-elm-pages-starter/tree/auth) repository on the `auth` branch.
+All of the code in this guide is available in the [fission-elm-pages-starter](https://github.com/bgins/fission-elm-pages-starter/tree/webnative-auth) repository on the `auth` branch.
+
+{% hint style="info" %}
+We are updating this example to use the new [webnative-elm](https://package.elm-lang.org/packages/fission-suite/webnative-elm/latest/) package! The latest code on the `auth` branch includes these changes. While we are updating the guide, please refer to the code linked above which has been tagged as `webnative-auth`.
+{% endhint %}
 
 Before authentication, our header has a Fission login button.
 
