@@ -40,13 +40,13 @@ Available commands:
 
 ### Login & Register
 
-Before using Fission services, you need to login. `login` and `register` prompt you for user credentials and store them in `~/.fission.yaml`. 
+Before using Fission services, you need to login. `login` and `register` prompt you for user credentials and store them in `~/.fission.yaml`.
 
 If you ever need to log into a different account, just delete `~/.fission.yaml` and login again.
 
 ### Up
 
-This is the only command you need to get your content hosted on the decentralized web! 
+This is the only command you need to get your content hosted on the decentralized web!
 
 To use `up`, make sure that you:
 
@@ -63,15 +63,33 @@ A few things happen when you run `fission up`:
   * And `_dnslink.[username].demo.runfission.com` at your uploaded content
   * _Note: It may take some time for DNS to propagate. So give it a minute or two if it doesn't load immediately._
 
-But from your perspective, it's just success messages,  emojis, and a link to your hosted website 🚀
+But from your perspective, it's just success messages, emojis, and a link to your hosted website 🚀
 
 ### Down
 
-
-
 ### Watch
 
-If you're currently developing your website and want continuous updates to the hosted version, use `watch` instead of `up`. 
+If you're currently developing your website and want continuous updates to the hosted version, use `watch` instead of `up`.
 
 This command does the same thing as `up` but after uploading your content, it continues watching the current directory for changes. Every time you change a file, it adds the new content to IPFS, pins it to the remote Fission node, and updates DNS.
+
+## Additional Settings
+
+There are a few advanced settings and configuration that can be set by your local environment.
+
+### DEBUG
+
+To get more details on what's happening, you can turn DEBUG to true like so:
+
+```text
+DEBUG=true fission up
+```
+
+### IPFS\_PATH
+
+By default, the fission-cli assumes that IPFS is installed at `/usr/local/bin`. You can call the CLI with a custom setting or permanently set a shell variable:
+
+```text
+IPFS_PATH=/Snap/ipfs fission up
+```
 
