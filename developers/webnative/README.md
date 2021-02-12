@@ -86,16 +86,14 @@ All information \(links, data, metadata, etc\) in the private tree is encrypted.
 const fs = state.fs
 const appPath = fs.appPath()
 
-// List the user's private files that belong to this app
-if (await fs.exists(appPath)) {
-  await fs.ls(appPath)
-
 // The user is new to the app, lets create the app-data directory.
-} else {
+if (!await fs.exists(appPath)) {
   await fs.mkdir(appPath)
   await fs.publish()
-
 }
+
+// List the user's private files that belong to this app
+await fs.ls(appPath)
 
 // Create a sub directory
 await fs.mkdir(fs.appPath([ "Sub Directory" ]))
