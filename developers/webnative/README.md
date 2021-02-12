@@ -166,7 +166,7 @@ Example:
 
 ```typescript
 const content = "hello world"
-const updatedCID = await wnfs.add("public/some/path/to/a/file", content)
+const updatedCID = await fs.add("public/some/path/to/a/file", content)
 // creates a file called "file" at "public/some/path/to/a"
 ```
 
@@ -183,7 +183,7 @@ Returns: `FileContent` \(`object | string | Blob | Buffer`\)
 Example:
 
 ```typescript
-const content = await wnfs.cat("public/some/path/to/a/file")
+const content = await fs.cat("public/some/path/to/a/file")
 ```
 
 **exists**
@@ -199,7 +199,7 @@ Returns: `boolean`
 Example:
 
 ```typescript
-const bool = await wnfs.exists("private/path/to/file")
+const bool = await fs.exists("private/path/to/file")
 ```
 
 **get**
@@ -215,7 +215,7 @@ Returns: `Tree | File | null`
 Example:
 
 ```typescript
-const node = await wnfs.get("public/some/path")
+const node = await fs.get("public/some/path")
 ```
 
 **ls**
@@ -231,8 +231,8 @@ Returns: `{ [name: string]: Link }` Object with the file name as the key and its
 Example:
 
 ```typescript
-linksObject = await wnfs.ls("public/some/directory/path") // public
-linksObject = await wnfs.ls("private/some/directory/path") // private
+linksObject = await fs.ls("public/some/directory/path") // public
+linksObject = await fs.ls("private/some/directory/path") // private
 
 // convert to list
 links = Object.entries(linksObject)
@@ -256,7 +256,7 @@ Returns: `CID` the updated _root_ CID for the file system
 Example:
 
 ```typescript
-const updatedCID = await wnfs.mkdir("public/some/directory/path")
+const updatedCID = await fs.mkdir("public/some/directory/path")
 // creates a directory called "path" at "public/some/directory"
 ```
 
@@ -274,7 +274,7 @@ Returns: `CID` the updated _root_ CID for the file system
 Example:
 
 ```typescript
-const updatedCID = await wnfs.mv("public/doc.md", "private/Documents/notes.md")
+const updatedCID = await fs.mv("public/doc.md", "private/Documents/notes.md")
 ```
 
 **rm**
@@ -290,7 +290,7 @@ Returns: `CID` the updated _root_ CID for the file system
 Example:
 
 ```typescript
-const updatedCID = await wnfs.rm("private/some/path/to/a/file")
+const updatedCID = await fs.rm("private/some/path/to/a/file")
 ```
 
 **write**
@@ -308,6 +308,6 @@ Example:
 
 ```typescript
 const content = "hello world"
-const updatedCID = await wnfs.write("public/some/path/to/a/file", content)
+const updatedCID = await fs.write("public/some/path/to/a/file", content)
 ```
 
