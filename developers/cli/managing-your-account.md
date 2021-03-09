@@ -14,7 +14,7 @@ The `fission user register` command registers your account with Fission or links
 $ fission user register
 Username: YOURNAME
 Email: yourname@example.com
-✅ Registration successful!
+✅ Registration successful! Head over to your email to confirm your account.
 ```
 
 When you register a new account, you will be prompted for a username and an email. Fission will send you an email to confirm your account and complete your registration.
