@@ -131,6 +131,9 @@ file.history.list()
 // { delta: -1, timestamp: 1606236743 }
 // { delta: -2, timestamp: 1606236532 }
 
+// List more than (by default) 5 versions
+file.history.list(10)
+
 // Get the previous version
 file.history.back()
 
