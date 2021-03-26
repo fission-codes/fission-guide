@@ -69,9 +69,9 @@ switch (state.scenario) {
 }
 ```
 
-`redirectToLobby` will redirect you to [auth.fission.codes](https://auth.fission.codes) our authentication lobby, where you'll be able to make a Fission account and link with another account that's on another device or browser.
+`redirectToLobby` will redirect you to our authentication lobby at [auth.fission.codes](https://auth.fission.codes/), where you'll be able to make a Fission account and link your account on another device or in another browser. This function takes an optional parameter, the URL that the lobby should redirect back to \(the default is `location.href`\).
 
-The function takes an optional parameter, the url that the lobby should redirect back to \(the default is `location.href`\).
+Apps request `permissions` to store user data in a default app storage directory and other public and private directories. Webnative creates these directories for your app if they do not already exist.
 
 ## File System
 
@@ -85,12 +85,6 @@ All information \(links, data, metadata, etc\) in the private tree is encrypted.
 // After initialising …
 const fs = state.fs
 const appPath = fs.appPath()
-
-// The user is new to the app, lets create the app-data directory.
-if (!await fs.exists(appPath)) {
-  await fs.mkdir(appPath)
-  await fs.publish()
-}
 
 // List the user's private files that belong to this app
 await fs.ls(appPath)
