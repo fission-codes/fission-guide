@@ -1,18 +1,19 @@
 # Webnative SDK
 
-This is the extended version of the [README of the webnative SDK](https://github.com/fission-suite/webnative).  
-If you're looking for the API reference that can be found at [webnative.fission.app](https://webnative.fission.app/).
+This guide is an extended version of the [webnative SDK README](https://github.com/fission-suite/webnative). You can find the complete API reference at [webnative.fission.app](https://webnative.fission.app/).
 
-You are welcome to post to the [Fission Developer forum](https://talk.fission.codes) and join the [Fission chat server](https://fission.codes/discord) to ask questions.
+{% hint style="info" %}
+**Have questions?** Come join the [Fission Discord server](https://fission.codes/discord) or post your question to the [Fission Developer forum](https://talk.fission.codes/c/developers/7/none). We are here to help!
+{% endhint %}
 
 The webnative SDK offers tools for:
 
-* authenticating through an **authentication lobby** \(a lobby is where you can make a Fission account or link an account\)
-* managing your web native **file system**  \(this is where a user's data lives\)
-* tools for building DIDs and UCANs.
-* interacting with the users apps via the **platform APIs**
+* **Authentication.** Users make an account and link their account across devices in the [Fission auth lobby](https://auth.fission.codes).
+* **Storage.** The webnative file system \(WNFS\) stores user data for apps.
+* **UCAN and DID tools** for working with UCANs and distributed identities
+* **Platform APIs** for interacting with user apps
 
-### **Include the webnative SDK:**
+### **Import the webnative SDK:**
 
 ```typescript
 // ES6
@@ -75,11 +76,11 @@ Apps request `permissions` to store user data in a default app storage directory
 
 ## File System
 
-The Web Native File System \(WNFS\) is built on top of the InterPlanetary File System \(IPFS\). It's structured and functions similarly to a Unix-style file system, with one notable exception: it's a Directed Acyclic Graph \(DAG\), meaning that a given child can have more than one parent \(think symlinks but without the "sym"\).
+The Web Native File System \(WNFS\) is built on top of the InterPlanetary File System \(IPFS\). WNFS is structured and functions similarly to a Unix-style file system, with one notable exception: it's a Directed Acyclic Graph \(DAG\), meaning that a given child can have more than one parent \(think symlinks but without the "sym"\).
 
-Each file system has a public tree and a private tree, much like your MacOS, Windows, or Linux desktop file system. The public tree is "live" and publically accessible on the Internet. The private tree is encrypted so that only the owner can see the contents.
+Each file system has a public tree and a private tree, much like your macOS, Windows, or Linux desktop file system. The public tree is "live" and publicly accessible on the Internet. The private tree is encrypted so that only the owner can see the contents.
 
-All information \(links, data, metadata, etc\) in the private tree is encrypted. Decryption keys are stored in such a manner that access to a given folder grants access to all of its subfolders.
+All information \(links, data, metadata, etc.\) in the private tree is encrypted. Decryption keys are stored so that access to a given folder grants access to all of its subfolders.
 
 ```typescript
 // After initialising …
@@ -96,7 +97,7 @@ await fs.publish()
 
 ### Basics
 
-WNFS exposes a familiar POSIX-style interface:
+WNFS exposes a POSIX-style interface:
 
 * `add`: add a file
 * `cat`: retrieve a file
@@ -110,13 +111,17 @@ WNFS exposes a familiar POSIX-style interface:
 
 ### Publish <a id="publicise"></a>
 
-The `publish` function synchronises your file system with the Fission API and IPFS. We don't do this automatically because if you add a large set of data, you only want to do this after everything is added. Otherwise it would be too slow and we would have too many network requests to the API.
+The `publish` function synchronises your file system with the Fission API and IPFS. WNFS does not publish changes automatically because it is more practical to batch changes in some cases. For example, a large data set is better published once than over multiple calls to `publish`.
 
 Returns: `CID` the updated _root_ CID for the file system
 
+{% hint style="warning" %}
+**Remember to publish!** If you do not call `publish` after making changes, user data will not be persisted to WNFS.
+{% endhint %}
+
 ### Versioning
 
-Each file and directory has a `history` property, which you can use to get an earlier version of that item. We use the `delta` variable as the order index. Primarily because the timestamps can be slightly out of sequence, due to device inconsistencies.
+Each file and directory has a `history` property, which you can use to get an earlier version of that item. We use the `delta` variable as the order index, primarily because the timestamps can be slightly out of sequence due to device inconsistencies.
 
 ```typescript
 const file = await fs.get("private/Blog Posts/article.md")
