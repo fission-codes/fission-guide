@@ -13,7 +13,13 @@ The webnative SDK offers tools for:
 * **UCAN and DID tools** for working with UCANs and distributed identities
 * **Platform APIs** for interacting with user apps
 
-### **Import the webnative SDK:**
+### Install the SDK
+
+```bash
+npm install webnative
+```
+
+### **Import the SDK**
 
 ```typescript
 // ES6
