@@ -13,13 +13,31 @@ The webnative SDK offers tools for:
 * **UCAN and DID tools** for working with UCANs and distributed identities
 * **Platform APIs** for interacting with user apps
 
-### Install the SDK
+## Installation
+
+You can add the webnative SDK to a project by loading it from a CDN or installing it with a package manager.
+
+### CDN
+
+For prototyping or experimentation, you can use the latest version of the SDK.
+
+```markup
+<script src="https://unpkg.com/webnative@latest/dist/index.umd.js"></script>
+```
+
+We recommend linking to a specific version in production to avoid unexpected changes.
+
+### Package Manager
+
+We recommend installing with a package manager for larger projects that use build tools or bundlers.
+
+Install the SDK with `npm` or your preferred package manager.
 
 ```bash
 npm install webnative
 ```
 
-### **Import the SDK**
+Import the SDK in your application.
 
 ```typescript
 // ES6
