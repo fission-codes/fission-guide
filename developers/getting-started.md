@@ -6,14 +6,23 @@ description: Get your first site up and running with this beginner-friendly guid
 
 ## Setup
 
-With `fission` installed, we are ready to set it up on your local machine. If this is your first time using fission, you will be prompted for a username and an email to confirm your new account.
+With `fission` installed, we are ready to set it up on your local machine. If this is your first time using `fission`, you will be prompted for a username and an email to confirm your new account.
 
 ```text
 $ fission setup
-Username: USERNAME
-Email: username@example.com
+🌱 Setting up environment
+🪐 Downloading managed IPFS for Linux
+🎛️  Configuring managed IPFS
+generating ED25519 keypair...done
+peer identity: 12D3KooWHZ3C1tDmzUhgi3A6LYmgBxvv1E1obtG7S2ZkYM1MN83
+initializing IPFS node at /home/yourname/.config/fission/ipfs
+🔑 Creating keys
+🏠 Do you have an existing account? [Y/n] n
+Username: YOURNAME
+Email: yourname@example.com
 ✅ Registration successful! Head over to your email to confirm your account.
-Installing dependencies...                                                                                                 
+🎛️  Initializing user config file
+✅ Done! Welcome to Fission, YOURNAME ✨.                                                                                             
 ```
 
 A private key has been generated for your machine and saved in the `~/.config/fission/key/` directory. This key secures your communication with Fission services and works like using an SSH key to connect to GitHub.
