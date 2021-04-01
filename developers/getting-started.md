@@ -33,11 +33,7 @@ The current version of the fission-cli automatically downloads and runs the ipfs
 
 ### Account Linking
 
-If you already have an account, you can link it to your local machine. Just enter in your current username and [follow the linking flow](../accounts/account-linking.md).
-
-{% hint style="danger" %}
-Note: CLI account linking is not yet live, but will be very soon. You can rename your fission key or securely copy it around as workaround for now.
-{% endhint %}
+If you already have an account created in a web browser, you can link it on your local machine. See the [Fission CLI linking guide](cli/managing-your-account.md#linking-an-existing-user) to link your account.
 
 ## Create a simple webpage
 
