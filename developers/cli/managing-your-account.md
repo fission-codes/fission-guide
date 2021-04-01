@@ -4,7 +4,7 @@ description: The Fission CLI account management commands
 
 # Managing Your Account
 
-Use `fission setup` and `fission user` to set up your account and display your username.
+Use `fission setup` and`fission user whoami` to set up your account and display your username.
 
 ## Register a new user
 
