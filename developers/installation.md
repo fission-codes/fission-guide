@@ -52,3 +52,21 @@ Usage: fission (SHORTCUT | COMMAND | --version)
 ...
 ```
 
+## Upgrading the CLI
+
+To upgrade the CLI on macOS, `brew uninstall` and `brew untap` to reset `brew`.
+
+```text
+brew uninstall fission-cli
+brew untap fission-suite/fission
+```
+
+Reinstall with `brew tap` and `brew install`.
+
+```text
+brew tap fission-suite/fission
+brew install fission-cli
+```
+
+On Linux, repeat the [installation steps](installation.md#installing-the-fission-cli) listed above, leaving out the installation of `libpq.so.5` and `libtinfo.so.5`.
+
