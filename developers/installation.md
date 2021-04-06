@@ -19,23 +19,24 @@ For Windows users, we currently recommend using the Windows Subsystem for Linux 
 We have a brew recipe to get you up and running quickly on MacOS:
 
 ```bash
-$ brew install fission-suite/fission/fission-cli
+brew install fission-suite/fission/fission-cli
 ```
 
 #### Linux \(and manual MacOS\)
 
 Head over to our [releases](https://github.com/fission-suite/fission/releases) page on Github and download the latest release for your operating system.
 
-Unzip the file and move the file to your PATH:
+Grant execute permissions and move the file onto to your PATH:
 
 ```bash
-$ sudo mv ./fission-cli-exe /usr/local/bin/fission
+chmod a+x ./fission-cli-exe
+sudo mv ./fission-cli-exe /usr/local/bin/fission
 ```
 
 We currently depend on two additional libraries `libpq.so.5` and `libtinfo.so.5`. For apt-based Linux distros, you'll want to run the following:
 
 ```bash
-$ apt install libpq-dev libtinfo5
+apt install libpq-dev libtinfo5
 ```
 
 Depending on your OS version, you may need to run `apt-get update` first, and you may need to run these commands with `sudo`.
@@ -53,6 +54,8 @@ Usage: fission (SHORTCUT | COMMAND | --version)
 ```
 
 ## Upgrading the CLI
+
+Run `fission --version` to check if you are using an old version of the CLI.
 
 To upgrade the CLI on macOS, `brew uninstall` and `brew untap` to reset `brew`.
 
