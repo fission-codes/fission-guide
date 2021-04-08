@@ -27,10 +27,6 @@ Email: yourname@example.com
 
 A private key has been generated for your machine and saved in the `~/.config/fission/key/` directory. This key secures your communication with Fission services and works like using an SSH key to connect to GitHub.
 
-{% hint style="warning" %}
-The current version of the fission-cli automatically downloads and runs the ipfs peer-to-peer software that makes for fast publishing. We have a known issue where if you already have ipfs running on your system, there is a conflict. We have a fix in an upcoming release, for now please turn off your local ipfs services with `brew services stop ipfs` , quit IPFS desktop, or otherwise follow your local OS instructions.
-{% endhint %}
-
 ### Account Linking
 
 If you already have an account created in a web browser, you can link it on your local machine. See the [Fission CLI linking guide](cli/managing-your-account.md#linking-an-existing-user) to link your account.
