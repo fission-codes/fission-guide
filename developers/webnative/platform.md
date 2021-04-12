@@ -18,13 +18,13 @@ A list of all of your apps and their associated domain names
 
 Params:
 
-Returns: `{ RandomKey : [ subdomain ] }` a map of subdomains
+Returns: `{ domain: string }[]` an array of app domains
 
 Example:
 
 ```typescript
 const index = await sdk.apps.index()
-// { `SqlBackendKey {unSqlBackendKey = 216} `: ['your-fission-deployment.fission.app'] }
+// [ { domain: 'your-fission-deployment.fission.app' } ]
 ```
 
 **apps.create**
@@ -44,9 +44,35 @@ const newApp = await sdk.apps.create()
 // 'your-fission-deployment.fission.app'
 ```
 
-**apps.deleteByURL**
+**apps.publish**
 
-Destroy app by any associated URL
+Publishes a new app version by IPFS CID. If the app doesn't exist yet, it has to be created with `apps.create` first.
+
+Params:
+
+* domain: `string` **required**
+* cid: `string` **required**
+
+Example:
+
+```typescript
+await sdk.apps.publish('your-fission-deployment.fission.app', 'QmRVvvMeMEPi1zerpXYH9df3ATdzuB63R1wf3Mz5NS5HQN')
+```
+
+Getting a CID can be tricky. Here's a way to turn a WNFS public subdirectory into a CID:
+```typescript
+const appPath = "Apps/your-fission-deployment/Published` // If you've put app files here
+const ipfs = await webnative.ipfs.get()
+const rootCid = await fs.root.put()
+const stats = await ipfs.files.stat(`/ipfs/${rootCid}/p/${appPath}/`)
+const cid = stats.cid.toBaseEncodedString()
+// This is the CID you can use for publish:
+await sdk.apps.publish('your-fission-deployment.fission.app', cid)
+```
+
+**apps.deleteByDomain**
+
+Destroy app by domain
 
 Params:
 
@@ -57,8 +83,7 @@ Returns:
 Example:
 
 ```typescript
-const deletedApp = await sdk.apps.deleteByURL('your-fission-deployment.fission.app')
-//
+await sdk.apps.deleteByDomain('your-fission-deployment.fission.app')
 ```
 
 ## 
