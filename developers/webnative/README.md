@@ -169,6 +169,10 @@ file.history.back(delta)
 file.history.prior(1606236743)
 ```
 
+{% hint style="warning" %}
+Requesting many versions with `file.history.list` can be slow. The acceptable delay will depend on your application. 
+{% endhint %}
+
 ### API
 
 #### Methods
