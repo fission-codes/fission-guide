@@ -10,7 +10,7 @@ The SDK also exposes methods to interact with the apps associated with the user.
 * `apps.create`: Creates a new app, assigns an initial subdomain, and sets an asset placeholder
 * `apps.deleteByURL`: Destroy app by any associated URL
 
-### API
+## API
 
 **apps.index**
 
@@ -60,6 +60,7 @@ await sdk.apps.publish('your-fission-deployment.fission.app', 'QmRVvvMeMEPi1zerp
 ```
 
 Getting a CID can be tricky. Here's a way to turn a WNFS public subdirectory into a CID:
+
 ```typescript
 const appPath = "Apps/your-fission-deployment/Published` // If you've put app files here
 const ipfs = await webnative.ipfs.get()
@@ -85,6 +86,4 @@ Example:
 ```typescript
 await sdk.apps.deleteByDomain('your-fission-deployment.fission.app')
 ```
-
-## 
 
