@@ -46,7 +46,7 @@ const newApp = await sdk.apps.create()
 
 **apps.publish**
 
-Publishes a new app version by IPFS CID.
+Publishes a new app version by IPFS CID. If the app doesn't exist yet, it has to be created with `apps.create` first.
 
 Params:
 
@@ -60,7 +60,15 @@ await sdk.apps.publish('your-fission-deployment.fission.app', 'QmRVvvMeMEPi1zerp
 ```
 
 Getting a CID can be tricky. Here's a way to turn a WNFS public subdirectory into a CID:
-https://github.com/fission-suite/dashboard/blob/8ef6e7031b8f6f20f2927e7e6c16349d9ba24ec9/src/Javascript/index.js#L334-L339
+```typescript
+const appPath = "Apps/your-fission-deployment/Published` // If you've put app files here
+const ipfs = await webnative.ipfs.get()
+const rootCid = await fs.root.put()
+const stats = await ipfs.files.stat(`/ipfs/${rootCid}/p/${appPath}/`)
+const cid = stats.cid.toBaseEncodedString()
+// This is the CID you can use for publish:
+await sdk.apps.publish('your-fission-deployment.fission.app', cid)
+```
 
 **apps.deleteByDomain**
 
