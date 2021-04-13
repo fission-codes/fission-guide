@@ -19,3 +19,9 @@ Behaviour between drag-and-drop and the file chooser differs slightly!
 
 * If you upload files via clicking on the drop area, you'll open a directory chooser. There, select the directory that contains all files you want to have served on your app. So, e.g. choose the `build` directory that _contains_ the `index.html` and `styles.css` files.
 {% endhint %}
+
+### Manage apps you've created
+
+When you click on an app in your [apps list](https://dashboard.fission.codes/#developers/apps), you get to a page you can update, rename or delete your apps on.
+
+![](../../.gitbook/assets/fission-dashboard-individual-app-page.png)
