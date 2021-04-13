@@ -48,7 +48,7 @@ And yes, this works on mobile too:
 
 ## Command Line Linking
 
-Linking accounts on the command line is not yet implemented. [Follow this Github issue »](https://github.com/fission-suite/fission/issues/390)
+The [Linking an existing user](../../developers/cli/managing-your-account.md#linking-an-existing-user) guide has details on linking accounts used at the command line.
 
 
 
