@@ -260,11 +260,11 @@ Returns: `{ [name: string]: Link }` Object with the file name as the key and its
 Example:
 
 ```typescript
-linksObject = await fs.ls("public/some/directory/path") // public
-linksObject = await fs.ls("private/some/directory/path") // private
+publicLinksObject = await fs.ls("public/some/directory/path") // public
+privateLinksObject = await fs.ls("private/some/directory/path") // private
 
-// convert to list
-links = Object.entries(linksObject)
+// convert private links object to a list
+links = Object.entries(privateLinksObject)
 
 // working with links
 data = await Promise.all(links.map(([name, _]) => {
