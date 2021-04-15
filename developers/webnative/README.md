@@ -164,8 +164,9 @@ file.history.back()
 const delta = -2
 file.history.back(delta)
 
-// Get the first version (ie. delta -2)
-// by providing a timestamp
+// Get a version strictly before a timestamp
+// The first version (delta -2) is prior to
+// the second version (delta -1) timestamp
 file.history.prior(1606236743)
 ```
 
