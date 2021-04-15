@@ -295,8 +295,8 @@ Move a directory or file from one path to another
 
 Params:
 
-* pathA: `string` **required**
-* pathB: `string` **required**
+* from: `string` **required**
+* to: `string` **required**
 
 Returns: `CID` the updated _root_ CID for the file system
 
