@@ -6,7 +6,7 @@ There is a live beta of the development version available at [https://dashboard-
 
 All of the apps that you have published with your account are listed on the Apps page.
 
-![](../../.gitbook/assets/screen-shot-2021-04-12-at-11.47.38-am.png)
+![](../../.gitbook/assets/screen-shot-2021-04-14-at-10.08.20-pm.png)
 
 ## Create a new app from the Dashboard
 
