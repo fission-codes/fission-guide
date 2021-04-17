@@ -87,7 +87,7 @@ build: .
 ```
 {% endcode %}
 
-The `url` is where your webpage will be on the web after it has been published, `build` tells the fission which directory to publish, and `ignore` is a list of files and directories to ignore. See the [Fission YAML guide ](https://guide.fission.codes/hosting/cli/fission-yaml)for more details.
+The `url` is where your webpage will be on the web after it has been published, `build` tells the fission which directory to publish, and `ignore` is a list of files and directories to ignore. See the [Fission YAML guide](cli/fission-yaml.md) for more details.
 
 Run `fission app publish` to publish the webpage.
 

@@ -14,7 +14,7 @@ The SDK also exposes methods to interact with the apps associated with the user.
 
 To use the platform APIs, your app needs to ask the user for permission to access the user's apps. This is handled via the parameters to `webnative.initialise` and `webnative.redirectToLobby`:
 
-```js
+```javascript
 const permissions = {
   platform: {
     apps: "*",
@@ -34,6 +34,7 @@ webnative.initialise({ permissions }).then(state => {
 ```
 
 The value at `permissions.platform.apps` can be
+
 * `"*"`: Complete app management access for all of the user's apps
 * An array of domain names, e.g. `[ "an-app.fission.app", "another-app.fission.app" ]`: Permission to manage particular apps. Those apps can be published to or deleted.
 
@@ -79,7 +80,7 @@ const newApp = await sdk.apps.create()
 
 Publishes a new app version by IPFS CID. If the app doesn't exist yet, it has to be created with `apps.create` first.
 
-Needs either permissions for the particular app domain or full app management permissions. See [Permissions](#permissions).
+Needs either permissions for the particular app domain or full app management permissions. See [Permissions](platform.md#permissions).
 
 Params:
 
@@ -108,7 +109,7 @@ await sdk.apps.publish('your-fission-deployment.fission.app', cid)
 
 Destroy app by domain.
 
-Needs either permissions for the particular app domain or full app management permissions. See [Permissions](#permissions).
+Needs either permissions for the particular app domain or full app management permissions. See [Permissions](platform.md#permissions).
 
 Params:
 
