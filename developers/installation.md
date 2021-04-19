@@ -6,13 +6,13 @@ description: Install the Fission command line tools to start publishing from you
 
 ## Installing the Fission CLI
 
-The Fission command line interface \(CLI\) is the most common way to interact with Fission's services.
+The Fission command line interface \(CLI\) is the most common way for developers to interact with Fission's services.
 
-{% hint style="info" %}
-For Windows users, we currently recommend using Windows Subsystem for Linux 2 \(WSL2\). WSL1 is not supported. Run the [Linux installation](installation.md#linux-and-manual-macos) instructions in your WSL2 environment.
+#### macOS with Homebrew
+
+{% hint style="warning" %}
+Note: we're currently getting reports that people are having trouble using Homebrew to install on M1 Macs, due to issues with processor architecture and an OpenSSL dependency. We are documenting a work around as well as working on improving this long term.
 {% endhint %}
-
-#### macOS
 
 Install or update OpenSSL.
 
@@ -20,13 +20,17 @@ Install or update OpenSSL.
 brew install openssl
 ```
 
-We have a `brew` recipe to install the CLI on macOS.
+Use the Homebrew recipe to install the CLI on macOS. This taps and installs in one command:
 
 ```bash
 brew install fission-suite/fission/fission-cli
 ```
 
-#### Linux \(and manual macOS\)
+#### Linux and Manual Installs
+
+{% hint style="info" %}
+For Windows users, we currently recommend using Windows Subsystem for Linux 2 \(WSL2\). WSL1 is not supported. Run the [Linux installation](installation.md#linux-and-manual-macos) instructions in your WSL2 environment.
+{% endhint %}
 
 Head over to our [releases](https://github.com/fission-suite/fission/releases) page on Github and download the latest release for your operating system.
 
