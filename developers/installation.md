@@ -26,10 +26,12 @@ Use the Homebrew recipe to install the CLI on macOS. This taps and installs in o
 brew install fission-suite/fission/fission-cli
 ```
 
+You can also follow the next section for a manual install on macOS.
+
 #### Linux and Manual Installs
 
 {% hint style="info" %}
-For Windows users, we currently recommend using Windows Subsystem for Linux 2 \(WSL2\). WSL1 is not supported. Run the [Linux installation](installation.md#linux-and-manual-macos) instructions in your WSL2 environment.
+For Windows users, we currently recommend using Windows Subsystem for Linux 2 \(WSL2\). WSL1 is not supported. Run these Linux / Manual install instructions in your WSL2 environment.
 {% endhint %}
 
 Head over to our [releases](https://github.com/fission-suite/fission/releases) page on Github and download the latest release for your operating system.
@@ -55,7 +57,7 @@ Usage: fission (SHORTCUT | COMMAND | --version)
 
 If you run into any problems, check that you have `libssl1.1` \(installed with OpenSSL\) and `libtinfo5` \(or `libtinfo6`\). Most recent Linux distributions will already have these libraries installed.
 
-On macOS, you will also need `libcrypto1.1` installed and linked on your system.
+On macOS, you will also need `libcrypto1.1` installed and linked on your system, which should be available from OpenSSL.
 
 ##  Upgrading the CLI
 
