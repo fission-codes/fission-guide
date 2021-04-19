@@ -1,47 +1,43 @@
 ---
-description: Install the Fission command line tools to start publishing from your desktop
+description: Install the Fission command line tools to start publishing from your desktop.
 ---
 
 # Installation
 
-You can sign up for Fission and get setup to start using it directly from your command line.
-
 ## Installing the Fission CLI
 
-The Fission command line interface \(CLI\) is the main way to interact with Fission's services.
+The Fission command line interface \(CLI\) is the most common way to interact with Fission's services.
 
 {% hint style="info" %}
-For Windows users, we currently recommend using the Windows Subsystem for Linux \(WSL\). The Linux instructions below apply equally to WSL, except where noted.
+For Windows users, we currently recommend using Windows Subsystem for Linux 2 \(WSL2\). WSL1 is not supported. Run the [Linux installation](installation.md#linux-and-manual-macos) instructions in your WSL2 environment.
 {% endhint %}
 
-#### MacOS
+#### macOS
 
-We have a brew recipe to get you up and running quickly on MacOS:
+Install or update OpenSSL.
+
+```text
+brew install openssl
+```
+
+We have a `brew` recipe to install the CLI on macOS.
 
 ```bash
 brew install fission-suite/fission/fission-cli
 ```
 
-#### Linux \(and manual MacOS\)
+#### Linux \(and manual macOS\)
 
 Head over to our [releases](https://github.com/fission-suite/fission/releases) page on Github and download the latest release for your operating system.
 
-Grant execute permissions and move the file onto to your PATH:
+Grant execute permissions and move the binary onto to your PATH. For example, on Ubuntu 20.04:
 
 ```bash
-chmod a+x ./fission-cli-exe
-sudo mv ./fission-cli-exe /usr/local/bin/fission
+chmod a+x ./fission-cli-ubuntu-20.04
+sudo mv ./fission-cli-ubuntu-20.04 /usr/local/bin/fission
 ```
 
-We currently depend on two additional libraries `libpq.so.5` and `libtinfo.so.5`. For apt-based Linux distros, you'll want to run the following:
-
-```bash
-apt install libpq-dev libtinfo5
-```
-
-Depending on your OS version, you may need to run `apt-get update` first, and you may need to run these commands with `sudo`.
-
-That's it! Double check that it's installed correctly:
+That's it! Double check that it's installed correctly.
 
 ```bash
 $ fission --help
@@ -53,7 +49,11 @@ Usage: fission (SHORTCUT | COMMAND | --version)
 ...
 ```
 
-## Upgrading the CLI
+If you run into any problems, check that you have `libssl1.1` \(installed with OpenSSL\) and `libtinfo5` \(or `libtinfo6`\). Most recent Linux distributions will already have these libraries installed.
+
+On macOS, you will also need `libcrypto1.1` installed and linked on your system.
+
+##  Upgrading the CLI
 
 Run `fission --version` to check if you are using an old version of the CLI.
 
@@ -71,5 +71,5 @@ brew tap fission-suite/fission
 brew install fission-cli
 ```
 
-On Linux, repeat the [installation steps](installation.md#installing-the-fission-cli) listed above, leaving out the installation of `libpq.so.5` and `libtinfo.so.5`.
+On Linux, repeat the [installation steps](installation.md#installing-the-fission-cli) listed above, leaving out the installation of the additional libraries.
 
