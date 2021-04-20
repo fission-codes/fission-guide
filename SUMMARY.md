@@ -22,6 +22,7 @@
   * [Managing Your Account](developers/cli/managing-your-account.md)
   * [Working with Apps](developers/cli/working-with-apps.md)
   * [Fission YAML](developers/cli/fission-yaml.md)
+  * [Apple Silicon \(M1\) Macs](developers/cli/apple-silicon-m1-macs.md)
 * [Webnative SDK](developers/webnative/README.md)
   * [Additional information](developers/webnative/additional-info.md)
   * [Platform APIs](developers/webnative/platform.md)

@@ -11,14 +11,8 @@ The Fission command line interface \(CLI\) is the most common way for developers
 #### macOS with Homebrew
 
 {% hint style="warning" %}
-Note: we're currently getting reports that people are having trouble using Homebrew to install on M1 Macs, due to issues with processor architecture and an OpenSSL dependency. We are documenting a workaround and working on improving this long-term.
+Note: For Apple Silicon \(M1\) Macs, we are currently unable to provide native CLI builds. Please follow [these instructions](cli/apple-silicon-m1-macs.md) to run the intel version under Rosetta 2 emulation.
 {% endhint %}
-
-Install or update OpenSSL.
-
-```text
-brew install openssl
-```
 
 Use the Homebrew recipe to install the CLI on macOS. This taps and installs in one command:
 
