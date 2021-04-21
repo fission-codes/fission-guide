@@ -6,11 +6,22 @@ description: "Become a webnative jedi \U0001F9D8"
 
 ## Lobby
 
-### Authorisation
+### Authorization
 
-The auth lobby is responsible for authorisation. As well, it gives us a UCAN \(or token if you will\) with various scopes based on the values we gave to `wn.initialise`.
+The auth lobby grants apps authorization to access WNFS. Apps request permission to use App Storage and additional public and private directories. The auth lobby creates a User Controlled Authorization Networks \(UCAN\) token that reflects the requested permissions.
 
-Important to note here is that if a UCAN token received from a previous session is expired, the response will be `notAuthorised`.
+Webnative checks the UCAN at initialization and returns an auth scenario.
+
+* **AuthSucceded.** The user has just returned from the auth lobby, and they granted the requested permissions.
+* **Continuation.** The user has already granted permission, and the UCAN has not expired.
+* **AuthCancelled.** The user denied the requested permissions.
+* **NotAuthorised.** The user has not granted permission yet or the UCAN has expired. 
+
+UCANs expire and users must periodically re-authorize apps through the auth lobby. All user data is preserved in WNFS across authorizations, including the data stored in App Storage.
+
+{% hint style="info" %}
+**More on UCANs.** Read more about UCANs in our [UCAN: Authorizing Users Without a Back End](https://blog.fission.codes/auth-without-backend/) blog post and in the [Fission Whitepaper](https://whitepaper.fission.codes/access-control/ucan/ucan-tokens).
+{% endhint %}
 
 ### Shared devices
 
