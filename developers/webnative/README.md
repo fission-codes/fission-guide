@@ -47,7 +47,7 @@ import * as wn from 'webnative'
 const wn = self.webnative
 ```
 
-## Authentication
+## Auth
 
 ```typescript
 const state = await wn.initialise({
@@ -94,7 +94,7 @@ switch (state.scenario) {
 }
 ```
 
-`redirectToLobby` will redirect you to our authentication lobby at [auth.fission.codes](https://auth.fission.codes/), where you'll be able to make a Fission account and link your account on another device or in another browser. This function takes an optional parameter, the URL that the lobby should redirect back to \(the default is `location.href`\).
+`redirectToLobby` redirects users to our auth lobby at [auth.fission.codes](https://auth.fission.codes/), where they can make a Fission account and link their account on another device or in another browser. This function takes an optional parameter, the URL that the lobby should redirect back to \(the default is `location.href`\).
 
 Apps request `permissions` to store user data in a default app storage directory and other public and private directories. Webnative creates these directories for your app if they do not already exist.
 
