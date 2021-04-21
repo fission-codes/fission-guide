@@ -25,14 +25,12 @@ UCANs expire and users must periodically re-authorize apps through the auth lobb
 
 ### Shared devices
 
-Our vision for "fission-enabled apps" is that users don't really need to sign out, unless they are on a shared device \(a device they normally don't use\). You can read more about our vision on this on [our forum](https://talk.fission.codes/t/what-does-log-in-or-log-out-mean-for-the-fission-sdk-and-apps/919).
+In most cases, users will not need to log out of an app or a device. Read more about this part of our vision for Fission-enabled apps in the [What does “log in” or “log out” mean for the Fission SDK and apps?](https://talk.fission.codes/t/what-does-log-in-or-log-out-mean-for-the-fission-sdk-and-apps/919) blog post.
 
-Signing out on shared devices would be two-fold:
+One case where logging out is desirable is on a shared device. Logging out on a shared device can be accomplished in two steps:
 
-1. Remove any authorisation tokens from the current domain \(ie. for your app\)
-2. Sign out of the auth lobby
-
-The `wn.leave` function will do that first part, and then redirect you to the auth lobby.
+* Remove the UCAN token from apps that were granted permissions with the webnative`wn.leave` function
+* Log out from the auth lobby on the reset page \([https://auth.fission.codes/reset/](https://auth.fission.codes/reset/)\)
 
 ## File System
 
