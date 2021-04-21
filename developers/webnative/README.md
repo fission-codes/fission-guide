@@ -8,7 +8,7 @@ This guide is an extended version of the [webnative SDK README](https://github.c
 
 The webnative SDK offers tools for:
 
-* **Authentication.** Users make an account and link their account across devices in the [Fission auth lobby](https://auth.fission.codes).
+* **Auth.** Users make an account and link their account across devices in the [Fission auth lobby](https://auth.fission.codes).
 * **Storage.** The webnative file system \(WNFS\) stores user data for apps.
 * **UCAN and DID tools** for working with UCANs and distributed identities
 * **Platform APIs** for interacting with user apps
