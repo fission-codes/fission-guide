@@ -36,9 +36,33 @@ One case where logging out is desirable is on a shared device. Logging out on a 
 
 ### Permissions
 
-Every file system action checks if you received the sufficient permissions from the user. Permissions are given to the app by the auth lobby. The permissions to ask the user are determined by the `permissions` you give to `wn.initialise`, such as `app`.
+Every file system action checks if an app has received sufficient permissions from the user. Apps request `permissions` when they initialize webnative, and the [auth lobby grants authorization](additional-info.md#authorization).
 
-The initialise function will indicate the `notAuthorised` scenario if one of the necessary tokens will expire in one day, to minimise the likelihood of receiving this error message. But to be safe, you should account for this error:
+Apps request permission for App Storage, additional private and public directories, and user apps published with the Platform APIs. For example, and notes app might request these permissions.
+
+```javascript
+permissions: {
+  app: {
+    name: "Notes",
+    creator: "Fission"
+  },
+  fs: {
+    privatePaths: [ "Notes" ],
+    publicPaths: [ "Notes" ]
+  },
+  platform: {
+    apps: []
+  }
+}
+```
+
+The app would have access to its App Storage and shared public and private Notes directories. 
+
+{% hint style="info" %}
+**Platform permissions.** The platform permissions could be left out of this example because this app will not need them. See the [Platform API guide](platform.md#permissions) for more information on working with user apps.
+{% endhint %}
+
+The initialize function will return a `NotAuthorised` scenario if one of the UCAN will expire in one day to minimize the likelihood of receiving an expired permissions error. But to be safe, apps should also account for this error.
 
 ### Web Worker
 
