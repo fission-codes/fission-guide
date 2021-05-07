@@ -4,6 +4,33 @@ description: 'Troubleshooting, work arounds, and known issues.'
 
 # Troubleshooting
 
+## Check your DNS
+
+To check the setup of your DNS for [Custom Domains](../developers/custom-domains/control-own-dns.md), you can run this `dig` command:
+
+```text
+dig -t txt short _dnslink.junior-angular-tulip.fission.app
+```
+
+The "short" option is still pretty long! We're just looking for the ANSWER section:
+
+```text
+;; ANSWER SECTION:
+_dnslink.junior-angular-tulip.fission.app. 9 IN	TXT "dnslink=/ipfs/QmafcCaym2UZ46oKDoSQs7UkHVPpeKTVTES2GN5icuvKQv"
+```
+
+## Unable to connect to the Fission IPFS peer
+
+```text
+🛰 Unable to connect to the Fission IPFS peer, trying again...
+🛰 Unable to connect to the Fission IPFS peer, trying again...
+UnableToConnect
+😭 We were unable to connect to the Fission IPFS peer!
+Try checking your connection or logging in again
+```
+
+This message most often appears when your local IPFS server isn't running, or if you're offline. Turn on your IPFS Desktop, run `ipfs daemon &`, or whatever method you're using to run IPFS.
+
 ## Maximum Open Files on Ubuntu, Mac OS, ChromeOS
 
 We've had a report with uploading large numbers of files using `ipfs-deploy` with Fission support that you may need to increase the number of open files that your operating system supports. This could also occur with `fission watch`.
@@ -43,7 +70,7 @@ This is related to [issue \#37](https://github.com/fission-suite/cli/issues/37).
 
 ## DEBUG mode for fission cli
 
-If you want to see what the [Fission CLI](../apps/cli.md) is doing under the covers, you can turn on DEBUG mode by calling commands like this:
+If you want to see what the [Fission CLI](../developers/cli/) is doing under the covers, you can turn on DEBUG mode by calling commands like this:
 
 ```text
 DEBUG=true fission up .
@@ -61,7 +88,7 @@ In this case, we can see that after the "Remote pinning Qm…", there is a _504 
 
 ## Running IPFS as a service on Linux and WSL <a id="initd"></a>
 
-WSL doesn't have systemd, so this init.d script should work.
+WSL doesn't have systemd, so this init.d script should work. Place the script in your init.d folder and then run `/etc/init.d/ipfs start/status/stop` to control the IPFS daemon.
 
 {% embed url="https://gist.github.com/bmann/54223ad136d9ff34144ad6367fc05677" %}
 
