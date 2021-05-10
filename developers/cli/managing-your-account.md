@@ -33,7 +33,7 @@ The `fission setup` command will create a global `config.yaml` file in your `~/.
 
 The registration process will also create a [Fission Drive](../../drive/preview.md) for you automatically at the URL `YOURNAME.fission.name` using your Fission username.
 
-## Linking an existing user
+## Linking from a web account
 
 If you are signed into a Fission account in a web browser, you can link your account and use it at the command line.
 
