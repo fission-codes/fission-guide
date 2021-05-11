@@ -4,7 +4,7 @@ description: The Fission CLI account management commands
 
 # Managing Your Account
 
-Use `fission setup` and`fission user whoami` to set up your account and display your username.
+Use `fission setup`, `fission user whoami`, and `fission login` to set up your account, display your username, and link your account in web browser.
 
 ## Register a new user
 
@@ -32,6 +32,45 @@ When you register a new account, you will be prompted for a username and an emai
 The `fission setup` command will create a global `config.yaml` file in your `~/.config/fission` directory. See the [Global Fission YAML](fission-yaml.md#global-fission-yaml) guide for more information about the `config.yaml` file.
 
 The registration process will also create a [Fission Drive](../../drive/preview.md) for you automatically at the URL `YOURNAME.fission.name` using your Fission username.
+
+## Display user information
+
+Use `fission user whoami` to display your username.
+
+```bash
+$ fission user whoami
+💻 Currently logged in as: fission
+```
+
+## Linking a web browser
+
+You can link your Fission account in a web browser to interact with Fission-enabled apps. The `fission login` command sets up the CLI to listen for requests to link your account.
+
+```text
+$ fission login
+🕚🌐 Listening for logins requests for griffin
+```
+
+Open the [Fission auth lobby](https://auth.fission.codes) in a browser window, select "Sign In", enter your Fission username, and select "Link Account".
+
+![](../../.gitbook/assets/sign-in.png)
+
+The browser window and command line will display confirmation codes. Verify that the confirmation codes match and grant access at the command line.
+
+![](../../.gitbook/assets/conf-code.png)
+
+```text
+$ fission login
+🕚🌐 Listening for logins requests for griffin
+🔢  Does this code match your second device? [4, 4, 5, 3, 0, 7] [Y/n] Y
+🧞 Grant access? SuperUser all resources, from Tue, 11 May 2021 15:30:01 UTC until 
+Fri, 10 Mar 2276 15:30:31 UTC [Y/n] Y
+🤝 Login to other device successful 🎉
+```
+
+The browser window will update to show that you have successfully linked your account.
+
+![](../../.gitbook/assets/authed.png)
 
 ## Linking from a web account
 
@@ -77,14 +116,5 @@ initializing IPFS node at /home/thuselem/.config/fission/ipfs
 📛 Please enter your username: yeti
 🔢 Confirmation code: [6, 0, 9, 1, 2, 3]
 🎛️  Initializing user config file
-```
-
-## Display user information
-
-Use `fission user whoami` to display your username.
-
-```text
-$ fission user whoami
-💻 Currently logged in as: fission
 ```
 
