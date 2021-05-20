@@ -126,7 +126,7 @@ Next, webnative links the change to make it available across the web.
 🌊 Updating your DNSLink
 ```
 
-When linking completes, the changes are published and available to other browsers.
+When linking completes, the change is published and available to other browsers.
 
 ```text
 🪴 DNSLink updated:
