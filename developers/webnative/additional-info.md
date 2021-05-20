@@ -96,3 +96,39 @@ Currently two versions exist:
 * `1.0.0`: file tree with metadata. Nodes in the file tree are structured as 2 layers where one layer contains "header" information \(metadata, cache, etc\), and the second layer contains data or links. **This is the default version, use this unless you have a good reason not to**.
 * `0.0.0`: bare file tree. The public tree consists of [ipfs dag-pg](https://github.com/ipld/js-ipld-dag-pb) nodes. The private tree is encrypted links with no associated metadata. These should really only be used for vanity links to be rendered by a gateway.
 
+## Debugging
+
+### Version
+
+Check the webnative version.
+
+```javascript
+console.log(wn.VERSION)
+```
+
+### Debug Logs
+
+Add the following to your code to enable webnative debug logging.
+
+```javascript
+wn.setup.debug({ enabled: true })
+```
+
+When webnative makes a change to the user's filesystem, it logs:
+
+```text
+📓 Adding to the CID ledger
+```
+
+Next, webnative links the change to make it available across the web.
+
+```text
+🌊 Updating your DNSLink
+```
+
+When linking completes, the changes are published and available to other browsers.
+
+```text
+🪴 DNSLink updated:
+```
+
