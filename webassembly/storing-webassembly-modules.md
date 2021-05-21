@@ -55,17 +55,8 @@ webnative.initialize(fissionInit).then(async state => {
     case webnative.Scenario.Continuation:
       fs = state.fs;
 
-      // Check for the app directory and create it if needed 
-      const appPath = fs.appPath();
-      const appDirectoryExists = await fs.exists(appPath);
-
-      if (!appDirectoryExists) {
-        await fs.mkdir(appPath);
-        await fs.publish();
-      }
-
       // Show the previous result if we have one
-      const resultPath = fs.appPath(['results', 'add']);
+      const resultPath = fs.appPath(webnative.path.file('results', 'add'));
       if (await fs.exists(resultPath)) {
         const stored = JSON.parse(await fs.read(resultPath));
         revealStoredResult(stored);
@@ -85,7 +76,7 @@ webnative.initialize(fissionInit).then(async state => {
 
 In the `AuthSucceeded` and `Continuation` cases, the user gave our app permission to use their file system. Otherwise, they have not been asked or they declined.
 
-If they gave permission, we check if a directory for app storage exists and create one if it does not. The user may have already stored `add.wasm` and used it to add numbers on a previous visit, so we check and display a stored result if we have one.
+The user may have already stored `add.wasm` and used it to add numbers on a previous visit, so we check and display a stored result if we have one.
 
 If the user has not authenticated, we show them a Sign In button that will redirect them to the Fission auth lobby.
 
@@ -104,7 +95,7 @@ After authentication, we are ready to request `add.wasm` and store it in web nat
     fetch('add.wasm').then(response =>
       response.arrayBuffer().then(async buffer => {
         if (fs) {
-          const path = fs.appPath(['wasm', 'math', 'add.wasm']);
+          const path = fs.appPath(webnative.path.file('wasm', 'math', 'add.wasm'));
           const blob = new Blob([buffer], { type: 'application/wasm' });
           await fs.write(path, blob);
           await fs.publish();
@@ -127,7 +118,8 @@ Next, we can check to make sure the module has been saved in storage.
 
 ```javascript
     if (fs) {
-      const directoryListing = await fs.ls(fs.appPath(['wasm', 'math']));
+      const directoryPath = fs.appPath(webnative.path.directory('wasm', 'math'));
+      const directoryListing = await fs.ls(directoryPath);
       Object.keys(directoryListing).forEach(function (key) {
         appendRow(directoryListing[key]);
       });
@@ -150,14 +142,14 @@ The module is in storage and we are ready to use it! Each time a user submits `l
 ```javascript
     if (fs) {
       if (!Number.isNaN(lhs) && !Number.isNaN(rhs)) {
-        const path = fs.appPath(['wasm', 'math', 'add.wasm']);
+        const path = fs.appPath(webnative.path.file('wasm', 'math', 'add.wasm'));
         if (await fs.exists(path)) {
           const buffer = await fs.read(path);
           WebAssembly.instantiate(buffer).then(async wasmObject => {
             const result = wasmObject.instance.exports.add(lhs, rhs);
             dom.updateFirstChild('result', result);
 
-            const resultPath = fs.appPath(['results', 'add']);
+            const resultPath = fs.appPath(webnative.path.file('results', 'add'));
             const computation = { lhs, rhs, result };
             await fs.write(resultPath, JSON.stringify(computation));
             await fs.publish();
@@ -180,8 +172,8 @@ We can delete the module and result from storage to reset our example.
 
 ```javascript
     if (fs) {
-      const funcPath = fs.appPath(['wasm', 'math', 'add.wasm']);
-      const resultPath = fs.appPath(['results', 'add']);
+      const funcPath = fs.appPath(webnative.path.file('wasm', 'math', 'add.wasm'));
+      const resultPath = fs.appPath(webnative.path.file('results', 'add'));
       await fs.rm(funcPath);
       await fs.rm(resultPath);
       await fs.publish();
