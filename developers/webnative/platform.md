@@ -8,6 +8,7 @@ The SDK also exposes methods to interact with the apps associated with the user.
 
 * `apps.index`: A list of all of your apps and their associated domain names
 * `apps.create`: Creates a new app, assigns an initial subdomain, and sets an asset placeholder
+* `apps.publish`: Publish a new app version
 * `apps.deleteByDomain`: Destroy an app identified by domain
 
 ## Permissions
