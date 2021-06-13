@@ -2,12 +2,12 @@
 
 * [Overview](README.md)
 
-## Accounts & Dashboard
+## Accounts & Dashboard <a id="accounts"></a>
 
-* [Fission Accounts](accounts-and-dashboard/accounts/README.md)
-  * [Account Linking](accounts-and-dashboard/accounts/account-linking.md)
-* [Dashboard](accounts-and-dashboard/dashboard/README.md)
-  * [App Management](accounts-and-dashboard/dashboard/app-management.md)
+* [Fission Accounts](accounts/account-signup/README.md)
+  * [Account Linking](accounts/account-signup/account-linking.md)
+* [Dashboard](accounts/dashboard/README.md)
+  * [App Management](accounts/dashboard/app-management.md)
 
 ## Fission Drive <a id="drive"></a>
 

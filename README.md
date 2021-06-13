@@ -14,5 +14,5 @@ Get started by [installing the Fission CLI »](developers/installation.md)
 
 ### Users
 
-Learn more about [Fission Accounts](accounts-and-dashboard/accounts/), and try one out by [installing the Drive app »](https://guide.fission.codes/drive)
+Learn more about [Fission Accounts](accounts/account-signup/), and try one out by [installing the Drive app »](https://guide.fission.codes/drive)
 
