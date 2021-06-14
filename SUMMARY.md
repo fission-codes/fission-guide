@@ -6,6 +6,7 @@
 
 * [Fission Accounts](accounts/account-signup/README.md)
   * [Account Linking](accounts/account-signup/account-linking.md)
+  * [Account Recovery](accounts/account-signup/account-recovery.md)
 * [Dashboard](accounts/dashboard/README.md)
   * [App Management](accounts/dashboard/app-management.md)
 
