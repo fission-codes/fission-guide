@@ -4,7 +4,7 @@ description: Fission Platform APIs
 
 # Platform APIs
 
-The SDK also exposes methods to interact with the apps associated with the user. This API must be prefixed with `apps`
+The SDK also exposes methods to interact with the apps associated with the user. This API must be prefixed with `apps`.
 
 * `apps.index`: A list of all of your apps and their associated domain names
 * `apps.create`: Creates a new app, assigns an initial subdomain, and sets an asset placeholder
@@ -16,6 +16,8 @@ The SDK also exposes methods to interact with the apps associated with the user.
 To use the platform APIs, your app needs to ask the user for permission to access the user's apps. This is handled via the parameters to `webnative.initialise` and `webnative.redirectToLobby`:
 
 ```javascript
+import * as wn from 'webnative'
+
 const permissions = {
   platform: {
     apps: "*",
@@ -24,10 +26,10 @@ const permissions = {
 }
 
 // Initialise webnative with expected permissions
-webnative.initialise({ permissions }).then(state => {
+wn.initialise({ permissions }).then(state => {
   if (!state.authenticated) {
     // We don't have the permissions yet. Let's send the user to auth.fission.codes and ask for them:
-    webnative.redirectToLobby(permissions)
+    wn.redirectToLobby(permissions)
   } else {
     // we're all set up! 🎉
   }
@@ -43,18 +45,18 @@ The value at `permissions.platform.apps` can be
 
 **apps.index**
 
-A list of all of your apps and their associated domain names.
+Lists all of your apps and their associated domain names.
 
-Needs these permissions: `{ platform: { apps: "*" } }`.
+Required permissions: `{ platform: { apps: "*" } }` full app management permissions
 
-Params:
+Params: No parameters.
 
 Returns: `{ domain: string }[]` an array of app domains
 
 Example:
 
 ```typescript
-const index = await sdk.apps.index()
+const index = await wn.apps.index()
 // [ { domain: 'your-fission-deployment.fission.app' } ]
 ```
 
@@ -62,31 +64,33 @@ const index = await sdk.apps.index()
 
 Creates a new app, assigns an initial subdomain, and sets an asset placeholder.
 
-Needs these permissions: `{ platform: { apps: "*" } }`.
+Required permissions: `{ platform: { apps: "*" } }` full app management permissions
 
 Params:
 
 * subdomain: `string` **optional**
 
-Returns: `subdomain` the newly created subdomain
+Returns: `{ domain: string }` the subdomain of the newly created app
 
 Example:
 
 ```typescript
-const newApp = await sdk.apps.create()
-// 'your-fission-deployment.fission.app'
+const newApp = await wn.apps.create()
+// { domain: 'your-fission-deployment.fission.app' }
 ```
 
 **apps.publish**
 
 Publishes a new app version by IPFS CID. If the app doesn't exist yet, it has to be created with `apps.create` first.
 
-Needs either permissions for the particular app domain or full app management permissions. See [Permissions](platform.md#permissions).
+Required permissions: Needs either permissions for the particular app domain or full app management permissions. See [Permissions](platform.md#permissions).
 
 Params:
 
 * domain: `string` **required**
 * cid: `string` **required**
+
+Returns: Nothing returned
 
 Example:
 
@@ -97,13 +101,17 @@ await sdk.apps.publish('your-fission-deployment.fission.app', 'QmRVvvMeMEPi1zerp
 Getting a CID can be tricky. Here's a way to turn a WNFS public subdirectory into a CID:
 
 ```typescript
-const appPath = "Apps/your-fission-deployment/Published` // If you've put app files here
-const ipfs = await webnative.ipfs.get()
+// The POSIX path where you published your app in the public filesystem:
+const appPath = `Apps/your-fission-deployment/Published`
+
+const ipfs = await wn.ipfs.get()
 const rootCid = await fs.root.put()
 const stats = await ipfs.files.stat(`/ipfs/${rootCid}/p/${appPath}/`)
-const cid = stats.cid.toBaseEncodedString()
+
 // This is the CID you can use for publish:
-await sdk.apps.publish('your-fission-deployment.fission.app', cid)
+const cid = stats.cid.toBaseEncodedString()
+
+await wn.apps.publish('your-fission-deployment.fission.app', cid)
 ```
 
 **apps.deleteByDomain**
@@ -116,11 +124,11 @@ Params:
 
 * url: `string` **required**
 
-Returns:
+Returns: Nothing returned
 
 Example:
 
 ```typescript
-await sdk.apps.deleteByDomain('your-fission-deployment.fission.app')
+await wn.apps.deleteByDomain('your-fission-deployment.fission.app')
 ```
 
