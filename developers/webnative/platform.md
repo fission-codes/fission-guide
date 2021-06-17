@@ -4,9 +4,13 @@ description: Fission Platform APIs
 
 # Platform APIs
 
-The webnative platform API provides methods to work with the apps associated with users. The apps may have been created by this API or by the Fission CLI.
+The webnative platform API provides methods to work with the apps associated with users.
 
 The platform API makes it possible to manage user apps and, combined with the webnative filesystem methods, create and manage apps entirely from the browser.
+
+{% hint style="success" %}
+Yes, you can build an app, that creates apps on behalf of the user! This is a way for developers to make use of the Fission Platform to build their own MicroSaaS business, including custom domains and other features for their users.
+{% endhint %}
 
 The API methods are prefixed with `apps`.
 
