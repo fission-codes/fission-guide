@@ -4,7 +4,11 @@ description: Fission Platform APIs
 
 # Platform APIs
 
-The SDK also exposes methods to interact with the apps associated with the user. This API must be prefixed with `apps`.
+The webnative platform API provides methods to work with the apps associated with users. The apps may have been created by this API or by the Fission CLI.
+
+The platform API makes it possible to manage user apps and, combined with the webnative filesystem methods, create and manage apps entirely from the browser.
+
+The API methods are prefixed with `apps`.
 
 * `apps.index`: A list of all of your apps and their associated domain names
 * `apps.create`: Creates a new app, assigns an initial subdomain, and sets an asset placeholder
@@ -13,7 +17,9 @@ The SDK also exposes methods to interact with the apps associated with the user.
 
 ## Permissions
 
-To use the platform APIs, your app needs to ask the user for permission to access the user's apps. This is handled via the parameters to `webnative.initialise` and `webnative.redirectToLobby`:
+Apps that use the platform API must request permission to work with a user's apps. Permissions are requested when a user signs in through the Fission auth lobby. See the [Auth guide](./#auth) for more on the webnative authentication flow.
+
+Platform API permissions are requested at `permissions.platform.apps` in the initialization object.
 
 ```javascript
 import * as wn from 'webnative'
@@ -28,7 +34,8 @@ const permissions = {
 // Initialise webnative with expected permissions
 wn.initialise({ permissions }).then(state => {
   if (!state.authenticated) {
-    // We don't have the permissions yet. Let's send the user to auth.fission.codes and ask for them:
+    // We don't have the permissions yet. 
+    // Let's send the user to auth.fission.codes and ask for them:
     wn.redirectToLobby(permissions)
   } else {
     // we're all set up! 🎉
@@ -38,18 +45,18 @@ wn.initialise({ permissions }).then(state => {
 
 The value at `permissions.platform.apps` can be
 
-* `"*"`: Complete app management access for all of the user's apps
-* An array of domain names, e.g. `[ "an-app.fission.app", "another-app.fission.app" ]`: Permission to manage particular apps. Those apps can be published to or deleted.
+* `"*"`: Grant complete app management access for all of the user's apps
+* An array of domain names, e.g. `[ "an-app.fission.app", "another-app.fission.app" ]`: Grant permission to manage specific apps. Those apps can be published or deleted.
 
 ## API
 
 **apps.index**
 
-Lists all of your apps and their associated domain names.
+Lists all user apps and their associated domain names.
 
 Required permissions: `{ platform: { apps: "*" } }` full app management permissions
 
-Params: No parameters.
+Params: No parameters
 
 Returns: `{ domain: string }[]` an array of app domains
 
@@ -62,7 +69,7 @@ const index = await wn.apps.index()
 
 **apps.create**
 
-Creates a new app, assigns an initial subdomain, and sets an asset placeholder.
+Creates a new app, assigns an initial subdomain, and publishes a placeholder site.
 
 Required permissions: `{ platform: { apps: "*" } }` full app management permissions
 
@@ -81,9 +88,9 @@ const newApp = await wn.apps.create()
 
 **apps.publish**
 
-Publishes a new app version by IPFS CID. If the app doesn't exist yet, it has to be created with `apps.create` first.
+Publishes a new app version by IPFS CID. If the app does not exist yet, create the app first with `apps.create`.
 
-Required permissions: Needs either permissions for the particular app domain or full app management permissions. See [Permissions](platform.md#permissions).
+Required permissions: Needs either permission for the app domain or full app management permissions. See [Permissions](platform.md#permissions).
 
 Params:
 
@@ -98,17 +105,17 @@ Example:
 await sdk.apps.publish('your-fission-deployment.fission.app', 'QmRVvvMeMEPi1zerpXYH9df3ATdzuB63R1wf3Mz5NS5HQN')
 ```
 
-Getting a CID can be tricky. Here's a way to turn a WNFS public subdirectory into a CID:
+Retrieving the CID depends on where you have staged the app code. One convenient way to do this is to publish the app's HTML, CSS, JavaScript, and assets to a public directory in WNFS and retrieve the CID of that directory.
 
 ```typescript
-// The POSIX path where you published your app in the public filesystem:
+// The POSIX path where you published your app code in the public filesystem:
 const appPath = `Apps/your-fission-deployment/Published`
 
 const ipfs = await wn.ipfs.get()
 const rootCid = await fs.root.put()
 const stats = await ipfs.files.stat(`/ipfs/${rootCid}/p/${appPath}/`)
 
-// This is the CID you can use for publish:
+// The CID you use to publish with the plaform API:
 const cid = stats.cid.toBaseEncodedString()
 
 await wn.apps.publish('your-fission-deployment.fission.app', cid)
@@ -116,9 +123,9 @@ await wn.apps.publish('your-fission-deployment.fission.app', cid)
 
 **apps.deleteByDomain**
 
-Destroy app by domain.
+Delete an app by domain.
 
-Needs either permissions for the particular app domain or full app management permissions. See [Permissions](platform.md#permissions).
+Required permissions: Needs either permission for the app domain or full app management permissions. See [Permissions](platform.md#permissions).
 
 Params:
 
