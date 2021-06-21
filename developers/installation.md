@@ -44,9 +44,8 @@ $ fission --help
 Fission makes developing, deploying, updating, and iterating on web apps quick
 and easy.
 
-Usage: fission (SHORTCUT | COMMAND | --version)
+Usage: fission (SHORTCUT | COMMAND | --version) [-v|--verbose]
   CLI to interact with Fission services
-...
 ```
 
 If you run into any problems, check that you have `libssl1.1` \(installed with OpenSSL\) and `libtinfo5` \(or `libtinfo6`\). Most recent Linux distributions will already have these libraries installed.

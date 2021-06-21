@@ -93,8 +93,10 @@ Run `fission app publish` to publish the webpage.
 
 ```text
 $ fission app publish
+🕚🛫 App publish local preflight
+✈️  Pushing to remote
 🚀 Now live on the network
-📝 DNS updated! Check out your site at: 
+📝 DNS updated! Check out your site at:
 🔗 big-narrow-fuchsia-elf.fission.app
 ```
 

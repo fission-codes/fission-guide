@@ -12,7 +12,7 @@ The `fission app register` command initializes a new app and links it to your Fi
 
 ```text
 $ fission app register
-👷 Build directory (./dist): 
+👷 Build directory (.): 
 ✅ App initialized as big-narrow-fuchsia-elf.fission.app
 ⏯️  Next run fission app publish or fission app publish --watch to sync data
 💁 It may take DNS time to propagate this initial setup globally. In this case, 
@@ -58,8 +58,10 @@ The `fission app publish` command publishes your app and associates it with the 
 
 ```text
 $ fission app publish
+🕚🛫 App publish local preflight
+✈️  Pushing to remote
 🚀 Now live on the network
-📝 DNS updated! Check out your site at: 
+📝 DNS updated! Check out your site at:
 🔗 big-narrow-fuchsia-elf.fission.app
 ```
 
@@ -94,6 +96,8 @@ You can continuously publish your app by adding the `--watch` option. The Fissio
 
 ```text
 $ fission app publish --watch
+🕚🛫 App publish local preflight
+✈️  Pushing to remote
 🚀 Now live on the network
 📝 DNS updated! Check out your site at: 
 🔗 big-narrow-fuchsia-elf.fission.app
