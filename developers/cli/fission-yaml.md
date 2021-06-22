@@ -8,7 +8,7 @@ Fission stores global and app configuration options in YAML files. The global co
 
 ## Global Fission YAML
 
-After you run `fission user register`, you will have a global `config.yaml` in your `~/.config/fission/` folder. You can open `config.yaml` in a text editor or display it at the command line.
+After you run `fission user setup`, you will have a global `config.yaml` in your `~/.config/fission/` folder. You can open `config.yaml` in a text editor or display it at the command line.
 
 ```bash
 more ~/.config/fission/config.yaml
@@ -121,6 +121,6 @@ The build directory is the directory the Fission CLI will publish. Use this when
 The build directory is set as a relative path from the location of the `fission.yaml` file.
 
 {% hint style="success" %}
-If you are using a "common" build directory, the Fission CLI will attempt to detect it the first time you run `fission app register`. It will prompt you and ask if you would like to use the directory it detects.
+If you are using a well-known build directory, the Fission CLI will attempt to detect it the first time you run `fission app register`. It will prompt you and ask if you would like to use the directory it detects.
 {% endhint %}
 
