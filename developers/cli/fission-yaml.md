@@ -19,11 +19,22 @@ The default global `config.yaml` will looks something like this:
 ```yaml
 ignore: []
 username: fission
+root_proof: null
 server_did: did:key:zStEZpzSMtTt9k2vszgvCwF4fLQQSyA15W5AQ4z3AR6Bx4eFJ5crJFbuGxKmbma4
 peers:
 - /dns4/node.runfission.com/tcp/4001/ipfs/QmVLEz2SxoNiFnuyLpbXsH6SvjPTrHNMU88vCQZyhgBzgw
-- /ip4/3.226.224.78/tcp/4001/p2p/QmPeeeZZXxMBAPxxba7a6ggjDr5jLuD3RAFnmPPcvJ9fMS
-- /ip4/3.226.224.78/udp/4001/quic/p2p/QmPeeeZZXxMBAPxxba7a6ggjDr5jLuD3RAFnmPPcvJ9fMS
+- /dns4/node.fission.systems/tcp/4003/wss/p2p/QmVLEz2SxoNiFnuyLpbXsH6SvjPTrHNMU88vCQZyhgBzgw
+- /dns4/production-ipfs-cluster-us-east-1-node0.runfission.com/tcp/4001/p2p/12D3KooWFSAbpiAeKHnVyqMqrdvAtu8C3veePHi36bZGNM2qv42q
+- /dns4/production-ipfs-cluster-us-east-1-node0.runfission.com/tcp/4003/wss/p2p/12D3KooWFSAbpiAeKHnVyqMqrdvAtu8C3veePHi36bZGNM2qv42q
+- /dns4/production-ipfs-cluster-us-east-1-node1.runfission.com/tcp/4001/p2p/12D3KooWNntMEXRUa2dNgkQsVgzao6zGSYxm1oAs83YtRy6uBuxv
+- /dns4/production-ipfs-cluster-us-east-1-node1.runfission.com/tcp/4003/wss/p2p/12D3KooWNntMEXRUa2dNgkQsVgzao6zGSYxm1oAs83YtRy6uBuxv
+- /dns4/production-ipfs-cluster-us-east-1-node2.runfission.com/tcp/4001/p2p/12D3KooWQ2hL9NschcJ1Suqa1TybJc2ZaacqoQMBT3ziFC7Ye2BZ
+- /dns4/production-ipfs-cluster-us-east-1-node2.runfission.com/tcp/4003/wss/p2p/12D3KooWQ2hL9NschcJ1Suqa1TybJc2ZaacqoQMBT3ziFC7Ye2BZ
+- /dns4/production-ipfs-cluster-eu-north-1-node0.runfission.com/tcp/4001/p2p/12D3KooWDTUTdVJfW7Rwb6kKhceEwevTatPXnavPwkfZp2A6r1Fn
+- /dns4/production-ipfs-cluster-eu-north-1-node0.runfission.com/tcp/4003/wss/p2p/12D3KooWDTUTdVJfW7Rwb6kKhceEwevTatPXnavPwkfZp2A6r1Fn
+- /dns4/production-ipfs-cluster-eu-north-1-node1.runfission.com/tcp/4001/p2p/12D3KooWRwbRrSN2cPAKz4yt1vxBFdh53CpgWjSFK5hZPkzHHz5h
+- /dns4/production-ipfs-cluster-eu-north-1-node1.runfission.com/tcp/4003/wss/p2p/12D3KooWRwbRrSN2cPAKz4yt1vxBFdh53CpgWjSFK5hZPkzHHz5h
+update_checked: 2021-06-08T22:47:53.507087194Z
 signing_key_path: /home/fission/.config/fission/key/machine_id.ed25519
 ```
 
@@ -45,6 +56,10 @@ Ignore follows the same conventions used in a `.gitignore` file.
 
 Username is a name you select for yourself during `fission setup`.
 
+### root\_proof
+
+The UCAN that was used to link from another device or browser. `null` if the account was created on this device.
+
 ### server\_did
 
 Server DID is the identity of the Fission server that authenticates your requests when using the Fission CLI.
@@ -56,6 +71,10 @@ We configure your machine to directly connect to our servers. The peers are the 
 {% hint style="info" %}
 Eventually, we'll have a list of peers around the world.
 {% endhint %}
+
+### update\_checked
+
+Timestamp of the last check for an updated version of the CLI.
 
 ### signing\_key\_path
 
