@@ -52,6 +52,7 @@
 
 * [Browser Support](appendix/browser-support.md)
 * [Troubleshooting](appendix/troubleshooting.md)
+* [Migration](appendix/migration.md)
 * [Compute, Storage, and Identity Foundations](appendix/compute-storage-identity.md)
 * [Heroku Add-on](appendix/heroku.md)
 * [Fission Web API \(Live Swagger Docs\)](https://runfission.com/docs)
