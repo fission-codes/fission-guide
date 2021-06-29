@@ -4,7 +4,7 @@ description: 'Fission Drive lets you browse public, unencrypted files stored on 
 
 # Preview
 
-**Fission Drive** is currently a Preview release of our upcoming file storage and identity system that lets you take your files anywhere, encrypted end-to-end as well as for public hosting of files, websites, and apps.
+**Fission Drive** is currently a preview release of our upcoming file storage and identity system that lets you take your files anywhere, encrypted end-to-end as well as for public hosting of files, websites, and apps.
 
 ![Fission Drive Preview in light mode](../.gitbook/assets/drive-index-large-light.png)
 
