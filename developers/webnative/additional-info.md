@@ -4,101 +4,9 @@ description: "Become a webnative jedi \U0001F9D8"
 
 # Additional information
 
-## Lobby
-
-### Authorization
-
-The auth lobby grants apps authorization to access WNFS. Apps request permission to use App Storage and additional public and private directories. The auth lobby creates a User Controlled Authorization Networks \(UCAN\) token that reflects the requested permissions.
-
-Webnative checks the UCAN at initialization and returns an auth scenario.
-
-* **AuthSucceded.** The user has just returned from the auth lobby, and they granted the requested permissions.
-* **Continuation.** The user has already granted permission, and the UCAN has not expired.
-* **AuthCancelled.** The user denied the requested permissions.
-* **NotAuthorised.** The user has not granted permission yet or the UCAN has expired. 
-
-UCANs expire and users must periodically re-authorize apps through the auth lobby. All user data is preserved in WNFS across authorizations, including the data stored in App Storage.
-
-{% hint style="info" %}
-**More on UCANs.** Read more about UCANs in our [UCAN: Authorizing Users Without a Back End](https://blog.fission.codes/auth-without-backend/) blog post and in the [Fission Whitepaper](https://whitepaper.fission.codes/access-control/ucan/ucan-tokens).
-{% endhint %}
-
-### Shared devices
-
-In most cases, users will not need to log out of an app or a device. Read more about this part of our vision for Fission-enabled apps in the [What does “log in” or “log out” mean for the Fission SDK and apps?](https://talk.fission.codes/t/what-does-log-in-or-log-out-mean-for-the-fission-sdk-and-apps/919) blog post.
-
-One case where logging out is desirable is on a shared device. Logging out on a shared device can be accomplished in two steps:
-
-* Remove the UCAN token from apps that were granted permissions with the webnative`wn.leave` function
-* Log out from the auth lobby on the reset page \([https://auth.fission.codes/reset/](https://auth.fission.codes/reset/)\)
-
-## File System
-
-### Permissions
-
-Every file system action checks if an app has received sufficient permissions from the user. Apps request `permissions` when they initialize webnative, and the [auth lobby grants authorization](additional-info.md#authorization).
-
-Apps request permission for App Storage, additional private and public directories, and user apps published with the Platform APIs. For example, a notes app might request these permissions.
-
-```javascript
-permissions: {
-  app: {
-    name: "Notes",
-    creator: "Fission"
-  },
-  fs: {
-    private: [ wn.path.directory("Notes") ],
-    public: [ wn.path.directory("Notes") ]
-  },
-  platform: {
-    apps: []
-  }
-}
-```
-
-The app would have access to its App Storage and public and private Notes directories. 
-
-{% hint style="info" %}
-**Platform permissions.** The platform permissions could be left out of this example because this app will not need them. See the [Platform API guide](platform.md#permissions) for more information on working with user apps.
-{% endhint %}
-
-The initialize function will return a `NotAuthorised` scenario if one of the UCAN will expire in one day to minimize the likelihood of receiving an expired permissions error. But to be safe, apps should also account for this error.
-
-### Web Worker
-
-Can I use my file system in a web worker?  
-Yes, this only requires a slightly different setup.
-
-```typescript
-// UI thread
-// `state.fs` will now be `null`
-const { permissions } = wn.initialise({ loadFileSystem: false })
-worker.postMessage({ tag: "LOAD_FS", permissions })
-
-// Web Worker
-let fs
-
-self.onMessage = async event => {
-  switch (event.data.tag) {
-    case "LOAD_FS":
-      fs = await wn.loadFileSystem(event.data.permissions)
-      break;
-  }
-}
-```
-
-### Versions
-
-Since the file system may evolve over time, a "version" is associated with each node in the file system \(tracked with semver\).
-
-Currently two versions exist:
-
-* `1.0.0`: file tree with metadata. Nodes in the file tree are structured as 2 layers where one layer contains "header" information \(metadata, cache, etc\), and the second layer contains data or links. **This is the default version, use this unless you have a good reason not to**.
-* `0.0.0`: legacy bare file tree of an early version.
-
 ## Debugging
 
-### Version
+### Version <a id="version"></a>
 
 Check the webnative version.
 
@@ -106,7 +14,7 @@ Check the webnative version.
 console.log(wn.VERSION)
 ```
 
-### Debug Logs
+### Debug Logs <a id="debug-logs"></a>
 
 Add the following to your code to enable webnative debug logging.
 
@@ -130,5 +38,118 @@ When linking completes, the change is published and available to other browsers.
 
 ```text
 🪴 DNSLink updated:
+```
+
+## **WNFS Hierarchy**
+
+The Webnative File System, or WNFS for short, is the live file system that every Fission user account has.
+
+As a developer, it's also where your app stores files and data.
+
+### Top Level File System Roots <a id="top-level-file-system-roots"></a>
+
+WNFS comes with three separate file systems "roots": public, pretty, and private.
+
+#### Public <a id="public"></a>
+
+Not encrypted. Full metadata support. Starts with `/public`.
+
+#### Pretty <a id="pretty"></a>
+
+Not encrypted. No metadata. Represented simply as `/p` to be nice and short when creating public URLs like `/p/path/to/file.img`. It does not support versioning, use the Public or Private trees for that.
+
+#### Private <a id="private"></a>
+
+Encrypted. Structured so that file metadata as well as contents is obscured. Starts with `/private`
+
+### Default folders <a id="default-folders"></a>
+
+Currently we initialize WNFS with a set of default _private_ folders, which should be familiar to people from working with desktop operating systems.
+
+{% hint style="warning" %}
+TODO: We'll be documenting and versioning these default folders in the webnative Github repo.
+{% endhint %}
+
+Additionally, in apps like Drive or in file pickers, the user sees a top level Public folder, which maps to the Public system root
+
+{% hint style="info" %}
+You can dive deeper by [reading the whitepaper »](https://whitepaper.fission.codes/file-system/sections/root)
+{% endhint %}
+
+## Web Worker
+
+Can I use my file system in a web worker? Yes, this only requires a slightly different setup.
+
+```typescript
+// UI thread
+// `state.fs` will now be `null`
+const { permissions } = wn.initialise({ loadFileSystem: false })
+worker.postMessage({ tag: "LOAD_FS", permissions })
+
+// Web Worker
+let fs
+
+self.onMessage = async event => {
+  switch (event.data.tag) {
+    case "LOAD_FS":
+      fs = await wn.loadFileSystem(event.data.permissions)
+      break;
+  }
+}
+```
+
+## Versions
+
+Since the file system may evolve over time, a "version" is associated with each node in the file system \(tracked with semver\).
+
+Currently two versions exist:
+
+* `1.0.0`: file tree with metadata. Nodes in the file tree are structured as 2 layers where one layer contains "header" information \(metadata, cache, etc\), and the second layer contains data or links. **This is the default version, use this unless you have a good reason not to**.
+* `0.0.0`: legacy bare file tree of an early version.
+
+## Customi**z**ation
+
+Customization can be done using the `setup` module. Run these before anything else you do with the SDK.
+
+```javascript
+// custom api, lobby, and/or user domain
+// (no need to specify each one)
+wn.setup.endpoints({
+  api: "https://my.fission.api",
+  lobby: "https://my.fission.lobby",
+  user: "my.domain"
+})
+
+// js-ipfs options
+// (see docs in src for more info)
+wn.setup.ipfs({ init: { repo: "my-ipfs-repo" } })
+```
+
+## Building Blocks
+
+**Warning: Here be 🐉! Only use lower level utilities if you know what you're doing.**
+
+This library is built on top of [js-ipfs](https://github.com/ipfs/js-ipfs) and [keystore-idb](https://github.com/fission-suite/keystore-idb). If you have already integrated an ipfs daemon or keystore-idb into your web application, you probably don't want to have two instances floating around.
+
+You can use one instance for your whole application by doing the following:
+
+```typescript
+import * as ipfs from 'webnative/ipfs'
+
+// get the ipfs instance that the Fission SDK is using
+const ipfsInstance = await ipfs.get()
+
+// OR set the ipfs to an instance that you already have
+await ipfs.set(ipfsInstance)
+```
+
+```typescript
+import * as keystore from 'webnative/keystore'
+
+// get the keystore instance that the Fission SDK is using
+const keystoreInstance = await keystore.get()
+
+// OR set the keystore to an instance that you already have
+await keystore.set(keystoreInstance)
 ```
 
