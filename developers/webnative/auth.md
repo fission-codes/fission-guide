@@ -11,7 +11,7 @@ Users authenticate once per browser in the [Fission Auth Lobby](https://auth.fis
 Apps redirect users to the Auth Lobby to sign up and request authorization to use resources. Sign-up only happens once, and each subsequent visit from any app is for authorization only.
 
 {% hint style="info" %}
-Auth in webnative looks similar to an OAuth authentication flow but with an important difference. Webnative stores user credentials in the browse, and authentication through a third-party is not necessary. Private credentials are stored as [WebCrypto](https://developer.mozilla.org/en-US/docs/Web/API/Web_Crypto_API) `CryptoKey`s to keep them secure. See the [Login section](https://whitepaper.fission.codes/accounts/login) of the Fission Whitepaper for more details.
+Auth in webnative looks similar to an OAuth authentication flow but with an important difference. Webnative stores user credentials in the browser, and authentication through a third-party is not necessary. Private credentials are stored as [WebCrypto](https://developer.mozilla.org/en-US/docs/Web/API/Web_Crypto_API) `CryptoKey`s to keep them secure. See the [Login section](https://whitepaper.fission.codes/accounts/login) of the Fission Whitepaper for more details.
 {% endhint %}
 
 ## Authorization
