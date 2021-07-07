@@ -16,16 +16,16 @@ Auth in webnative looks similar to an OAuth authentication flow but with an impo
 
 ## Authorization
 
-The Auth Lobby grants apps authorization to access WNFS. Apps request permission to use app-specific storage and additional public and private directories. The auth lobby creates a User Controlled Authorization Networks \(UCAN\) token that reflects the requested permissions.
+The Auth Lobby grants apps authorization to access WNFS. Apps request permission to use app-specific storage and additional public and private directories. The Auth Lobby creates a User Controlled Authorization Networks \(UCAN\) token that reflects the requested permissions.
 
 Webnative checks the UCAN at initialization and returns an auth scenario.
 
-* **AuthSucceded.** The user has just returned from the auth lobby, and they granted the requested permissions.
+* **AuthSucceded.** The user has just returned from the Auth Lobby, and they granted the requested permissions.
 * **Continuation.** The user has already granted permission, and the UCAN has not expired.
 * **AuthCancelled.** The user denied the requested permissions.
 * **NotAuthorised.** The user has not granted permission yet or the UCAN has expired. 
 
-UCANs expire and users must periodically re-authorize apps through the auth lobby. All user data is preserved in WNFS across authorizations, including the data stored in App Storage.
+UCANs expire and users must periodically re-authorize apps through the Auth Lobby. All user data is preserved in WNFS across authorizations, including the data stored in App Storage.
 
 {% hint style="info" %}
 **More on UCANs.** Read more about UCANs in our [UCAN: Authorizing Users Without a Back End](https://blog.fission.codes/auth-without-backend/) blog post and in the [Fission Whitepaper](https://whitepaper.fission.codes/access-control/ucan#overview).
@@ -101,5 +101,5 @@ In most cases, users will not need to log out of an app or a device. Read more a
 One case where logging out is desirable is on a shared device. Logging out on a shared device can be accomplished in two steps:
 
 * Remove the UCAN token from apps that were granted permissions with the webnative`wn.leave` function
-* Log out from the auth lobby on the reset page \([https://auth.fission.codes/reset/](https://auth.fission.codes/reset/)\)
+* Log out from the Auth Lobby on the reset page \([https://auth.fission.codes/reset/](https://auth.fission.codes/reset/)\)
 

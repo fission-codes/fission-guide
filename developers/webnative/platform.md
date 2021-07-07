@@ -21,7 +21,7 @@ The API methods are prefixed with `apps`.
 
 ## Permissions
 
-Apps that use the platform API must request permission to work with a user's apps. Permissions are requested when a user signs in through the Fission auth lobby. See the [Auth guide](./#auth) for more on the webnative authentication flow.
+Apps that use the platform API must request permission to work with a user's apps. Permissions are requested when a user signs in through the Fission Auth Lobby. See the [Auth guide](auth.md) for more on the webnative authentication flow.
 
 Platform API permissions are requested at `permissions.platform.apps` in the initialization object.
 
