@@ -40,15 +40,9 @@ When linking completes, the change is published and available to other browsers.
 🪴 DNSLink updated:
 ```
 
-## **WNFS Hierarchy**
+## **WNFS File System Roots**
 
-The Webnative File System, or WNFS for short, is the live file system that every Fission user account has.
-
-As a developer, it's also where your app stores files and data.
-
-### Top Level File System Roots <a id="top-level-file-system-roots"></a>
-
-WNFS comes with three separate file systems "roots": public, pretty, and private.
+WNFS comes with three separate top-level file systems "roots": public, pretty, and private.
 
 #### Public <a id="public"></a>
 
@@ -60,11 +54,11 @@ Not encrypted. No metadata. Represented simply as `/p` to be nice and short when
 
 #### Private <a id="private"></a>
 
-Encrypted. Structured so that file metadata as well as contents is obscured. Starts with `/private`
+Encrypted. Structured so that file metadata as well as contents are obscured. Starts with `/private`.
 
 ### Default folders <a id="default-folders"></a>
 
-Currently we initialize WNFS with a set of default _private_ folders, which should be familiar to people from working with desktop operating systems.
+We initialize WNFS with a set of default _private_ folders, which should be familiar to people from working with desktop operating systems.
 
 {% hint style="warning" %}
 TODO: We'll be documenting and versioning these default folders in the webnative Github repo.
@@ -73,8 +67,10 @@ TODO: We'll be documenting and versioning these default folders in the webnative
 Additionally, in apps like Drive or in file pickers, the user sees a top level Public folder, which maps to the Public system root
 
 {% hint style="info" %}
-You can dive deeper by [reading the whitepaper »](https://whitepaper.fission.codes/file-system/sections/root)
+**More about roots.** Learn more about roots in the [Fission whitepaper](https://whitepaper.fission.codes/file-system/partitions/root).
 {% endhint %}
+
+
 
 ## Web Worker
 

@@ -4,17 +4,19 @@ description: Working with the Webnative File System (WNFS)
 
 # File System \(WNFS\)
 
-The Web Native File System \(WNFS\) is built on top of the InterPlanetary File System \(IPFS\). WNFS is structured and functions similarly to a Unix-style file system, with one notable exception: it's a Directed Acyclic Graph \(DAG\), meaning that a given child can have more than one parent \(think symlinks but without the "sym"\).
+The Web Native File System \(WNFS\) is a file system built on top of the InterPlanetary File System \(IPFS\). Each Fission user has their own WNFS, and apps store user files and data in it when granted permission.
 
 Each file system has a public tree and a private tree, much like your macOS, Windows, or Linux desktop file system. The public tree is "live" and publicly accessible on the Internet. The private tree is encrypted so that only the owner can see the contents.
 
-All information \(links, data, metadata, etc.\) in the private tree is encrypted. Decryption keys are stored so that access to a given folder grants access to all of its subfolders.
+All information \(links, data, metadata, etc.\) in the private tree is encrypted. Decryption keys are stored so that access to a given directory grants access to all of its subdirectories.
+
+WNFS is structured and functions similarly to a Unix-style file system, with one notable exception: it's a Directed Acyclic Graph \(DAG\), meaning that a given child can have more than one parent \(think symlinks but without the "sym"\).
 
 ## Permissions
 
-Every file system action checks if an app has received sufficient permissions from the user. Apps request `permissions` when they initialize webnative, and the [Fission Auth Lobby grants authorization](auth.md#authorization).
+Every file system action checks if an app has received sufficient permissions from the user. Apps request `permissions` when they initialize webnative. The [Fission Auth Lobby grants authorization](auth.md#authorization).
 
-Apps request permission for App Storage, additional private and public directories, and user apps published with the Platform APIs. For example, a notes app might request these permissions.
+Apps request permission for app storage, additional private and public directories, and user apps published with the Platform APIs. For example, a notes app might request these permissions.
 
 ```javascript
 permissions: {
@@ -32,7 +34,7 @@ permissions: {
 }
 ```
 
-The app would have access to its App Storage and public and private Notes directories.
+The app would have access to its dedicated app storage and public and private Notes directories.
 
 Apps request `permissions.app` to store user data in a default app storage directory and other public and private directories. Webnative creates these directories for your app if they do not already exist.
 
