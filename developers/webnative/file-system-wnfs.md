@@ -93,6 +93,8 @@ Methods for interacting with the filesystem all use **absolute** paths.
 
 Paths created by [path functions](paths.md) have a `FilePath` or `DirectoryPath` type. Methods with a `DistinctivePath` param accept either a `FilePath` or a `DirectoryPath`.
 
+The `FileContent`that WNFS can store includes `FileContentRaw`, `Blob`, `string`, `number`, and `boolean`. `FileContentRaw` is `Uint8Array`. In addition, the private file system can store `Object`s.
+
 **add**
 
 Adds file content at a given path**.**
@@ -100,7 +102,7 @@ Adds file content at a given path**.**
 Params:
 
 * path: `FilePath` **required**
-* content: `FileContent` \(`object | string | Blob | Buffer`\) **required**
+* content: `FileContent`**required**
 
 Returns: `CID` the updated _root_ CID for the file system
 
@@ -124,7 +126,7 @@ Params:
 
 * path: `FilePath` **required**
 
-Returns: `FileContent` \(`object | string | Blob | Buffer`\)
+Returns: `FileContent`
 
 Example:
 
@@ -255,7 +257,7 @@ Alias for `add`.
 Params:
 
 * path: `FilePath` **required**
-* content: `FileContent` \(`object | string | Blob | Buffer`\) **required**
+* content: `FileContent` **required**
 
 Returns: `CID` the updated _root_ CID for the file system
 
