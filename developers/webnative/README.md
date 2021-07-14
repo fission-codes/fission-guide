@@ -8,6 +8,10 @@ The webnative software development kit offers tools for:
 * **Platform APIs** for interacting with user apps
 
 {% hint style="info" %}
+**Versions and Migration.** This guide is versioned for each version of the CLI/Webnative SDK. See the top left above Overview in the sidebar to select the version of CLI or SDK you are working with. Latest represents all versions newer that last numbered version. We will always add a numbered version when a breaking change occurs.
+{% endhint %}
+
+{% hint style="info" %}
 **API documentation and code.** Read more in the [API reference](https://webnative.fission.app/) and in the [webnative code repository](https://github.com/fission-suite/webnative). 
 {% endhint %}
 
