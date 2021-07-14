@@ -1,5 +1,5 @@
 ---
-description: Migration guides for new versions of the CLI and webnative
+description: Migration guides for new versions of the webnative SDK
 ---
 
 # Migration
@@ -17,7 +17,7 @@ const bool = await fs.exists("private/some/file")
 const updatedCID = await fs.mkdir("public/some/directory")
 ```
 
-In webnative 0.24, paths are created by [path helper functions](../developers/webnative/#paths) for files and directories.
+In webnative 0.24, paths are created by [path helper functions](./#paths) for files and directories.
 
 ```text
 const bool = await fs.exists(wn.path.file("private", "some", "file"))

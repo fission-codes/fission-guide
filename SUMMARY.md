@@ -31,6 +31,7 @@
   * [File System \(WNFS\)](developers/webnative/file-system-wnfs.md)
   * [Platform APIs](developers/webnative/platform.md)
   * [Additional information](developers/webnative/additional-info.md)
+  * [Migration](developers/webnative/migration.md)
 * [Custom Domains](developers/custom-domains/README.md)
   * [Fission Hosted DNS](developers/custom-domains/fission-hosted-dns.md)
   * [Control your own DNS](developers/custom-domains/control-own-dns.md)
@@ -54,7 +55,6 @@
 
 * [Browser Support](appendix/browser-support.md)
 * [Troubleshooting](appendix/troubleshooting.md)
-* [Migration](appendix/migration.md)
 * [Compute, Storage, and Identity Foundations](appendix/compute-storage-identity.md)
 * [Heroku Add-on](appendix/heroku.md)
 * [Fission Web API \(Live Swagger Docs\)](https://runfission.com/docs)
