@@ -40,7 +40,7 @@ When linking completes, the change is published and available to other browsers.
 🪴 DNSLink updated:
 ```
 
-#### **Forcing a Logout**
+### **Forcing a Logout**
 
 While you are testing an app, you may want to force a logout to check the `NotAuthorised` authentication state. The `wn.leave()` method will log out and completely remove a user from your app. The user will still be authenticated with Fission, and they can sign back into your app to re-authorize.
 
