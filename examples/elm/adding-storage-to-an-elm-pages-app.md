@@ -4,7 +4,7 @@
 
 In this guide, we will show how to use Fission webnative storage to save user data. Our goal will be to add annotations to blog posts in the `elm-pages-starter`.
 
-All of the code in this guide is available in the [fission-elm-pages-starter](https://github.com/bgins/fission-elm-pages-starter/tree/storage) repository on the `storage` branch.
+All of the code in this guide is available in the [fission-elm-pages-starter](https://github.com/fission-suite/fission-elm-pages-starter/tree/storage) repository on the `storage` branch.
 
 When a user has signed in with Fission, an annotation button is displayed at the bottom right corner of the page.
 
@@ -388,7 +388,7 @@ import * as webnative from 'webnative';
 We initialize `webnative` with a list of permissions stating what our app would like to use. In our case, we only need to request permission to use the storage associated with our app.
 
 {% hint style="info" %}
-**Shared storage:** The webnative filesystem also has public and private shared storage that can be accessed across apps. See the [webnative documentation](../../developers/webnative/#file-system) for more details.
+**Shared storage:** The webnative filesystem also has public and private shared storage that can be accessed across apps. See the [webnative paths documentation](../../developers/webnative/paths.md) for more details.
 {% endhint %}
 
 Declare an `fs` variable that will be used to access the user's filesystem. Add `fissionInit` with a request for `permissions` to use app storage by app name and your Fission username.

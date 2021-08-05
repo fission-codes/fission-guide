@@ -2,7 +2,7 @@
 
 In this guide, we will add Fission auth to the `elm-pages-starter`. We will add a login button to the navbar that redirects users to the Fission auth lobby. After a user authenticates in the lobby, we will log them in and display their Fission username.
 
-All of the code in this guide is available in the [fission-elm-pages-starter](https://github.com/bgins/fission-elm-pages-starter/tree/webnative-auth) repository on the `auth` branch.
+All of the code in this guide is available in the [fission-elm-pages-starter](https://github.com/fission-suite/fission-elm-pages-starter/tree/webnative-auth) repository on the `auth` branch.
 
 {% hint style="info" %}
 We are updating this example to use the new [webnative-elm](https://package.elm-lang.org/packages/fission-suite/webnative-elm/latest/) package! The latest code on the `auth` branch includes these changes. While we are updating the guide, please refer to the code linked above which has been tagged as `webnative-auth`.
@@ -16,9 +16,9 @@ After authentication, we show a username next to the button.
 
 ![](../../.gitbook/assets/after-auth.png)
 
-We will use the Fission [web native](https://www.npmjs.com/package/webnative) package to authenticate users. Our Elm app will request a login over an outgoing port and subscribe to authentication changes over an incoming port.
+We will use the Fission [webnative](https://www.npmjs.com/package/webnative) package to authenticate users. Our Elm app will request a login over an outgoing port and subscribe to authentication changes over an incoming port.
 
-> **Users own their data.** All Fission services are designed on the principle that users should own their data. When users own their identity, developers no longer need to maintain user accounts and authentication becomes simple to implement. See [Compute, Storage, and Identity Foundations](https://guide.fission.codes/webnative-sdk/web-native-introduction/compute-storage-identity) in our guide for more information on identity.
+> **Users own their data.** All Fission services are designed on the principle that users should own their data. When users own their identity, developers no longer need to maintain user accounts and authentication becomes simple to implement. See [Compute, Storage, and Identity Foundations](../../appendix/compute-storage-identity.md) in our guide for more information on identity.
 
 ### Add username and login
 
@@ -239,6 +239,6 @@ That's it! User identity is held by your users in browser storage and you won't 
 
 Here are a couple of resources on Fission auth for a deeper dive into how this all works:
 
-* [UCAN: Authorizing Users Without a Back End](https://blog.fission.codes/auth-without-backend/)
-* [Identity section in Fission whitepaper](https://whitepaper.fission.codes/identity/id-overview)
+* [UCAN: Authorizing Users Without a Back End](https://fission.codes/blog/auth-without-backend/)
+* [Accounts section in Fission whitepaper](https://whitepaper.fission.codes/accounts/verifiable-claims)
 
