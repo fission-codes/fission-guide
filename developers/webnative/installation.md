@@ -11,7 +11,7 @@ You can add the webnative SDK to a project by loading it from a CDN or installin
 For prototyping or experimentation, you can use the latest version of the SDK.
 
 ```markup
-<script src="https://unpkg.com/webnative@0.26.0/dist/index.min.js"></script>
+<script src="https://unpkg.com/webnative@0.26.1/dist/index.umd.min.js"></script>
 ```
 
 We recommend linking to a specific version in production to avoid unexpected changes.

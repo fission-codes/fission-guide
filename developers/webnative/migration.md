@@ -26,7 +26,7 @@ const updatedCID = await fs.mkdir(wn.path.directory("public", "some", "directory
 
 The docs for the [previous API](https://guide.fission.codes/v/en-2.9.0-0.23/developers/webnative) remain available for reference.
 
-#### Version 0.26
+#### Version 0.26.0
 
 The URL for loading webnative from UNPKG has changed. In previous versions, webnative was available as `index.umd.js`.
 
@@ -38,5 +38,19 @@ In webnative 0.26, webnative is available as `index.min.js`.
 
 ```markup
 <script src="https://unpkg.com/webnative@0.26.0/dist/index.min.js"></script>
+```
+
+#### Version 0.26.1
+
+The URL for loading webnative from UNPKG has changed. In webnative 0.26.0, webnative was available as `index.min.js`.
+
+```markup
+<script src="https://unpkg.com/webnative@0.26.0/dist/index.min.js"></script>
+```
+
+We found that some projects needed the UMD build and brought it back in webnative 0.26.1. We have replaced `index.min.js` with `index.umd.min.js`.
+
+```markup
+<script src="https://unpkg.com/webnative@0.26.1/dist/index.umd.min.js"></script>
 ```
 
