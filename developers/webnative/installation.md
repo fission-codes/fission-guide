@@ -36,3 +36,7 @@ import * as wn from 'webnative'
 const wn = self.webnative
 ```
 
+{% hint style="info" %}
+**Build Target.** Webnative uses cryptographic libraries that rely on [BigInt](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/BigInt) and other modern browser standards. In some cases, you may need to set your build tool or bundler to target `es2020` to use webnative.
+{% endhint %}
+
