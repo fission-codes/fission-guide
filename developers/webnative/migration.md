@@ -54,3 +54,25 @@ We found that some projects needed the UMD build and brought it back in webnativ
 <script src="https://unpkg.com/webnative@0.26.1/dist/index.umd.min.js"></script>
 ```
 
+#### Version 0.27.0
+
+The type of `App` returned `app.index` has changed. Previously, the return type was
+
+```javascript
+export type App = {
+  domain: string
+}
+```
+
+In webnative 0.27.0, the the return type is
+
+```javascript
+export type App = {
+  domains: string[]
+  insertedAt: string
+  modifiedAt: string
+}
+```
+
+The domain for the app is now in the `domains` array.
+

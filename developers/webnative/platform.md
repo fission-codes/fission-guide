@@ -62,13 +62,18 @@ Required permissions: `{ platform: { apps: "*" } }` full app management permissi
 
 Params: No parameters
 
-Returns: `{ domain: string }[]` an array of app domains
+Returns: `App[]` with the domain names, creation and modification times for each app
 
 Example:
 
 ```typescript
 const index = await wn.apps.index()
-// [ { domain: 'your-fission-deployment.fission.app' } ]
+// [ 
+//   { domains: ['your-fission-deployment.fission.app'],
+//     insertedAt: '<creation-time>',
+//     modifiedAt: '<last-modified-time>',
+//   } 
+// ]
 ```
 
 **apps.create**
