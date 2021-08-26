@@ -193,7 +193,7 @@ const links = Object.entries(privateLinksObject)
 // working with links
 const data = await Promise.all(links.map(([name, _]) => {
   return fs.cat(
-    wn.path.file("private", "some", "directory", `${name}`
+    wn.path.file("private", "some", "directory", `${name}`)
   )
 }))
 ```
