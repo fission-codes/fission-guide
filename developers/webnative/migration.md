@@ -12,14 +12,14 @@ The way paths are used throughout the webnative and filesystem APIs has changed.
 
 In earlier versions of webnative, API calls expected UNIX style paths.
 
-```text
+```
 const bool = await fs.exists("private/some/file")
 const updatedCID = await fs.mkdir("public/some/directory")
 ```
 
 In webnative 0.24, paths are created by [path helper functions](./#paths) for files and directories.
 
-```text
+```
 const bool = await fs.exists(wn.path.file("private", "some", "file"))
 const updatedCID = await fs.mkdir(wn.path.directory("public", "some", "directory"))
 ```
@@ -76,3 +76,8 @@ export type App = {
 
 The domain for the app is now in the `domains` array.
 
+#### Version 0.28.0
+
+The `publicReadKey` function in `keystore-idb` was renamed to`publicExchangeKey`.
+
+Most users will not need to change anything for webnative 0.28.0, unless they are interacting directly with `keystore-idb.`
