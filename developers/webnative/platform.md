@@ -58,7 +58,7 @@ The value at `permissions.platform.apps` can be
 
 Lists all user apps and their associated domain names.
 
-Required permissions: `{ platform: { apps: "*" } }` full app management permissions
+Required permissions: `{ platform: { apps: "*" } } `full app management permissions
 
 Params: No parameters
 
@@ -80,7 +80,7 @@ const index = await wn.apps.index()
 
 Creates a new app, assigns an initial subdomain, and publishes a placeholder site.
 
-Required permissions: `{ platform: { apps: "*" } }` full app management permissions
+Required permissions: `{ platform: { apps: "*" } } `full app management permissions
 
 Params:
 
@@ -147,4 +147,3 @@ Example:
 ```typescript
 await wn.apps.deleteByDomain('your-fission-deployment.fission.app')
 ```
-

@@ -2,7 +2,7 @@
 
 * [Overview](README.md)
 
-## Accounts & Dashboard <a id="accounts"></a>
+## Accounts & Dashboard <a href="accounts" id="accounts"></a>
 
 * [Fission Accounts](accounts/account-signup/README.md)
   * [Account Linking](accounts/account-signup/account-linking.md)
@@ -10,7 +10,7 @@
 * [Dashboard](accounts/dashboard/README.md)
   * [App Management](accounts/dashboard/app-management.md)
 
-## Fission Drive <a id="drive"></a>
+## Fission Drive <a href="drive" id="drive"></a>
 
 * [Preview](drive/preview.md)
 * [Try Drive](https://drive.fission.codes)
@@ -27,7 +27,7 @@
   * [Installation](developers/webnative/installation.md)
   * [Auth](developers/webnative/auth.md)
   * [Paths](developers/webnative/paths.md)
-  * [File System \(WNFS\)](developers/webnative/file-system-wnfs.md)
+  * [File System (WNFS)](developers/webnative/file-system-wnfs.md)
   * [Platform APIs](developers/webnative/platform.md)
   * [Additional information](developers/webnative/additional-info.md)
   * [Migration](developers/webnative/migration.md)
@@ -35,8 +35,9 @@
   * [Fission Hosted DNS](developers/custom-domains/fission-hosted-dns.md)
   * [Control your own DNS](developers/custom-domains/control-own-dns.md)
   * [Using Cloudflare IPFS Gateway](developers/custom-domains/using-cloudflare-ipfs-gateway.md)
+* [Logos and Badges](developers/logos-and-badges.md)
 
-## App & Code Examples <a id="examples"></a>
+## App & Code Examples <a href="examples" id="examples"></a>
 
 * [Developer Examples](examples/dev-examples.md)
 * [Elm](examples/elm/README.md)
@@ -44,7 +45,7 @@
   * [Adding auth to an elm-pages app](examples/elm/adding-auth-to-an-elm-pages-app.md)
   * [Adding storage to an elm-pages app](examples/elm/adding-storage-to-an-elm-pages-app.md)
 
----
+***
 
 * [WebAssembly](webassembly/README.md)
   * [Storing WebAssembly Modules](webassembly/storing-webassembly-modules.md)
@@ -56,6 +57,5 @@
 * [Troubleshooting](appendix/troubleshooting.md)
 * [Compute, Storage, and Identity Foundations](appendix/compute-storage-identity.md)
 * [Heroku Add-on](appendix/heroku.md)
-* [Fission Web API \(Live Swagger Docs\)](https://runfission.com/docs)
+* [Fission Web API (Live Swagger Docs)](https://runfission.com/docs)
 * [Technical Specifications & Whitepaper](https://whitepaper.fission.codes)
-

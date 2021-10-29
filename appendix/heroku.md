@@ -4,17 +4,17 @@ description: Interplanetary Fission IPFS - Fission Web API as an Heroku Add-on
 
 # Heroku Add-on
 
-The Fission Web API is available as a Heroku Add-on. [Find it in the Heroku Add-Ons Marketplace](https://elements.heroku.com/addons/interplanetary-fission). It is currently in a free beta mode with a "test" plan. 
+The Fission Web API is available as a Heroku Add-on. [Find it in the Heroku Add-Ons Marketplace](https://elements.heroku.com/addons/interplanetary-fission). It is currently in a free beta mode with a "test" plan.&#x20;
 
 As with all Heroku add-ons, you can also create a new add-on locally using the Heroku CLI tool:
 
-```text
+```
 heroku addons:create interplanetary-fission:test
 ```
 
-If you create the add-on through the Heroku dashboard, you can find your API credentials in the _Settings_ section of your app, under the _Config Vars_ heading:
+If you create the add-on through the Heroku dashboard, you can find your API credentials in the _Settings _section of your app, under the _Config Vars_ heading:
 
-![](../.gitbook/assets/heroku_config_vars.png)
+![](../.gitbook/assets/heroku\_config\_vars.png)
 
 These can also be used in your local environment by creating an `.env` file.
 
@@ -35,4 +35,3 @@ This means adding an `app.json` file and a few other settings that tell Heroku w
 We built an [IPFS Storage Adapter for the Ghost blogging platform](https://github.com/fission-suite/ghost-storage-adapter-ipfs), and bundled it together with **Deploy to Heroku** and the **Fission Heroku Add On**. You can get started on the hobby tier by clicking the Deploy to Heroku button on Github:
 
 * [https://github.com/fission-suite/heroku-ipfs-ghost](https://github.com/fission-suite/heroku-ipfs-ghost)
-
