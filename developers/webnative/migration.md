@@ -81,3 +81,7 @@ The domain for the app is now in the `domains` array.
 The `publicReadKey` function in `keystore-idb` was renamed to`publicExchangeKey`.
 
 Most users will not need to change anything for webnative 0.28.0, unless they are interacting directly with `keystore-idb.`
+
+#### Version 0.29.0
+
+No migrations are needed for this version of webnative.
