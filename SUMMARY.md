@@ -19,6 +19,7 @@
 
 * [Installation](developers/installation.md)
 * [Getting Started](developers/getting-started.md)
+* [Concepts](developers/concepts.md)
 * [Fission CLI](developers/cli/README.md)
   * [Managing Your Account](developers/cli/managing-your-account.md)
   * [Working with Apps](developers/cli/working-with-apps.md)
