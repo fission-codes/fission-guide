@@ -12,7 +12,7 @@ As with all Heroku add-ons, you can also create a new add-on locally using the H
 heroku addons:create interplanetary-fission:test
 ```
 
-If you create the add-on through the Heroku dashboard, you can find your API credentials in the _Settings _section of your app, under the _Config Vars_ heading:
+If you create the add-on through the Heroku dashboard, you can find your API credentials in the _Settings_ section of your app, under the _Config Vars_ heading:
 
 ![](../.gitbook/assets/heroku\_config\_vars.png)
 

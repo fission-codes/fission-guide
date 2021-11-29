@@ -23,5 +23,5 @@ In the browser, the Webnative SDK connects with Fission peers to access and upda
 Apps that use Webnative communicate with Fission peers through a [shared worker](https://developer.mozilla.org/en-US/docs/Web/API/SharedWorker) provided by the Fission Auth Lobby. You can pass an instance of `js-ips` to Webnative to [bring your own peers](https://github.com/fission-suite/webnative/blob/6322c840f20e4f3cd6370d2ca5d999cb20b2e837/src/ipfs/config.ts#L10-L12).
 
 {% hint style="info" %}
-**More to come. **We are planning to cover more concepts here. Come by our [Discord server](https://fission.codes/discord) if you have questions on what we have covered so far.
+**More to come.** We are planning to cover more concepts here. Come by our [Discord server](https://fission.codes/discord) if you have questions on what we have covered so far.
 {% endhint %}

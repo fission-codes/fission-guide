@@ -2,15 +2,16 @@
 
 * [Overview](README.md)
 
-## Accounts & Dashboard <a href="accounts" id="accounts"></a>
+## Accounts & Dashboard <a href="#accounts" id="accounts"></a>
 
 * [Fission Accounts](accounts/account-signup/README.md)
   * [Account Linking](accounts/account-signup/account-linking.md)
   * [Account Recovery](accounts/account-signup/account-recovery.md)
+  * [Account Migration](accounts/account-signup/account-migration.md)
 * [Dashboard](accounts/dashboard/README.md)
   * [App Management](accounts/dashboard/app-management.md)
 
-## Fission Drive <a href="drive" id="drive"></a>
+## Fission Drive <a href="#drive" id="drive"></a>
 
 * [Preview](drive/preview.md)
 * [Try Drive](https://drive.fission.codes)
@@ -38,7 +39,7 @@
   * [Using Cloudflare IPFS Gateway](developers/custom-domains/using-cloudflare-ipfs-gateway.md)
 * [Logos and Badges](developers/logos-and-badges.md)
 
-## App & Code Examples <a href="examples" id="examples"></a>
+## App & Code Examples <a href="#examples" id="examples"></a>
 
 * [Developer Examples](examples/dev-examples.md)
 * [Elm](examples/elm/README.md)
