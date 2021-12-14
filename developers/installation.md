@@ -48,11 +48,11 @@ Usage: fission (SHORTCUT | COMMAND | --version) [-v|--verbose]
 
 If you have any issues, check that you have `libssl1.1` (installed with OpenSSL) and `libtinfo5` (or `libtinfo6`). Most recent Linux distributions will already have these libraries installed.
 
-#### Clock and Timezone Configuration
+#### Clock Configuration
 
 Check that your clock is accurate. Account linking depends on an accurate clock and may fail due to clock drift.&#x20;
 
-Mismatched timezones or clock drift between a host system and container or VM may also cause issues.
+Mismatched clocks between a host system and container or VM may also cause issues.
 
 ## &#x20;Upgrading the CLI
 
