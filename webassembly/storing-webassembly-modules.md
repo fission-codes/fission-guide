@@ -8,7 +8,7 @@ description: An introduction to storing WASM modules in web native storage
 
 In this guide, we will show how to store WebAssembly modules in Fission web native storage. Our goal will be to store a WASM module and execute it at a later time.
 
-The code in this guide is available in the [fission-stored-wasm-example](https://github.com/bgins/fission-stored-wasm-example) repository and the example is published at [quick-enormous-silicon-dinosaur.fission.app](https://quick-enormous-silicon-dinosaur.fission.app/).
+The code in this guide is available in the [stored-wasm-example](https://github.com/fission-suite/stored-wasm-example) repository and the example is published at [quick-enormous-silicon-dinosaur.fission.app](https://quick-enormous-silicon-dinosaur.fission.app).
 
 We have compiled an `add` function from C to a WASM module.
 
@@ -133,7 +133,7 @@ This time we prepare a `wasm/math` path for the directory and call `fs.ls` to li
 
 ![](../.gitbook/assets/table-data.png)
 
-Each entry has a name, size \(in bytes\), last modified time, and a flag indicating whether it is a file or directory.
+Each entry has a name, size (in bytes), last modified time, and a flag indicating whether it is a file or directory.
 
 ### Load and use the module
 
@@ -199,4 +199,3 @@ Reading this guide gives you a taste of how this all works, but extending this e
 * **Add a subtraction operation.** We have done addition, adding subtraction would be an easy first step. See [Compiling C to WebAssembly without Emscripten](https://surma.dev/things/c-to-webassembly/) for help with compiling WASM modules.
 * **Distributed addition.** How about instead of overwriting the result of an addition, we keep a running total across devices?
 * **Build a calculator.** A bit more ambitious, but a calculator app that stores state across devices would be so cool!
-
