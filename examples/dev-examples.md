@@ -10,12 +10,10 @@ We're developing a series of example apps, base templates, and code examples to 
 
 ### Elm
 
-[Walk through an example using elm-pages](elm/publishing-an-elm-pages-app.md) that goes from basic publishing through to adding auth and storage.
-
 The Quotes app is a simple app written in Elm. It features Fission login, and stores quotes data in your personal storage.
 
 * Try it live at [quotes.fission.app](https://quotes.fission.app)
-* Browse the source on Github [icidasset/quotes](https://github.com/icidasset/quotes) 
+* Browse the source on Github [icidasset/quotes](https://github.com/icidasset/quotes)&#x20;
 
 Fission Drive is maintained by the Fission team and included with every Fission account. It lets you work with all of the files in your account's file system.
 
@@ -30,6 +28,3 @@ Fission Drive is maintained by the Fission team and included with every Fission 
 ### React
 
 Photo Gallery [https://github.com/fission-suite/ipfs-photo-gallery](https://github.com/fission-suite/ipfs-photo-gallery)
-
-Notes
-
