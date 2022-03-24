@@ -49,8 +49,8 @@ const state = await wn.initialise({
 
     // Ask the user permission to additional filesystem paths
     fs: {
-      private: [ wn.path.directory("private", "Audio", "Music") ],
-      public: [ wn.path.directory("public", "Audio", "Mixtapes") ]
+      private: [ wn.path.directory("Audio", "Music") ],
+      public: [ wn.path.directory("Audio", "Mixtapes") ]
     }
   }
 
