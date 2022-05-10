@@ -33,6 +33,7 @@
   * [Platform APIs](developers/webnative/platform.md)
   * [Additional information](developers/webnative/additional-info.md)
   * [Migration](developers/webnative/migration.md)
+  * [Sharing Private Data](developers/webnative/sharing-private-data.md)
 * [Custom Domains](developers/custom-domains/README.md)
   * [Fission Hosted DNS](developers/custom-domains/fission-hosted-dns.md)
   * [Control your own DNS](developers/custom-domains/control-own-dns.md)
