@@ -68,6 +68,8 @@ Server DID is the identity of the Fission server that authenticates your request
 
 We configure your machine to directly connect to our servers. The peers are the IP addresses and fingerprints of our servers.
 
+You can also fetch our active public peers from the peers endpoint: [https://runfission.com/ipfs/peers](https://runfission.com/ipfs/peers)
+
 {% hint style="info" %}
 Eventually, we'll have a list of peers around the world.
 {% endhint %}
@@ -123,4 +125,3 @@ The build directory is set as a relative path from the location of the `fission.
 {% hint style="success" %}
 If you are using a well-known build directory, the Fission CLI will attempt to detect it the first time you run `fission app register`. It will prompt you and ask if you would like to use the directory it detects.
 {% endhint %}
-
