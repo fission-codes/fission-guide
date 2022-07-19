@@ -10,7 +10,7 @@ Use the `fission app` command and its subcommands to work with apps. The main op
 
 The `fission app register` command initializes a new app and links it to your Fission account.
 
-```text
+```
 $ fission app register
 👷 Build directory (.): 
 ✅ App initialized as big-narrow-fuchsia-elf.fission.app
@@ -20,7 +20,7 @@ you can always view your app at
 https://ipfs.runfission.com/ipns/big-narrow-fuchsia-elf.fission.app
 ```
 
-You will be prompted for a build directory. The Fission CLI will publish your app from the build directory you select. 
+You will be prompted for a build directory. The Fission CLI will publish your app from the build directory you select.&#x20;
 
 If you are using a common build directory, the Fission CLI will detect it when you run `fission app register` and suggest it. You accept the suggestion or enter another build directory as a relative path from the `fission.yaml` file.
 
@@ -32,7 +32,7 @@ You can also use a custom domain name for your app. See the [Custom Domains](../
 
 The `fission app register` command has advanced options:
 
-```text
+```
 $ fission app register --help
 Usage: fission app register [--ipfs-bin BIN_PATH] [--ipfs-timeout SECONDS] 
                             [-v|--verbose] [-a|--app-dir PATH] 
@@ -56,7 +56,7 @@ Use the `fission app publish` command to publish your app to the web. Run this c
 
 The `fission app publish` command publishes your app and associates it with the URL in the `fission.yaml` file. After your app is published, the Fission CLI will output a success message and the URL for your app.
 
-```text
+```
 $ fission app publish
 🕚🛫 App publish local preflight
 ✈️  Pushing to remote
@@ -71,7 +71,7 @@ The `fission up` command is a shortcut for `fission app publish`.
 
 The `fission app publish` command has advanced options:
 
-```text
+```
 $ fission app publish --help
 Usage: fission app publish [--ipfs-bin BIN_PATH] [--ipfs-timeout SECONDS] 
                            [-v|--verbose] [--update-data ARG] [--update-dns ARG]
@@ -94,7 +94,7 @@ Available options:
 
 You can continuously publish your app by adding the `--watch` option. The Fission CLI will watch your build directory and publish whenever it detects a change.
 
-```text
+```
 $ fission app publish --watch
 🕚🛫 App publish local preflight
 ✈️  Pushing to remote
@@ -103,18 +103,51 @@ $ fission app publish --watch
 🔗 big-narrow-fuchsia-elf.fission.app
 ```
 
-This means that as you work in your local development environment, changes are continuously streamed online as you save. Note that some development environments have different code and output options than "production", but this will allow you to quickly and easily share a live online version with other people. 
+This means that as you work in your local development environment, changes are continuously streamed online as you save. Note that some development environments have different code and output options than "production", but this will allow you to quickly and easily share a live online version with other people.&#x20;
 
 ## Display information about an app
 
 Use `fission app info` to display the URL where your app is viewable.
 
-```text
+```
 $ fission app info
 ✅ App available at big-narrow-fuchsia-elf.fission.app
 ```
 
-## 
+## Delegation
 
+The `fission app delegate` command delegates the capability to work with apps to a DID:
 
+```
+$ fission app delegate --app-name ancient-round-crab --did did:key:z6Mkfr7dWuKb2muJRLiqd7mNZ61iBQD9btiPHemdcHaXcF47
+✅ Delegated a UCAN for ancient-round-crab to did:key:z6Mkfr7dWuKb2muJRLiqd7mNZ61iBQD9btiPHemdcHaXcF47
+🎫 UCAN: eyJ1YXYiOiIxLjAuMCIsImFsZyI6IkVkRFNBIiwiY3R5IjpudWxsLCJ0eXAiOiJKV1QifQ.eyJuYmYiOjE2NTczMDM4NzMsImlzcyI6ImRp
+ZDprZXk6ejZNa2tYYkxrYjFqaGNhdkNBeW1aa3pKcnY4eWNZVHRzVmU4QndycTlaZFpHbjRLIiwicHJmIjpudWxsLCJhdWQiOiJkaWQ6a2V5Ono2TWtm
+cjdkV3VLYjJtdUpSTGlxZDdtTlo2MWlCUUQ5YnRpUEhlbWRjSGFYY0Y0NyIsImZjdCI6W10sInB0YyI6IkFQUEVORCIsInJzYyI6eyJhcHAiOiJhbmNp
+ZW50LXJvdW5kLWNyYWIucnVuZmlzc2lvbi5jb20ifSwiZXhwIjoxNjU3MzA0MjAzfQ.lgMvPwJS3aGmLZp5j-dftuUaVktx6EOc4RkL5rATXjrDdqgs-
+4CrIxmdq_JzWF1oEkiYYSjspfL9RQl95emFAQ
+```
 
+You can delegate apps you have registered on your machine or delegate from environment variables by setting `FISSION_MACHINE_KEY` and `FISSION_APP_UCAN` to an Ed25519 private key and a UCAN whose audience is associated with the key. Both environment variables must be set.
+
+The command assumes least privilege by defaulting to `Append` potency and limiting the UCAN lifetime to five minutes. Both potency and lifetime can be set when more potency or a longer lifetime are desired.
+
+The `fission app delegate` command has advanced options:
+
+```
+fission app delegate --help
+Usage: fission app delegate (-a|--app-name NAME) (-d|--did DID) 
+                            [-p|--potency POTENCY] [-l|--lifetime LIFETIME] 
+                            [-q|--quiet]
+  Delegate capability to an audience DID
+
+Available options:
+  -a,--app-name NAME       The target app
+  -d,--did DID             An audience DID
+  -p,--potency POTENCY     The potency to delegate. Options include Append,
+                           Destroy, or Super_User. (default: "Append")
+  -l,--lifetime LIFETIME   Lifetime in seconds before UCAN expires
+                           (default: 300)
+  -q,--quiet               Only output the UCAN on success
+  -h,--help                Show this help text
+```

@@ -23,6 +23,7 @@
 * [Concepts](developers/concepts.md)
 * [Fission CLI](developers/cli/README.md)
   * [Managing Your Account](developers/cli/managing-your-account.md)
+  * [Generate Credentials](developers/cli/generate-credentials.md)
   * [Working with Apps](developers/cli/working-with-apps.md)
   * [Fission YAML](developers/cli/fission-yaml.md)
 * [Webnative SDK](developers/webnative/README.md)
