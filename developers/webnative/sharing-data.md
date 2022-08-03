@@ -1,5 +1,5 @@
 ---
-description: How to share private data with the Webnative SDK
+description: How to share data with the Webnative SDK
 ---
 
 # Sharing Data
