@@ -17,10 +17,10 @@ For example:
 $ curl https://runfission.com/ipfs/QmWATWQ7fVPP2EFGu71UkfnqhYXDYH566qy47CnJDgvs8u
 ```
 
-If you want to do this programmatically, use your favorite REST client or the [Fission TypeScript Client](https://github.com/fission-suite/typescript-client)
+If you want to do this programmatically, use your favorite REST client or the [Fission TypeScript Client](https://github.com/fission-codes/typescript-client)
 
 ```javascript
-import { content } from '@fission-suite/client'
+import { content } from '@fission-codes/client'
 const helloWorld = await content("QmWATWQ7fVPP2EFGu71UkfnqhYXDYH566qy47CnJDgvs8u")
 ```
 
@@ -53,10 +53,10 @@ $ curl -i \
      https://runfission.com/ipfs
 ```
 
-If you want to do this programmatically, use your favorite REST client or the [Fission TypeScript Client](https://github.com/fission-suite/typescript-client)
+If you want to do this programmatically, use your favorite REST client or the [Fission TypeScript Client](https://github.com/fission-codes/typescript-client)
 
 ```javascript
-import { add } from '@fission-suite/client'
+import { add } from '@fission-codes/client'
 const auth = { username: "username", password: "password" }
 const content = {
   key1: 123,
@@ -79,10 +79,10 @@ curl -i \
      https://runfission.com/ipfs/QmWATWQ7fVPP2EFGu71UkfnqhYXDYH566qy47CnJDgvs8u
 ```
 
-If you want to do this programmatically, use your favorite REST client or the [Fission TypeScript Client](https://github.com/fission-suite/typescript-client)
+If you want to do this programmatically, use your favorite REST client or the [Fission TypeScript Client](https://github.com/fission-codes/typescript-client)
 
 ```javascript
-import { pin } from '@fission-suite/client'
+import { pin } from '@fission-codes/client'
 const auth = { username: "username", password: "password" }
 await pin("QmWATWQ7fVPP2EFGu71UkfnqhYXDYH566qy47CnJDgvs8u", auth)
 ```

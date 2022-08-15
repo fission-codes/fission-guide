@@ -83,16 +83,16 @@ For Windows users, we currently recommend using the Windows Subsystem for Linux 
 We have a brew recipe to get you up and running quickly on MacOS:
 
 ```bash
-$ brew tap fission-suite/fission
+$ brew tap fission-codes/fission
 $ brew install fission-cli
 ```
 
 #### Linux \(and manual MacOS\)
 
-Head over to our [releases](https://github.com/fission-suite/cli/releases) page on Github and download the latest release for your operating system.
+Head over to our [releases](https://github.com/fission-codes/cli/releases) page on Github and download the latest release for your operating system.
 
 {% hint style="warning" %}
-Note: Ubuntu 19+ is currently not supported due to [a build issue \#51](https://github.com/fission-suite/cli/issues/51)
+Note: Ubuntu 19+ is currently not supported due to [a build issue \#51](https://github.com/fission-codes/cli/issues/51)
 {% endhint %}
 
 Unzip the file and move the file to your PATH:

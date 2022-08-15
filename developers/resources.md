@@ -4,11 +4,11 @@ Here are some additional resources to help you understand the wider Fission ecos
 
 * [Fission Web API docs through Swagger](https://runfission.com/docs/)
   * Use this if you want to make REST calls directly to our API. 
-* [Fission JavaScript client](https://github.com/fission-suite/typescript-client) 
+* [Fission JavaScript client](https://github.com/fission-codes/typescript-client) 
   * Client library for the Fission Web API
   * Use this if you want to add IPFS support to your app through HTTP
   * Compatible with JavaScript and TypeScript
-* [Fission Github](https://github.com/fission-suite)
+* [Fission Github](https://github.com/fission-codes)
   * See all of our projects, the latest releases, features that we're working on, and known issues.
 * [Fission blog](https://blog.fission.codes/)
   * Stay up to date with what we're working on as well as our thoughts on decentralization, open-source, and more!

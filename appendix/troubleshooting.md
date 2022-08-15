@@ -29,17 +29,17 @@ sudo sysctl fs.inotify.max_user_watches=1048576
 We've had some hiccups with our brew formula recently. To re-install / reset brew, run the following:
 
 ```text
-brew untap fission-suite/fission
+brew untap fission-codes/fission
 ```
 
 Now re-run the [installation instructions](https://guide.fission.codes/installation#macos), copied here for convenience:
 
 ```text
-brew tap fission-suite/fission
+brew tap fission-codes/fission
 brew install fission-cli
 ```
 
-This is related to [issue \#37](https://github.com/fission-suite/cli/issues/37).
+This is related to [issue \#37](https://github.com/fission-codes/cli/issues/37).
 
 ## DEBUG mode for fission cli
 

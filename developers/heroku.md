@@ -19,7 +19,7 @@ If you create the add-on through the Heroku dashboard, you can find your API cre
 These can also be used in your local environment by creating an `.env` file.
 
 {% hint style="info" %}
-The Heroku Add-on uses the Web API, appropriate for server side apps written in any language that Heroku supports. You can browse the live docs of the Fission Web API at [runfission.com/docs](https://runfission.com/docs), or look at our [Github repo](https://github.com/fission-suite) to find a client SDK for your programming language.
+The Heroku Add-on uses the Web API, appropriate for server side apps written in any language that Heroku supports. You can browse the live docs of the Fission Web API at [runfission.com/docs](https://runfission.com/docs), or look at our [Github repo](https://github.com/fission-codes) to find a client SDK for your programming language.
 {% endhint %}
 
 ### Deploy to Heroku
@@ -32,7 +32,7 @@ This means adding an `app.json` file and a few other settings that tell Heroku w
 
 #### Ghost Blogging on Heroku with IPFS
 
-We built an [IPFS Storage Adapter for the Ghost blogging platform](https://github.com/fission-suite/ghost-storage-adapter-ipfs), and bundled it together with Deploy to Heroku and the Fission Heroku Add On. You can get started on the hobby tier by clicking the Deploy to Heroku button on Github:
+We built an [IPFS Storage Adapter for the Ghost blogging platform](https://github.com/fission-codes/ghost-storage-adapter-ipfs), and bundled it together with Deploy to Heroku and the Fission Heroku Add On. You can get started on the hobby tier by clicking the Deploy to Heroku button on Github:
 
-* [https://github.com/fission-suite/heroku-ipfs-ghost](https://github.com/fission-suite/heroku-ipfs-ghost)
+* [https://github.com/fission-codes/heroku-ipfs-ghost](https://github.com/fission-codes/heroku-ipfs-ghost)
 
