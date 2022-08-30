@@ -1,8 +1,8 @@
 ---
-description: How to share private data with the Webnative SDK
+description: How to share data with the Webnative SDK
 ---
 
-# Sharing Private Data
+# Sharing Data
 
 You can share a private file or directory with another Fission user:
 
