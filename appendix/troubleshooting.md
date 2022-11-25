@@ -1,5 +1,5 @@
 ---
-description: 'Troubleshooting, work arounds, and known issues.'
+description: Troubleshooting, work arounds, and known issues.
 ---
 
 # Troubleshooting
@@ -8,13 +8,13 @@ description: 'Troubleshooting, work arounds, and known issues.'
 
 To check the setup of your DNS for [Custom Domains](../developers/custom-domains/control-own-dns.md), you can run this `dig` command:
 
-```text
+```
 dig -t txt short _dnslink.junior-angular-tulip.fission.app
 ```
 
 The "short" option is still pretty long! We're just looking for the ANSWER section:
 
-```text
+```
 ;; ANSWER SECTION:
 _dnslink.junior-angular-tulip.fission.app. 9 IN	TXT "dnslink=/ipfs/QmafcCaym2UZ46oKDoSQs7UkHVPpeKTVTES2GN5icuvKQv"
 ```
@@ -31,7 +31,7 @@ For ubuntu, read [underyx's article to increase the number of open files allowed
 
 For Mac OS, [Wilson Mar](https://wilsonmar.github.io/maximum-limits/) has a one liner:
 
-```text
+```
 sudo launchctl limit maxfiles 65536 200000
 ```
 
@@ -39,7 +39,7 @@ As [described in the article,](https://wilsonmar.github.io/maximum-limits/) you'
 
 On a Chromebook in the native ChromeOS shell? Yeah, [Boris hit this issue too when running large jekyll or gatsby builds](https://wiki.bmann.ca/chromebook#increase-inotify):
 
-```text
+```
 sudo sysctl fs.inotify.max_user_watches=1048576
 ```
 
@@ -47,24 +47,29 @@ sudo sysctl fs.inotify.max_user_watches=1048576
 
 We've had some hiccups with our brew formula recently. To re-install / reset brew, run the following:
 
-```text
+```
+brew uninstall
 brew untap fission-suite/fission
 ```
 
 Now re-run the [installation instructions](https://guide.fission.codes/installation#macos), copied here for convenience:
 
-```text
-brew tap fission-suite/fission
+```
+brew tap fission-codes/fission
 brew install fission-cli
 ```
 
-This is related to [issue \#37](https://github.com/fission-suite/cli/issues/37).
+{% hint style="info" %}
+Note: we changed from `fission-suite` to `fission-codes`, so you'll need to follow the steps above to get on the new packages.
+{% endhint %}
+
+This is related to [issue #37](https://github.com/fission-suite/cli/issues/37).
 
 ## DEBUG mode for fission cli
 
 If you want to see what the [Fission CLI](../developers/cli/) is doing under the covers, you can turn on DEBUG mode by calling commands like this:
 
-```text
+```
 DEBUG=true fission up .
 ```
 
@@ -85,4 +90,3 @@ The `--verbose` flag can be run on most commands these days. [See the CLI docs f
 ## Ports for Managed Fission IPFS Node
 
 The fission CLI installs a managed IPFS node. It runs on port `10235`.
-
