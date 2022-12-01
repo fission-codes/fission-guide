@@ -29,6 +29,7 @@
 * [Webnative SDK](developers/webnative/README.md)
   * [Installation](developers/webnative/installation.md)
   * [Initialization](developers/webnative/initialization.md)
+  * [Session](developers/webnative/session.md)
   * [Auth](developers/webnative/auth.md)
   * [File System (WNFS)](developers/webnative/file-system-wnfs.md)
   * [Platform APIs](developers/webnative/platform.md)
