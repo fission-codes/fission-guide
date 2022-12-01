@@ -28,6 +28,7 @@
   * [Fission YAML](developers/cli/fission-yaml.md)
 * [Webnative SDK](developers/webnative/README.md)
   * [Installation](developers/webnative/installation.md)
+  * [Initialization](developers/webnative/initialization.md)
   * [Auth](developers/webnative/auth.md)
   * [Paths](developers/webnative/paths.md)
   * [File System (WNFS)](developers/webnative/file-system-wnfs.md)
@@ -40,6 +41,7 @@
   * [Control your own DNS](developers/custom-domains/control-own-dns.md)
   * [Using Cloudflare IPFS Gateway](developers/custom-domains/using-cloudflare-ipfs-gateway.md)
 * [Logos and Badges](developers/logos-and-badges.md)
+* [Guide Versions](developers/guide-versions.md)
 
 ## App & Code Examples <a href="#examples" id="examples"></a>
 
