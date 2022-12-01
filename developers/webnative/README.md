@@ -14,9 +14,11 @@ The Webnative SDK empowers developers to build fully distributed web application
 
 Webnative applications work offline and store data encrypted for the user by leveraging the power of the web platform.&#x20;
 
-This guide walks through the fundamental concepts for working with the Webnative SDK. We also publish an API reference at [webnative.fission.app](https://webnative.fission.app) and you can view [the code](https://github.com/fission-codes/webnative) on GitHub.
+This guide walks through the fundamental concepts for working with the Webnative. We also publish an API reference at [webnative.fission.app](https://webnative.fission.app) and you can view the [source code](https://github.com/fission-codes/webnative) on GitHub.
+
+You can also view the API reference at [deno.land](https://doc.deno.land/https://esm.sh/webnative/) and [paka.dev](https://paka.dev/npm/webnative/).
 
 {% hint style="info" %}
-**Have questions?** Ask your questions in the [Fission Discord server](https://fission.codes/discord) or post them to the [Fission Developer forum](https://talk.fission.codes/c/developers/7/none). We are excited to help you build apps with the Webnative SDK and would love to hear from you!
+**Have questions?** Ask your questions in the [Fission Discord server](https://fission.codes/discord) or post them to the [Fission Developer forum](https://talk.fission.codes/c/developers/7/none). We are excited to help you build apps with Webnative and would love to hear from you!
 {% endhint %}
 
