@@ -8,7 +8,7 @@ description: An introduction to storing WASM modules in web native storage
 
 In this guide, we will show how to store WebAssembly modules in Fission web native storage. Our goal will be to store a WASM module and execute it at a later time.
 
-The code in this guide is available in the [stored-wasm-example](https://github.com/fission-suite/stored-wasm-example) repository and the example is published at [quick-enormous-silicon-dinosaur.fission.app](https://quick-enormous-silicon-dinosaur.fission.app).
+The code in this guide is available in the [stored-wasm-example](https://github.com/fission-suite/stored-wasm-example) repository and the example is published at [quick-enormous-silicon-dinosaur.fission.app](https://quick-enormous-silicon-dinosaur.fission.app/).
 
 We have compiled an `add` function from C to a WASM module.
 

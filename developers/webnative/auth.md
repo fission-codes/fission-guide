@@ -6,7 +6,7 @@ description: Authentication and Authorization with the Webnative SDK
 
 ## Authentication
 
-Users authenticate once per browser in the [Fission Auth Lobby](https://auth.fission.codes). If the user is new to Fission, they are prompted to sign up. They may also link an existing account from another browser.
+Users authenticate once per browser in the [Fission Auth Lobby](https://auth.fission.codes/). If the user is new to Fission, they are prompted to sign up. They may also link an existing account from another browser.
 
 Apps redirect users to the Auth Lobby to sign up and request authorization to use resources. Sign-up only happens once, and each subsequent visit from any app is for authorization only.
 

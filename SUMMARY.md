@@ -30,7 +30,6 @@
   * [Installation](developers/webnative/installation.md)
   * [Initialization](developers/webnative/initialization.md)
   * [Auth](developers/webnative/auth.md)
-  * [Paths](developers/webnative/paths.md)
   * [File System (WNFS)](developers/webnative/file-system-wnfs.md)
   * [Platform APIs](developers/webnative/platform.md)
   * [Additional information](developers/webnative/additional-info.md)

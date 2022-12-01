@@ -2,15 +2,15 @@
 description: Working with the Webnative File System (WNFS)
 ---
 
-# File System \(WNFS\)
+# File System (WNFS)
 
-The Web Native File System \(WNFS\) is a file system built on top of the InterPlanetary File System \(IPFS\). Each Fission user has their own WNFS, and apps store user files and data in it when granted permission.
+The Web Native File System (WNFS) is a file system built on top of the InterPlanetary File System (IPFS). Each Fission user has their own WNFS, and apps store user files and data in it when granted permission.
 
 Each file system has a public tree and a private tree, much like your macOS, Windows, or Linux desktop file system. The public tree is "live" and publicly accessible on the Internet. The private tree is encrypted so that only the owner can see the contents.
 
-All information \(links, data, metadata, etc.\) in the private tree is encrypted. Decryption keys are stored so that access to a given directory grants access to all of its subdirectories.
+All information (links, data, metadata, etc.) in the private tree is encrypted. Decryption keys are stored so that access to a given directory grants access to all of its subdirectories.
 
-WNFS is structured and functions similarly to a Unix-style file system, with one notable exception: it's a Directed Acyclic Graph \(DAG\), meaning that a given child can have more than one parent \(think symlinks but without the "sym"\).
+WNFS is structured and functions similarly to a Unix-style file system, with one notable exception: it's a Directed Acyclic Graph (DAG), meaning that a given child can have more than one parent (think symlinks but without the "sym").
 
 ## Permissions
 
@@ -44,7 +44,37 @@ Apps request `permissions.app` to store user data in a default app storage direc
 
 The initialize function will return a `NotAuthorised` scenario if one of the UCAN will expire in one day to minimize the likelihood of receiving an expired permissions error. But to be safe, apps should also account for this error.
 
-## WNFS
+## Paths
+
+WNFS uses directory and file paths built from path segments by path functions.
+
+```javascript
+// creates a directory path equivalent to "public/some/directory/"
+const publicDirectoryPath = wn.path.directory("public", "some", "directory")
+
+// creates a directory path equivalent to "private/some/directory/"
+const privateDirectoryPath = wn.path.directory("private", "some", "directory")
+
+// creates a file path equivalent to "public/some/file"
+const publicFilePath = wn.path.file("public", "some", "file")
+
+// creates a file path equivalent to "private/some/file"
+const privateFilePath = wn.path.file("private", "some", "file")
+
+// wn.path.Branch.Private is an alias for "private"
+const privateHelperPath = wn.path.file(wn.path.Branch.Private, "some", "file")
+
+// wn.path.Branch.Public is an alias for "public"
+const publicHelperPath = wn.path.file(wn.path.Branch.Public, "some", "file")
+```
+
+All WNFS operations expect paths created by path functions. See the [path API documentation](https://webnative.fission.app/modules/path.html) for more path utility functions.
+
+{% hint style="info" %}
+**Path Objects.** The path functions create objects like `{ directory: ["public", "some", "directory"] }` or `{ file: ["public", "some", "file"] }`. We recommend you use path functions because they validate paths to make sure they are well-formed.
+{% endhint %}
+
+## File System Interface
 
 WNFS exposes a POSIX-style interface:
 
@@ -91,7 +121,7 @@ Returns: `CID` the updated _root_ CID for the file system.
 
 Methods for interacting with the filesystem all use **absolute** paths.
 
-Paths created by [path functions](paths.md) have a `FilePath` or `DirectoryPath` type. Methods with a `DistinctivePath` param accept either a `FilePath` or a `DirectoryPath`.
+Paths created by [path functions](broken-reference) have a `FilePath` or `DirectoryPath` type. Methods with a `DistinctivePath` param accept either a `FilePath` or a `DirectoryPath`.
 
 The `FileContent`that WNFS can store includes `FileContentRaw`, `Blob`, `string`, `number`, and `boolean`. `FileContentRaw` is `Uint8Array`. In addition, the private file system can store `Object`s.
 
@@ -302,4 +332,3 @@ file.history.prior(1606236743)
 {% hint style="warning" %}
 Requesting many versions with `file.history.list` can be slow. The acceptable delay will depend on your application.
 {% endhint %}
-
