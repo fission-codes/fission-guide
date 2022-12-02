@@ -28,7 +28,7 @@ const program = await wn.program({
 
 ## Program
 
-A Webnative program is an assembly of components that make up a distributed web application.
+A Webnative program is a set of components and utilities for building a distributed web application.
 
 ```typescript
 export type Program = ShortHands & {
@@ -76,7 +76,7 @@ We saw a namespace earlier in our minimal example
 namespace: { creator: "Nullsoft", name: "Winamp" }
 ```
 
-A namespace isolates an application in browser storage. This means you can work on multiple apps on `localhost` at the same port and not worry about them interacting or conflicting with each other. Provide each app a namespace, and they will exist independently.
+A namespace isolates an application in browser storage. This means you can work on multiple apps on `localhost` at the same port and not worry about them interacting or conflicting with each other. Provide each app a namespace and they will exist independently.
 
 The namespace can also be set as a string
 
@@ -92,7 +92,7 @@ The `debug` flag determines whether Webnative should log detailed debugging info
 
 The `loadImmediately` flag determines whether the filesystem should be loaded on initialization. The default value is `true`.
 
-The filesystem can be loaded after initialization using the `program.loadFileSystem` or `program.loadRootFileSystem` short hand functions. In most cases, you will want to load the filesystem immediately, but deferring can be useful in some cases such as working with the filesystem in a Worker.
+The filesystem can be loaded after initialization using the `program.loadFileSystem` or `program.loadRootFileSystem` short hand functions. In most cases, you will want to load the filesystem immediately, but deferring can sometimes be useful. For example, you may want to [load the filesystem in a Worker](additional-info.md#web-worker) after initialization.
 
 The `version` sets the filesystem version. The `version` defaults to the latest stable version of WNFS.
 
@@ -102,7 +102,7 @@ Permissions are the capabilities to be requested from another application. We'll
 
 ### User messages
 
-User messages are alert messages that report to the user when their filesystem is not supported by the current version of Webnative. You can update these messages to provide users with your support information.
+User messages are [alerts](https://developer.mozilla.org/en-US/docs/Web/API/Window/alert) that report to the user when their filesystem is not supported by the current version of Webnative. You can update these messages to provide users with your support information.
 
 ## Components
 
